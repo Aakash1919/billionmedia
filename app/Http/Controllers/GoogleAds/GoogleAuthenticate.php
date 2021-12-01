@@ -2,6 +2,8 @@
 namespace App\Http\Controllers\GoogleAds;
 
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
 
@@ -31,10 +33,14 @@ class GoogleAuthenticate extends BaseController{
         return $this->oAuth2->buildFullAuthorizationUri(); 
     }
 
-    public function main()
-    {
-        echo $url = $this->getRedirectURI();
-        $this->getRefreshToken();    
+    public function main(Request $request) {
+        if($request->has('code')) {
+            $code = $request->get('code');
+            return $this->getRefreshToken($code);
+        }
+        $url = $this->getRedirectURI();
+        return Redirect::to($url);
+
     }
 
     public function getRefreshToken($code = null) {
@@ -42,6 +48,9 @@ class GoogleAuthenticate extends BaseController{
             $this->oAuth2->setCode($code);
             $authToken = $this->oAuth2->fetchAuthToken();
             print_r($authToken);
+            if(isset($authToken)) {
+                
+            }
         }
     }
 }
