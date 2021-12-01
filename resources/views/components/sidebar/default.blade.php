@@ -21,7 +21,14 @@
             <a href="{{ route('keyword-tool') }}">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>
                 </div>
-                <div class="menu-title">Keyword Tool</div>
+                <div class="menu-title">Authorize</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('keyword-planner') }}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Keyword Planner</div>
             </a>
         </li>
     </ul>

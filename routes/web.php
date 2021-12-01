@@ -20,4 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])->name('home');
-Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->name('keyword-tool');
+Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->name('google-authorize');
+Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->name('keyword-planner');
