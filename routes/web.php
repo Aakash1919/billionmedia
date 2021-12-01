@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])->name('home');
+Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->name('keyword-tool');

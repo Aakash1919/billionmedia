@@ -17,6 +17,13 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
+        <li>
+            <a href="{{ route('keyword-tool') }}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Keyword Tool</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </div>
