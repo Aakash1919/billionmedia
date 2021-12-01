@@ -30,7 +30,7 @@ class GoogleAuthenticate extends BaseController{
     }
 
     public function getRedirectURI() {
-        return $this->oAuth2->buildFullAuthorizationUri(); 
+        return $this->oAuth2->buildFullAuthorizationUri(['access_type' => 'offline','prompt'=>'consent',]); 
     }
 
     public function main(Request $request) {
