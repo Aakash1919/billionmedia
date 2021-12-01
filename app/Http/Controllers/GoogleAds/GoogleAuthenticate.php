@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Google\Auth\CredentialsLoader;
 use Google\Auth\OAuth2;
+use App\Models\User;
+use Auth;
 
 class GoogleAuthenticate extends BaseController{
 
     protected $oAuth2;
-
+    protected $refreshToken;
+  
     public function __construct() {
         $this->oAuth2 = $this->setOAuth();
     }
@@ -36,7 +39,15 @@ class GoogleAuthenticate extends BaseController{
     public function main(Request $request) {
         if($request->has('code')) {
             $code = $request->get('code');
-            return $this->getRefreshToken($code);
+            $refreshToken =  $this->getRefreshToken($code);
+            $user = User::find(Auth::id());
+            if(isset($refreshToken)) {
+                $user->google_refresh_token = $refreshToken;
+                $user->save();
+            }else {
+                $refreshToken = $user->google_refresh_token;
+            }
+            return $refreshToken;
         }
         $url = $this->getRedirectURI();
         return Redirect::to($url);
@@ -47,9 +58,10 @@ class GoogleAuthenticate extends BaseController{
         if(isset($code)) {
             $this->oAuth2->setCode($code);
             $authToken = $this->oAuth2->fetchAuthToken();
-            print_r($authToken);
-            if(isset($authToken)) {
-                
+            if(isset($authToken) && isset($authToken['refresh_token'])) {
+                return $authToken['refresh_token'];               
+            }else {
+                return null;
             }
         }
     }
