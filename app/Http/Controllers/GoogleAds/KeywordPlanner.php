@@ -87,7 +87,7 @@ class KeywordPlanner extends BaseController
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs
         );
-        echo "<table>
+        echo "<table border='1'>
         <tr><th>Keyword</th><th>Average Monthly Searches</th><th>Competition</th></tr>";
         foreach ($response->iterateAllElements() as $result) {
             echo "<tr> <td>".$result->getText()."</td>";
