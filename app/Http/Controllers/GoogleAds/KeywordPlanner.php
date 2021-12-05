@@ -90,9 +90,11 @@ class KeywordPlanner extends BaseController
         echo "<table border='1'>
         <tr><th>Keyword</th><th>Average Monthly Searches</th><th>Competition</th></tr>";
         foreach ($response->iterateAllElements() as $result) {
+            $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
+            $competition = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition();
             echo "<tr> <td>".$result->getText()."</td>";
-            echo "<td>".is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches()."</td>";
-            echo "<td>".is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition()."</td></tr>";
+            echo "<td>".$amc."</td>";
+            echo "<td>".$competition."</td></tr>";
         }
         echo "</table>";
     }
