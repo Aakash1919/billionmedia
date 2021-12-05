@@ -87,17 +87,13 @@ class KeywordPlanner extends BaseController
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs
         );
-
+        echo "<table>
+        <tr><th>Keyword</th><th>Average Monthly Searches</th><th>Competition</th></tr>";
         foreach ($response->iterateAllElements() as $result) {
-            printf(
-                "Keyword idea text '%s' has %d average monthly searches and competition as %d.%s",
-                $result->getText(),
-                is_null($result->getKeywordIdeaMetrics()) ?
-                    0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches(),
-                is_null($result->getKeywordIdeaMetrics()) ?
-                    0 : $result->getKeywordIdeaMetrics()->getCompetition(),
-                PHP_EOL
-            );
+            echo "<tr> <td>".$result->getText()."</td>";
+            echo "<td>".is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches()."</td>";
+            echo "<td>".is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition()."</td></tr>";
         }
+        echo "</table>";
     }
 }
