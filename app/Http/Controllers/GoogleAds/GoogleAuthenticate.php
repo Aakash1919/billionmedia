@@ -15,6 +15,7 @@ class GoogleAuthenticate extends BaseController{
     protected $refreshToken;
   
     public function __construct() {
+        $this->middleware('auth');
         $this->oAuth2 = $this->setOAuth();
     }
 

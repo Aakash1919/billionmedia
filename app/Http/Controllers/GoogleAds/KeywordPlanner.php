@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\GoogleAds;
 
-use App\Http\Controllers\GoogleAds\GoogleAuthenticate;
-use Auth;
 use Illuminate\Routing\Controller as BaseController;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
@@ -16,25 +14,23 @@ use Google\Ads\GoogleAds\V9\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V9\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V9\Services\UrlSeed;
 use Google\ApiCore\ApiException;
+use Auth;
 
 class KeywordPlanner extends BaseController
 {
-    protected $googleAuthenticateObject;
-    protected $refreshToken;
-
     public function __construct() {
-        $this->googleAuthenticateObject = new GoogleAuthenticate();
-        $this->refreshToken = Auth::user()->google_refresh_token();
+        $this->middleware('auth');
+              
     }
 
     public function main()
     {
-       
-        $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($this->refreshToken)->build();
+        $refreshToken = Auth::user()->google_refresh_token;
+        $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
         $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
 
         try {
-            $this->getKeywordsDetails($googleAdsClient,env('CUSTOMER_ID'), [1007740],1000,['test'], null);
+            $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000,['test'], null);
         } catch (GoogleAdsException $googleAdsException) {
             printf(
                 "Request with ID '%s' has failed.%sGoogle Ads failure details:%s",
