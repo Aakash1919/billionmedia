@@ -30,7 +30,7 @@ class KeywordPlanner extends BaseController
         $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
 
         try {
-            $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000,['test'], null);
+            $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000,['youtube'], null);
         } catch (GoogleAdsException $googleAdsException) {
             printf(
                 "Request with ID '%s' has failed.%sGoogle Ads failure details:%s",
