@@ -41,8 +41,7 @@ class KeywordPlanner extends BaseController
             $url = $type=='URL' ? $request->get('URL') : null;
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
-                print_r($keywordResponse);
-                return view('keywordPlanner', compact('keywordResponse'));
+                return view('keywordPlanner', compact('keywordResponse','refreshToken'));
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                     $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
@@ -90,6 +89,6 @@ class KeywordPlanner extends BaseController
             $competition = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition();
             array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition]);
         }
-       return $response ?? [];
+       return $responseArray ?? [];
     }
 }

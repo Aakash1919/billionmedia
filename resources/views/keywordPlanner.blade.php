@@ -46,17 +46,38 @@
                     <select name="searchType" class="form-select" required>
                         <option value="">Select Type</option>
                         <option value="keyword">Keyword</option>
-                        <option value="URL">URL</option>
+                        <!--<option value="URL">URL</option>-->
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary mx-sm-3 mb-4">Search Keyword</button>
             </form>
         </div>
-
-        @if(isset($keywordPlanner))
-            @php
-                print_r($keywordPlanner);
-            @endphp
+    
+        @if(isset($keywordResponse))
+        <div class="card">
+    		<div class="card-body">
+    			<table class="table mb-0">
+    				<thead>
+    					<tr>
+    						<th scope="col">S.No</th>
+    						<th scope="col">Keyword</th>
+    						<th scope="col">Average Monthly Searches</th>
+    						<th scope="col">Competition</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    				    @foreach($keywordResponse as $key => $value)
+    					<tr>
+    						<th scope="row">{{$key++}}</th>
+    						<td>{{ $value['keyword'] ?? '' }}</td>
+    						<td>{{ $value['searches'] ?? '' }}</td>
+    						<td>{{ $value['competition'] ?? '' }}</td>
+    					</tr>
+    					@endforeach
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
         @endif
     </div>
 </div>
