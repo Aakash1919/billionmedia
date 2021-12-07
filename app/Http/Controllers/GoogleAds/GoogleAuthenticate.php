@@ -48,7 +48,7 @@ class GoogleAuthenticate extends BaseController{
             }else {
                 $refreshToken = $user->google_refresh_token;
             }
-            return $refreshToken;
+            return redirect('keyword-planner')->with('status', 'Cnnection Successfully Made'); 
         }
         $url = $this->getRedirectURI();
         return Redirect::to($url);
