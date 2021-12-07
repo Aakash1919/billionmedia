@@ -43,11 +43,8 @@
                     <input type="text" class="form-control" name="keyword" id="inputKeyword" placeholder="Keyword" required>
                 </div>
                 <div class="form-group mx-sm-3 mb-4">
-                    <select name="searchType" class="form-select" required>
-                        <option value="">Select Type</option>
-                        <option value="keyword">Keyword</option>
-                        <!--<option value="URL">URL</option>-->
-                    </select>
+                    <label for="inputUrl" class="sr-only">URL</label>
+                    <input type="text" class="form-control" name="Url" id="inputUrl" placeholder="Please insert URL if want to check in particular URL else leave blank">
                 </div>
                 <button type="submit" class="btn btn-primary mx-sm-3 mb-4">Search Keyword</button>
             </form>

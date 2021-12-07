@@ -36,9 +36,8 @@ class KeywordPlanner extends BaseController
         if($request->has('keyword') && isset($refreshToken)) {
             $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
             $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
-            $type = $request->get('searchType');
-            $keyword = $type=='keyword' ? explode(',',$request->get('keyword')) : [];
-            $url = $type=='URL' ? $request->get('URL') : null;
+            $keyword = explode(',',$request->get('keyword')) ;
+            $url = $request->get('Url');
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
                 return view('keywordPlanner', compact('keywordResponse','refreshToken'));
