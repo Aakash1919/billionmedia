@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\GoogleAds;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
@@ -23,48 +24,42 @@ class KeywordPlanner extends BaseController
               
     }
 
-    public function main()
+    public function index() {
+        return view('keywordPlanner');
+    }
+
+    public function main(Request $request)
     {
         $refreshToken = Auth::user()->google_refresh_token;
-        $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
-        $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
-
-        try {
-            $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000,['youtube'], null);
-        } catch (GoogleAdsException $googleAdsException) {
-            printf(
-                "Request with ID '%s' has failed.%sGoogle Ads failure details:%s",
-                $googleAdsException->getRequestId(),
-                PHP_EOL,
-                PHP_EOL
-            );
-            foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                /** @var GoogleAdsError $error */
-                printf(
-                    "\t%s: %s%s",
-                    $error->getErrorCode()->getErrorCode(),
-                    $error->getMessage(),
-                    PHP_EOL
-                );
+        $message = '';
+        if($request->has('keyword') && isset($refreshToken)) {
+            $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
+            $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
+            $type = $request->get('searchType');
+            $keyword = $type=='keyword' ? explode(',',$request->get('keyword')) : [];
+            $url = $type=='URL' ? $request->get('URL') : null;
+            try {
+                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
+                return view('keywordPlanner', compact('keywordResponse'));
+            } catch (GoogleAdsException $googleAdsException) {
+                foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
+                    $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
+                }
+                return redirect('keyword-planner')->with('status', $message); 
+            } catch (ApiException $apiException) {
+                return redirect('keyword-planner')->with('status', 'ApiException was thrown with message '.$apiException->getMessage()); 
             }
-            exit(1);
-        } catch (ApiException $apiException) {
-            printf(
-                "ApiException was thrown with message '%s'.%s",
-                $apiException->getMessage(),
-                PHP_EOL
-            );
-            exit(1);
+        }else {
+            return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
     }
 
     public function getKeywordsDetails(GoogleAdsClient $googleAdsClient, int $customerId, array $locationIds, int $languageId, array $keywords,?string $pageUrl
     ) {
+        $responseArray = array();
         $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
         if (empty($keywords) && is_null($pageUrl)) {
-            throw new \InvalidArgumentException(
-                'At least one of keywords or page URL is required, but neither was specified.'
-            );
+            return redirect('keyword-planner')->with('status', 'At least one of keywords or page URL is required, but neither was specified.'); 
         }
         $requestOptionalArgs = [];
         if (empty($keywords)) {
@@ -87,15 +82,12 @@ class KeywordPlanner extends BaseController
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs
         );
-        echo "<table border='1'>
-        <tr><th>Keyword</th><th>Average Monthly Searches</th><th>Competition</th></tr>";
         foreach ($response->iterateAllElements() as $result) {
+
             $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
             $competition = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition();
-            echo "<tr> <td>".$result->getText()."</td>";
-            echo "<td>".$amc."</td>";
-            echo "<td>".$competition."</td></tr>";
+            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition]);
         }
-        echo "</table>";
+       return $response ?? [];
     }
 }

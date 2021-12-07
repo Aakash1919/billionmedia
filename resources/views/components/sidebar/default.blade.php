@@ -17,13 +17,6 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
-        {{-- <li>
-            <a href="{{ route('google-authorize') }}">
-                <div class="parent-icon"><i class='bx bx-home-circle'></i>
-                </div>
-                <div class="menu-title">Authorize</div>
-            </a>
-        </li> --}}
         <li>
             <a href="{{ route('keyword-planner') }}">
                 <div class="parent-icon"><i class='bx bx-home-circle'></i>

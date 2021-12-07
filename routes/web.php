@@ -21,4 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])->name('home');
 Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->name('google-authorize');
-Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->name('keyword-planner');
+Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'index'])->name('keyword-planner');
+Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->name('keyword-planner-post');
+
