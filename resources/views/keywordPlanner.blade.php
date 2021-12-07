@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group mx-sm-3 mb-4">
                     <label for="inputUrl" class="sr-only">URL</label>
-                    <input type="text" class="form-control" name="Url" id="inputUrl" placeholder="Please insert URL if want to check in particular URL else leave blank">
+                    <input type="text" class="form-control" name="Url" id="inputUrl" placeholder="Please insert URL if you want to check in particular URL else leave blank">
                 </div>
                 <button type="submit" class="btn btn-primary mx-sm-3 mb-4">Search Keyword</button>
             </form>
