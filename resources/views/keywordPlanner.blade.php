@@ -65,7 +65,7 @@
     				<tbody>
     				    @foreach($keywordResponse as $key => $value)
     					<tr>
-    						<th scope="row">{{$key++}}</th>
+    						<th scope="row">{{++$key}}</th>
     						<td>{{ $value['keyword'] ?? '' }}</td>
     						<td>{{ $value['searches'] ?? '' }}</td>
     						<td>{{ $value['competition'] ?? '' }}</td>
