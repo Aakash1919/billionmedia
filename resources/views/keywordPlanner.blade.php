@@ -3,17 +3,32 @@
 @section('content')
 <div class="page-wrapper">
     <div class="page-content">
-        <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2">
-            <div class="d-flex align-items-center">
-                <div class="font-35 text-dark"><i class="bx bx-info-circle"></i>
+        @if (!isset($refreshToken))
+            <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2">
+                <div class="d-flex align-items-center">
+                    <div class="font-35 text-dark"><i class="bx bx-info-circle"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0 text-dark">Authentication Alets</h6>
+                        <div class="text-dark">If you want to access full tools, please connect with google <a href="{{ route('google-authorize') }}" class="btn btn-sm btn-primary mb-2">Connect</a></div>
+                    </div>
                 </div>
-                <div class="ms-3">
-                    <h6 class="mb-0 text-dark">Authentication Alets</h6>
-                    <div class="text-dark">If you want to access full tools, please connect with google <a href="{{ route('google-authorize') }}" class="btn btn-sm btn-primary mb-2">Connect</a></div>
-                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        @endif
+        @if (session('status'))
+            <div class="alert alert-daner border-0 bg-daner alert-dismissible fade show py-2">
+                <div class="d-flex align-items-center">
+                    <div class="font-35 text-dark"><i class="bx bx-info-circle"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0 text-dark">Message</h6>
+                        <div class="text-dark"> {{ session('status') }}</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <div class="card">
             <div class="card-body">
                 <div class="card-title">

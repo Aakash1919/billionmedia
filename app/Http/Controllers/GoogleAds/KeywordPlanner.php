@@ -25,7 +25,8 @@ class KeywordPlanner extends BaseController
     }
 
     public function index() {
-        return view('keywordPlanner');
+        $refreshToken = Auth::user()->google_refresh_token;
+        return view('keywordPlanner',compact('refreshToken'));
     }
 
     public function main(Request $request)
@@ -40,6 +41,7 @@ class KeywordPlanner extends BaseController
             $url = $type=='URL' ? $request->get('URL') : null;
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
+                print_r($keywordResponse);
                 return view('keywordPlanner', compact('keywordResponse'));
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
