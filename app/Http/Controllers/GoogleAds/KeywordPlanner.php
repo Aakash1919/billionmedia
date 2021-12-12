@@ -10,23 +10,43 @@ use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsException;
 use Google\Ads\GoogleAds\Util\V9\ResourceNames;
 use Google\Ads\GoogleAds\V9\Enums\KeywordPlanNetworkEnum\KeywordPlanNetwork;
-use Google\Ads\GoogleAds\V9\Errors\GoogleAdsError;
 use Google\Ads\GoogleAds\V9\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V9\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V9\Services\UrlSeed;
 use Google\ApiCore\ApiException;
 use Auth;
+use DB;
 
 class KeywordPlanner extends BaseController
 {
-    public function __construct() {
-        $this->middleware('auth');
-              
-    }
-
+   
     public function index() {
         $refreshToken = Auth::user()->google_refresh_token;
-        return view('keywordPlanner',compact('refreshToken'));
+        return view('user.keywordPlanner',compact('refreshToken'));
+    }
+
+    public function publicPlanner(Request $request) {
+        $refreshToken = DB::table('users')->where('id',1)->first()->google_refresh_token;
+        $message = '';
+        if($request->has('keyword') && isset($refreshToken)) {
+            $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
+            $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
+            $keyword = explode(',',$request->get('keyword')) ;
+            $url = $request->get('Url');
+            try {
+                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
+                return view('public.keyword-planner', compact('keywordResponse'));
+            } catch (GoogleAdsException $googleAdsException) {
+                foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
+                    $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
+                }
+                return redirect('public.keyword-planner')->with('status', $message); 
+            } catch (ApiException $apiException) {
+                return redirect('public.keyword-planner')->with('status', 'ApiException was thrown with message '.$apiException->getMessage()); 
+            }
+        }
+
+        return view('public.keywordPlanner');
     }
 
     public function main(Request $request)
@@ -40,7 +60,7 @@ class KeywordPlanner extends BaseController
             $url = $request->get('Url');
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
-                return view('keywordPlanner', compact('keywordResponse','refreshToken'));
+                return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                     $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
@@ -86,7 +106,16 @@ class KeywordPlanner extends BaseController
 
             $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
             $competition = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition();
-            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition]);
+            $cpc = is_null($result->getKeywordIdeaMetrics()) ? 0 : ($result->getKeywordIdeaMetrics()->getHighTopOfPageBidMicros() - $result->getKeywordIdeaMetrics()->getLowTopOfPageBidMicros()) / 2000000;
+            $cpc = round($cpc,2);
+            if($competition >= 67) {
+                $competition = "HIGH";
+            }elseif ($competition >= 33 && $competition < 33) {
+                $competition = "Medium";
+            }else {
+                $competition = "LOW";
+            }
+            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'cpc' => $cpc]);
         }
        return $responseArray ?? [];
     }

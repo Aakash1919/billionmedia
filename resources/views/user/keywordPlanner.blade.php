@@ -60,6 +60,7 @@
     						<th scope="col">Keyword</th>
     						<th scope="col">Average Monthly Searches</th>
     						<th scope="col">Competition</th>
+    						<th scope="col">CPC</th>
     					</tr>
     				</thead>
     				<tbody>
@@ -69,6 +70,7 @@
     						<td>{{ $value['keyword'] ?? '' }}</td>
     						<td>{{ $value['searches'] ?? '' }}</td>
     						<td>{{ $value['competition'] ?? '' }}</td>
+    						<td>{{ $value['cpc'] ?? '' }}</td>
     					</tr>
     					@endforeach
     				</tbody>
