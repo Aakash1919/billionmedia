@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/930х690_20-Things-You-Can-Do-450x334.png') }}">
+                                <img src="{{ asset('assets/front/images/blog1.png') }}">
                                 <span>SEO Insights </span>
                                 <div class="title"><a href="blog-details.html">20 pro tips on using SE Ranking</a></div>
                                 <div class="postyear">Nov 22, 2021</div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/1200х630-2-450x334.png') }}">
+                                <img src="{{ asset('assets/front/images/blog1') }}">
                                 <span>SEO Insights </span>
                                 <div class="title"><a href="blog-details.html">Best Black Friday & Cyber Monday Deals of
                                         2021 for Digital Marketers</a></div>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/930х690-450x334.png') }}">
+                                <img src="{{ asset('assets/front/images/blog1') }}">
                                 <span>SEO Insights </span>
                                 <div class="title">
                                     <<a href="blog-details.html">Historical data: The long-awaited Competitive Research

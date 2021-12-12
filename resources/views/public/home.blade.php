@@ -345,7 +345,7 @@
             </div>
             <div class="col-md-4">
                 <div class="post-saction-boxxx">
-                    <img src="{{ asset('assets/front/images/930х690_20-Things-You-Can-Do-450x334.png') }}">
+                    <img src="{{ asset('assets/front/images/blog1.png') }}">
                     <div class="year-date">Nov 22, 2021</div>
                     <h3><a href="#">20 pro tips on using SE Ranking</a></h3>
                     <p>There are a vast number of ways how SE Ranking can help take your SEO and marketing..</p>
