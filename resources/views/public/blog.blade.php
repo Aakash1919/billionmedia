@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/930х690_mobile-optmization-450x334.png') }}">
+                                <img src="{{ asset('assets/front/images/blog1') }}">
                                 <span>SEO Insights </span>
                                 <div class="title"><a href="blog-details.html">The complete mobile optimization guide
                                         for SEO</a></div>

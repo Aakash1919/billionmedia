@@ -35,7 +35,7 @@ class KeywordPlanner extends BaseController
             $url = $request->get('Url');
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
-                return view('public.keyword-planner', compact('keywordResponse'));
+                return view('public.keywordPlanner', compact('keywordResponse'));
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                     $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
