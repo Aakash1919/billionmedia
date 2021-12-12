@@ -70,7 +70,7 @@
     						<td>{{ $value['keyword'] ?? '' }}</td>
     						<td>{{ $value['searches'] ?? '' }}</td>
     						<td>{{ $value['competition'] ?? '' }}</td>
-    						<td>{{ $value['cpc'] ?? '' }}</td>
+    						<td>${{ $value['cpc'] ?? '0' }}</td>
     					</tr>
     					@endforeach
     				</tbody>
