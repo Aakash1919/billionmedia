@@ -36,4 +36,5 @@ Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])-
 Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->middleware('auth')->name('google-authorize');
 Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'index'])->middleware('auth')->name('keyword-planner');
 Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
+Route::get('/rank-tracking', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'getRank'])->middleware('auth')->name('rank-tracking');
 

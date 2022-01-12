@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\GoogleAds;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClientBuilder;
@@ -17,7 +17,7 @@ use Google\ApiCore\ApiException;
 use Auth;
 use DB;
 
-class KeywordPlanner extends BaseController
+class KeywordPlanner extends Controller
 {
    
     public function index() {
@@ -119,4 +119,34 @@ class KeywordPlanner extends BaseController
         }
        return $responseArray ?? [];
     }
+
+    public function crawlGoogleResults($query = '', $page = 0, $url = 'http://www.google.co.in/search') {
+        $queryParams = ['q' => $query, 'start'=>$page];
+        $responseArray = $this->sendCurlGet($url, $queryParams);
+        $response = isset($responseArray['content']) ? $responseArray['content'] : '';
+        return $response;
+    }
+
+/**
+ * Related Searches
+ * class to fetch with : 's75CSd OhScic AB4Wff'
+ */
+    public function getRelatedSearches(Request $request) {
+        $refreshToken = Auth::user()->google_refresh_token;
+        if($request->has('keyword') && isset($refreshToken)) {
+            $response = $this->crawlGoogleResults($request->keyword);
+            $html = new simple_html_dom();   
+            $html->load($response); 
+            $items = $html->find('div.s75CSd',0); 
+            print_r($items);
+        }
+    }
+/**
+ * Releated questions
+ * Class to fetch with : 'hwqd7e d0fCJc BOZ6hd'
+ */
+    public function getRelatedQuestions() {
+
+    }
+
 }
