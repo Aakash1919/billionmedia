@@ -17,10 +17,6 @@ class PositionTracking extends Controller
         $rankArray = [];
         for($i=0; $i<10; $i = $i+10) {
             $response = $this->keywordPlannerObject->crawlGoogleResults('google search api', $i);
-            $html = new simple_html_dom();   
-            $html->load($response); 
-            $items = $response->find('div.s75CSd',0); 
-            print_r($items);
             $position = strpos($response, $param);
             if(isset($position)) {
                 array_push($rankArray, ['page'=>$i/10, 'position' => $position]);

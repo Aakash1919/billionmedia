@@ -20,4 +20,17 @@ class Controller extends BaseController
         return ['status' => false, 'content' => ''];
     }
 
+    public function getInnerTextOfDiv($className = '', $response = '') {
+        if(preg_match_all('/<div class="'.$className.'">(.*?)<\/div>/s', $response, $match)) {
+            return $match[0] ?? [];
+        };
+    }
+
+    public function crawlGoogleResults($query = '', $page = 0, $url = 'http://www.google.co.in/search') {
+        $queryParams = ['q' => $query, 'start'=>$page];
+        $responseArray = $this->sendCurlGet($url, $queryParams);
+        $response = isset($responseArray['content']) ? (string) $responseArray['content'] : '';
+        return $response;
+    }
+
 }

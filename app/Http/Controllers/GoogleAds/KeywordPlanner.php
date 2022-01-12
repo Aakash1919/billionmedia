@@ -120,33 +120,31 @@ class KeywordPlanner extends Controller
        return $responseArray ?? [];
     }
 
-    public function crawlGoogleResults($query = '', $page = 0, $url = 'http://www.google.co.in/search') {
-        $queryParams = ['q' => $query, 'start'=>$page];
-        $responseArray = $this->sendCurlGet($url, $queryParams);
-        $response = isset($responseArray['content']) ? $responseArray['content'] : '';
-        return $response;
-    }
-
 /**
  * Related Searches
+ * Class to fetch the crawled result: BNeawe s3v9rd AP7Wnd lRVwie
  * class to fetch with : 's75CSd OhScic AB4Wff'
  */
     public function getRelatedSearches(Request $request) {
         $refreshToken = Auth::user()->google_refresh_token;
         if($request->has('keyword') && isset($refreshToken)) {
             $response = $this->crawlGoogleResults($request->keyword);
-            $html = new simple_html_dom();   
-            $html->load($response); 
-            $items = $html->find('div.s75CSd',0); 
-            print_r($items);
+            return $this->getInnerTextOfDiv('BNeawe s3v9rd AP7Wnd lRVwie', $response);
         }
+        return [];
     }
 /**
  * Releated questions
+ * Class to getch the crawled result : Lt3Tzc
  * Class to fetch with : 'hwqd7e d0fCJc BOZ6hd'
  */
-    public function getRelatedQuestions() {
-
+    public function getRelatedQuestions(Request $request) {
+        $refreshToken = Auth::user()->google_refresh_token;
+        if($request->has('keyword') && isset($refreshToken)) {
+            $response = $this->crawlGoogleResults($request->keyword);
+            return $this->getInnerTextOfDiv('Lt3Tzc', $response);
+        }
+        return [];
     }
 
 }
