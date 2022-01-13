@@ -221,10 +221,13 @@
                             <tbody>
                                 @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
                                     @foreach($keywordResponse['data'] as $key => $value)
+                                    @php $maxSearch = $keywordResponse['data']['maxSearch']; @endphp
+                                    @foreach($keywordResponse['data'] as $key => $value)
                                         @php 
                                             $i=0; 
-                                            $barPercentage = ($value['cpc'] / $keywordResponse['data']['maxCPC'])*100 
-                                        @endphp   
+                                            $search = $value['searches'] ?? 0;
+                                            $barPercentage = (  $search / $maxSearch )*100 ;
+                                        @endphp    
                                             <tr class="{{ $i % 2 == 0 ? 'odd' : 'even'}}">
                                                     <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
                                                     <td class="markrow sorting_1">
@@ -232,7 +235,7 @@
                                                             <div class="progress" style="width:85px;margin:5px 0">
                                                                 <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
                                                                 </div>
-                                                            </div><span>{{ $value['searches'] ?? '' }}</span>
+                                                            </div><span>{{ $search ?? '' }}</span>
                                                         </div>
                                                     </td>
                                                     <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
