@@ -30,10 +30,29 @@ class KeywordPlanner extends Controller
         $message = '';
         if($request->has('keyword') && isset($refreshToken)) {
             $url = $request->get('url') ?? null;
-            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $request->get('keyword'), $url);
-            return view('public.keywordPlanner', compact('keywordResponse'));
+            if($request->has('action')) {
+                $action = $request->get('action');
+                echo $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                die;
+                $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
+                return view('public.keywordPlanner', compact('keywordResponse'));
+            }
         }
         return view('public.keywordPlanner');
+    }
+
+    public function getKeywordByAction($keyword = null, $action = null) {
+        if(isset($keyword) && isset($action)) {
+            switch($action) {
+                case 'questions' :
+                    $keyword = $this->getSearchesBasedOnClass($keyword, 'Lt3Tzc');
+                    break;
+                case 'similar_searches' :
+                    $keyword = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
+                    break;
+            }
+        }
+        return $keyword;
     }
 
     public function main(Request $request)
@@ -116,34 +135,22 @@ class KeywordPlanner extends Controller
     }
 
 /**
- * Related Searches
- * Class to fetch the crawled result: BNeawe s3v9rd AP7Wnd lRVwie
- * class to fetch with : 's75CSd OhScic AB4Wff'
+ * Function created to crawl the google result 
+ * @param $keyword : contain the keyword to be crawled on google
+ *        $class : contain the class to be searched on page
+ *        Class for Related Searches : BNeawe s3v9rd AP7Wnd lRVwie
+ *        class for Related Questions : Lt3Tzc
  */
-    public function getRelatedSearches(Request $request) {
-        $refreshToken = Auth::user()->google_refresh_token;
-        if($request->has('keyword') && isset($refreshToken)) {
-            $response = $this->crawlGoogleResults($request->keyword);
-            $relatedSearchesArray = $this->getInnerTextOfDiv('BNeawe s3v9rd AP7Wnd lRVwie', $response);
+    public function getSearchesBasedOnClass($keyword = null, $class = null) {
+        if(isset($keyword) && isset($class)) {
+            $response = $this->crawlGoogleResults($keyword);
+            $relatedSearchesArray = $this->getInnerTextOfDiv($class, $response);
             if(!empty($relatedSearchesArray)) {
-               $keywordString = implode(',', $relatedSearchesArray);
-
+                $keywordString = implode(',', $relatedSearchesArray);
+                return $keywordString ?? null;
             }
         }
-        return [];
-    }
-/**
- * Releated questions
- * Class to getch the crawled result : Lt3Tzc
- * Class to fetch with : 'hwqd7e d0fCJc BOZ6hd'
- */
-    public function getRelatedQuestions(Request $request) {
-        $refreshToken = Auth::user()->google_refresh_token;
-        if($request->has('keyword') && isset($refreshToken)) {
-            $response = $this->crawlGoogleResults($request->keyword);
-            return $this->getInnerTextOfDiv('Lt3Tzc', $response);
-        }
-        return [];
+        return null;
     }
 
 }

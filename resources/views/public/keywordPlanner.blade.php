@@ -29,12 +29,11 @@
                                     <option value="questions">Questions</option>
                                     <option value="similar_searches">Related searches</option>
                                     <option value="autocomplete">Auto complete</option>
-                                    <option value="related_keywords">Related terms</option>
                                 </select>
                             </div>
                             <div class="-kewful-side">
                                 <label>Search engine</label>
-                                <input type="text" name="searchengine" list="engines" class="form-control"
+                                <input type="text" name="url" list="engines" class="form-control"
                                     placeholder="Google.com">
                             </div>
                             <div class="btn-keyword">

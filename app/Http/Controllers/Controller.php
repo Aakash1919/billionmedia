@@ -22,7 +22,13 @@ class Controller extends BaseController
 
     public function getInnerTextOfDiv($className = '', $response = '') {
         if(preg_match_all('/<div class="'.$className.'">(.*?)<\/div>/s', $response, $match)) {
-            return $match[0] ?? [];
+            if(isset($match[0]) && is_array($match[0])) {
+                foreach ($match[0] as $key => $value) {
+                    $returnArray[$key] = trim(strip_tags($value));
+                }
+            }
+            return $returnArray ?? [];
+
         };
     }
 
