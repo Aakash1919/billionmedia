@@ -226,7 +226,7 @@
                                             <td class="markrow sorting_1">
                                                 <div class="flex" style="justify-content: space-between;">
                                                     <div class="progress" style="width:85px;margin:5px 0">
-                                                        @php $barPercentage = ($value['cpc'] / $keywordResponse['maxCPC'])*100 @endphp
+                                                        @php $barPercentage = ($value['cpc'] / $keywordResponse['data']['maxCPC'])*100 @endphp
                                                         <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
                                                         </div>
                                                     </div><span>{{ $value['searches'] ?? '' }}</span>
