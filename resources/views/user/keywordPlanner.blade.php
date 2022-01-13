@@ -50,7 +50,7 @@
             </form>
         </div>
     
-        @if(isset($keywordResponse))
+        @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
         <div class="card">
     		<div class="card-body">
     			<table class="table mb-0">
@@ -64,15 +64,17 @@
     					</tr>
     				</thead>
     				<tbody>
-    				    @foreach($keywordResponse as $key => $value)
-    					<tr>
-    						<th scope="row">{{++$key}}</th>
-    						<td>{{ $value['keyword'] ?? '' }}</td>
-    						<td>{{ $value['searches'] ?? '' }}</td>
-    						<td>{{ $value['competition'] ?? '' }}</td>
-    						<td>${{ $value['cpc'] ?? '0' }}</td>
-    					</tr>
-    					@endforeach
+    				    @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
+        				    @foreach($keywordResponse['data'] as $key => $value)
+        					<tr>
+        						<th scope="row">{{++$key}}</th>
+        						<td>{{ $value['keyword'] ?? '' }}</td>
+        						<td>{{ $value['searches'] ?? '' }}</td>
+        						<td>{{ $value['competition'] ?? '' }}</td>
+        						<td>${{ $value['cpc'] ?? '0' }}</td>
+        					</tr>
+        					@endforeach
+    					@endif;
     				</tbody>
     			</table>
     		</div>

@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            @if(isset($keywordResponse))
+           @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
             <div class="tblliul">
                 <ul>
                     <li class="active"><a href="#">Similar keywords</a></li>
@@ -217,26 +217,28 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                @foreach($keywordResponse as $key => $value)
-                                    <tr class="{{ $key % 2 == 0 ? 'odd' : 'even'}}">
-                                        <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
-                                        <td class="markrow sorting_1">
-                                            <div class="flex" style="justify-content: space-between;">
-                                                <div class="progress" style="width:85px;margin:5px 0">
-                                                    <div class="progress-bar " style="width: 61%;">
-                                                    </div>
-                                                </div><span>{{ $value['searches'] ?? '' }}</span>
-                                            </div>
-                                        </td>
-                                        <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
-                                        <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
-                                        <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
-                                                <span class="glyphicon glyphicon-chevron-down"></span></button></td>
-                                        <td class=" markrow check" data-original-title="" title=""
-                                            style="cursor: not-allowed;"><input type="checkbox" value="dharamshala|16"
-                                                disabled="disabled" style="cursor: not-allowed;"></td>
-                                    </tr>
-                                @endforeach
+                                @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
+                                    @foreach($keywordResponse['data'] as $key => $value)
+                                        <tr class="{{ $key % 2 == 0 ? 'odd' : 'even'}}">
+                                            <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
+                                            <td class="markrow sorting_1">
+                                                <div class="flex" style="justify-content: space-between;">
+                                                    <div class="progress" style="width:85px;margin:5px 0">
+                                                        <div class="progress-bar " style="width: 61%;">
+                                                        </div>
+                                                    </div><span>{{ $value['searches'] ?? '' }}</span>
+                                                </div>
+                                            </td>
+                                            <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
+                                            <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
+                                            <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
+                                                    <span class="glyphicon glyphicon-chevron-down"></span></button></td>
+                                            <td class=" markrow check" data-original-title="" title=""
+                                                style="cursor: not-allowed;"><input type="checkbox" value="dharamshala|16"
+                                                    disabled="disabled" style="cursor: not-allowed;"></td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </tbody>
                         </table>
                         <div class="dataTables_paginate paging_simple_numbers" id="keyword-table_paginate">

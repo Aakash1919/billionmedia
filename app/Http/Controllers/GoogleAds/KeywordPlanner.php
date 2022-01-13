@@ -41,7 +41,7 @@ class KeywordPlanner extends Controller
         $refreshToken = Auth::user()->google_refresh_token;   
         if($request->has('keyword') && isset($refreshToken)) {
             $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $request->get('keyword'), $request->get('url'));
-            return view('user.keywordPlanner', compact('keywordResponse'));
+            return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
         }else {
             return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
@@ -50,7 +50,7 @@ class KeywordPlanner extends Controller
     public function getGlobalKeywordAnalytics($refreshToken = null, $keyword = null, $url = null) {
         $response = array('status' => 'false', 'message' => 'Keyword Planner Not working at this moment please contact administator');  
         $message = '';
-        if(isset($refreshToken) && isset($keyword) && isset($url)) {
+        if(isset($refreshToken) && isset($keyword)) {
             $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
             $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
             $keyword = explode(',',$keyword) ;
