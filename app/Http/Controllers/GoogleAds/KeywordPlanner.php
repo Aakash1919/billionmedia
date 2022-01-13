@@ -29,49 +29,44 @@ class KeywordPlanner extends Controller
         $refreshToken = DB::table('users')->where('id',1)->first()->google_refresh_token;
         $message = '';
         if($request->has('keyword') && isset($refreshToken)) {
-            $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
-            $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
-            $keyword = explode(',',$request->get('keyword')) ;
-            $url = $request->get('Url');
-            try {
-                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1007740],1000, $keyword , $url);
-                return view('public.keywordPlanner', compact('keywordResponse'));
-            } catch (GoogleAdsException $googleAdsException) {
-                foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
-                    $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
-                }
-                return redirect('public.keyword-planner')->with('status', $message); 
-            } catch (ApiException $apiException) {
-                return redirect('public.keyword-planner')->with('status', 'ApiException was thrown with message '.$apiException->getMessage()); 
-            }
+            $url = $request->get('url') ?? null;
+            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $request->get('keyword'), $url);
+            return view('public.keywordPlanner', compact('keywordResponse'));
         }
-
         return view('public.keywordPlanner');
     }
 
     public function main(Request $request)
     {
-        $refreshToken = Auth::user()->google_refresh_token;
-        $message = '';
+        $refreshToken = Auth::user()->google_refresh_token;   
         if($request->has('keyword') && isset($refreshToken)) {
+            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $request->get('keyword'), $request->get('url'));
+            return view('user.keywordPlanner', compact('keywordResponse'));
+        }else {
+            return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
+        }
+    }
+
+    public function getGlobalKeywordAnalytics($refreshToken = null, $keyword = null, $url = null) {
+        $response = array('status' => 'false', 'message' => 'Keyword Planner Not working at this moment please contact administator');  
+        $message = '';
+        if(isset($refreshToken) && isset($keyword) && isset($url)) {
             $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
             $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
-            $keyword = explode(',',$request->get('keyword')) ;
-            $url = $request->get('Url');
+            $keyword = explode(',',$keyword) ;
             try {
                 $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1012873],1000, $keyword , $url);
-                return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+                $response = array('status' => 'true', 'data' => $keywordResponse, 'token' => $refreshToken);
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
                     $message .= 'Error Code : '.$error->getErrorCode()->getErrorCode().', Message : '.$error->getMessage().'<br>';
                 }
-                return redirect('keyword-planner')->with('status', $message); 
+                $response = array('status' => 'false', 'message' => $message);
             } catch (ApiException $apiException) {
-                return redirect('keyword-planner')->with('status', 'ApiException was thrown with message '.$apiException->getMessage()); 
+                $response = array('status' => 'false', 'message' => 'ApiException was thrown with message '.$apiException->getMessage());
             }
-        }else {
-            return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
+        return $response;
     }
 
     public function getKeywordsDetails(GoogleAdsClient $googleAdsClient, int $customerId, array $locationIds, int $languageId, array $keywords,?string $pageUrl
@@ -129,7 +124,11 @@ class KeywordPlanner extends Controller
         $refreshToken = Auth::user()->google_refresh_token;
         if($request->has('keyword') && isset($refreshToken)) {
             $response = $this->crawlGoogleResults($request->keyword);
-            return $this->getInnerTextOfDiv('BNeawe s3v9rd AP7Wnd lRVwie', $response);
+            $relatedSearchesArray = $this->getInnerTextOfDiv('BNeawe s3v9rd AP7Wnd lRVwie', $response);
+            if(!empty($relatedSearchesArray)) {
+               $keywordString = implode(',', $relatedSearchesArray);
+
+            }
         }
         return [];
     }
