@@ -232,7 +232,7 @@
                                                     <td class="markrow sorting_1">
                                                         <div class="flex" style="justify-content: space-between;">
                                                             <div class="progress" style="width:85px;margin:5px 0">
-                                                                <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
+                                                                <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}%;">
                                                                 </div>
                                                             </div><span>{{ $search ?? '' }}</span>
                                                         </div>
