@@ -221,25 +221,30 @@
                             <tbody>
                                 @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
                                     @foreach($keywordResponse['data'] as $key => $value)
-                                        <tr class="{{ $key % 2 == 0 ? 'odd' : 'even'}}">
-                                            <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
-                                            <td class="markrow sorting_1">
-                                                <div class="flex" style="justify-content: space-between;">
-                                                    <div class="progress" style="width:85px;margin:5px 0">
-                                                        @php $barPercentage = ($value['cpc'] / $keywordResponse['data']['maxCPC'])*100 @endphp
-                                                        <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
+                                        @php 
+                                            $i=0; 
+                                            $barPercentage = ($value['cpc'] / $keywordResponse['data']['maxCPC'])*100 
+                                        @endphp   
+                                            <tr class="{{ $i % 2 == 0 ? 'odd' : 'even'}}">
+                                                    <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
+                                                    <td class="markrow sorting_1">
+                                                        <div class="flex" style="justify-content: space-between;">
+                                                            <div class="progress" style="width:85px;margin:5px 0">
+                                                                <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
+                                                                </div>
+                                                            </div><span>{{ $value['searches'] ?? '' }}</span>
                                                         </div>
-                                                    </div><span>{{ $value['searches'] ?? '' }}</span>
-                                                </div>
-                                            </td>
-                                            <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
-                                            <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
-                                            <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
-                                                    <span class="glyphicon glyphicon-chevron-down"></span></button></td>
-                                            <td class=" markrow check" data-original-title="" title=""
-                                                style="cursor: not-allowed;"><input type="checkbox" value="dharamshala|16"
-                                                    disabled="disabled" style="cursor: not-allowed;"></td>
-                                        </tr>
+                                                    </td>
+                                                    <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
+                                                    <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
+                                                    <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
+                                                            <span class="glyphicon glyphicon-chevron-down"></span></button></td>
+                                                    <td class=" markrow check" data-original-title="" title=""
+                                                        style="cursor: not-allowed;"><input type="checkbox" value="dharamshala|16"
+                                                            disabled="disabled" style="cursor: not-allowed;"></td>
+                                                </tr>
+                                                @php $i++; @endphp
+                                            @endphp
                                     @endforeach
                                 @endif
                             </tbody>
