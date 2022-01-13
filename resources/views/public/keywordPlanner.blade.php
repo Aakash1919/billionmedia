@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('content')
 @php
- $action = $action;    
+ $action = $request->get('action') ?? '';    
 @endphp
 <div class="keyword-saction-one research-keyword">
     <div class="container">
