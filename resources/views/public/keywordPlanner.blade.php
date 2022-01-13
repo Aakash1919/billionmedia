@@ -1,6 +1,8 @@
 @extends('layouts.public')
 @section('content')
-
+@php
+ $action = $action;    
+@endphp
 <div class="keyword-saction-one research-keyword">
     <div class="container">
         <div class="keyword-box-one">
@@ -25,10 +27,10 @@
                                 <label>Analysis</label>
                                 <select name="action" class="form-control" style="padding-left: 8px;"
                                     placeholder="Similar keywords">
-                                    <option value="similar_keywords" {{ isset($request->get("action")) && $request->get("action") == 'similar_keywords' ? 'selected': '' }}>Similar keywords</option>
-                                    <option value="questions" {{ isset($request->get("action")) && $request->get("action") == 'questions' ? 'selected': '' }}>Questions</option>
-                                    <option value="similar_searches" {{ isset($request->get("action")) && $request->get("action") == 'similar_searches' ? 'selected': '' }}>Related searches</option>
-                                    <option value="autocomplete" {{ isset($request->get("action")) && $request->get("action") == 'autocomplete' ? 'selected': '' }}>Auto complete</option>
+                                    <option value="similar_keywords" {{ isset($action) && $action == 'similar_keywords' ? 'selected': '' }}>Similar keywords</option>
+                                    <option value="questions" {{ isset($action) && $action == 'questions' ? 'selected': '' }}>Questions</option>
+                                    <option value="similar_searches" {{ isset($action) && $action == 'similar_searches' ? 'selected': '' }}>Related searches</option>
+                                    <option value="autocomplete" {{ isset($action) && $action == 'autocomplete' ? 'selected': '' }}>Auto complete</option>
                                 </select>
                             </div>
                             <div class="-kewful-side">
@@ -110,10 +112,10 @@
            @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
             <div class="tblliul">
                 <ul>
-                    <li {{ isset($request->get("action")) && $request->get("action") == 'similar_keywords' ? 'active': '' }}><a href="javascript:void(0)">Similar keywords</a></li>
-                    <li {{ isset($request->get("action")) && $request->get("action") == 'questions' ? 'active': '' }} ><a href="javascript:void(0)">Questions</a></li>
-                    <li {{ isset($request->get("action")) && $request->get("action") == 'similar_searches' ? 'active': '' }}><a href="javascript:void(0)">Related searches</a></li>
-                    <li {{ isset($request->get("action")) && $request->get("action") == 'autocomplete' ? 'active': '' }}><a href="javascript:void(0)">Auto complete</a></li>
+                    <li {{ isset($action) && $action == 'similar_keywords' ? 'active': '' }}><a href="javascript:void(0)">Similar keywords</a></li>
+                    <li {{ isset($action) && $action == 'questions' ? 'active': '' }} ><a href="javascript:void(0)">Questions</a></li>
+                    <li {{ isset($action) && $action == 'similar_searches' ? 'active': '' }}><a href="javascript:void(0)">Related searches</a></li>
+                    <li {{ isset($action) && $action == 'autocomplete' ? 'active': '' }}><a href="javascript:void(0)">Auto complete</a></li>
                 </ul>
             </div>
 
