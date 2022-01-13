@@ -150,10 +150,10 @@ class KeywordPlanner extends Controller
             $relatedSearchesArray = $this->getInnerTextOfDiv($class, $response);
             if(!empty($relatedSearchesArray)) {
                 $keywordString = implode(',', $relatedSearchesArray);
-                return  array('count'=>count($relatedSearchesArray), 'keyword' => $keywordString)  ?? null;
+                return  array('count'=>count($relatedSearchesArray), 'keyword' => $keywordString)  ?? array('count'=>0, 'keyword' => '');
             }
         }
-        return null;
+        return array('count'=>0, 'keyword' => '');
     }
 
 }
