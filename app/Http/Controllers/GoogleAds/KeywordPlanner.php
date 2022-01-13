@@ -93,7 +93,7 @@ class KeywordPlanner extends Controller
 
     public function getKeywordsDetails(GoogleAdsClient $googleAdsClient, int $customerId, array $locationIds, int $languageId, array $keywords,$keywordCount, ?string $pageUrl
     ) {
-        $responseArray = array();
+        $responseArray = array();  $cpcArray = array();
         $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
         $requestOptionalArgs = [];
         if (empty($keywords)) {
@@ -116,7 +116,7 @@ class KeywordPlanner extends Controller
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs
         );
-        $count = 0;
+        $count = 1;
         foreach ($response->iterateAllElements() as $result) {
 
             $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
@@ -130,11 +130,13 @@ class KeywordPlanner extends Controller
             }else {
                 $competition = "LOW";
             }
+            array_push($cpcArray, $cpc);
             array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'cpc' => $cpc]);
             if($keywordCount== $count) break;
             $count++;
         }
-       return $responseArray ?? [];
+        $responseArray['maxCPC'] = max($cpcArray);
+        return $responseArray ?? [];
     }
 
 /**

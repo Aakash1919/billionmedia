@@ -1,7 +1,9 @@
 @extends('layouts.public')
 @section('content')
 @php
- $action = $request->get('action') ?? '';    
+ $action = isset($request) ? $request->get('action') : '';    
+ $keyword = isset($request) ? $request->get('keyword') : '';
+ $url = isset($request) ? $request->get('url') : '';
 @endphp
 <div class="keyword-saction-one research-keyword">
     <div class="container">
@@ -21,7 +23,7 @@
                             <div class="-kewleft-side">
                                 <label>Keyword</label>
                                 <input type="text" required name="keyword" class="form-control" autofocus
-                                    placeholder="Keyword" value= '{{$request->get("keyword") ?? '' }}'>
+                                    placeholder="Keyword" value= '{{ $keyword ?? '' }}'>
                             </div>
                             <div class="-kewright-side">
                                 <label>Analysis</label>
@@ -36,7 +38,7 @@
                             <div class="-kewful-side">
                                 <label>Search engine</label>
                                 <input type="text" name="url" list="engines" class="form-control"
-                                    placeholder="Google.com" value='{{$request->get("url") ?? '' }}'>
+                                    placeholder="Google.com" value='{{ $url ?? '' }}'>
                             </div>
                             <div class="btn-keyword">
                                 <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
@@ -224,7 +226,8 @@
                                             <td class="markrow sorting_1">
                                                 <div class="flex" style="justify-content: space-between;">
                                                     <div class="progress" style="width:85px;margin:5px 0">
-                                                        <div class="progress-bar " style="width: 61%;">
+                                                        @php $barPercentage = ($value['cpc'] / $keywordResponse['maxCPC'])*100 @endphp
+                                                        <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}}}%;">
                                                         </div>
                                                     </div><span>{{ $value['searches'] ?? '' }}</span>
                                                 </div>
