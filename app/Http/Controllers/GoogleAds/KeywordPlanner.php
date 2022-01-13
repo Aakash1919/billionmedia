@@ -135,7 +135,7 @@ class KeywordPlanner extends Controller
             if($keywordCount== $count) break;
             $count++;
         }
-        $responseArray['maxCPC'] = max($cpcArray);
+        $responseArray['maxCPC'] = max($cpcArray) == 0 ? 1 : max($cpcArray);
         return $responseArray ?? [];
     }
 
