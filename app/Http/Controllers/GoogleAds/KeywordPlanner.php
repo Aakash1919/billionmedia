@@ -41,39 +41,43 @@ class KeywordPlanner extends Controller
     }
 
     public function getKeywordByAction($keyword = null, $action = null) {
+        $keywordArray = array('count'=>100, 'keyword' => $keyword);
         if(isset($keyword) && isset($action)) {
             switch($action) {
                 case 'questions' :
-                    $keyword = $this->getSearchesBasedOnClass($keyword, 'Lt3Tzc');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'Lt3Tzc');
                     break;
                 case 'similar_searches' :
-                    $keyword = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
                     break;
             }
         }
-        return $keyword;
+        return $keywordArray;
     }
 
     public function main(Request $request)
     {
         $refreshToken = Auth::user()->google_refresh_token;   
         if($request->has('keyword') && isset($refreshToken)) {
-            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $request->get('keyword'), $request->get('url'));
+            $keywordArray = array('count'=>100, 'keyword' => $request->get('keyword'));
+            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keywordArray, $request->get('url'));
             return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
         }else {
             return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
     }
 
-    public function getGlobalKeywordAnalytics($refreshToken = null, $keyword = null, $url = null) {
+    public function getGlobalKeywordAnalytics($refreshToken = null, $keywordArray = null, $url = null) {
         $response = array('status' => 'false', 'message' => 'Keyword Planner Not working at this moment please contact administator');  
         $message = '';
+        $keyword = $keywordArray['keyword'];
+        $keywordCount = $keywordArray['count'];
         if(isset($refreshToken) && isset($keyword)) {
             $oAuth2Credential = (new OAuth2TokenBuilder())->withClientId(env('CLIENT_ID'))->withClientSecret(env('CLIENT_SECRET'))->withRefreshToken($refreshToken)->build();
             $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
             $keyword = explode(',',$keyword) ;
             try {
-                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1012873],1000, $keyword , $url);
+                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1012873],1000, $keyword , $keywordCount, $url);
                 $response = array('status' => 'true', 'data' => $keywordResponse, 'token' => $refreshToken);
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
@@ -87,13 +91,10 @@ class KeywordPlanner extends Controller
         return $response;
     }
 
-    public function getKeywordsDetails(GoogleAdsClient $googleAdsClient, int $customerId, array $locationIds, int $languageId, array $keywords,?string $pageUrl
+    public function getKeywordsDetails(GoogleAdsClient $googleAdsClient, int $customerId, array $locationIds, int $languageId, array $keywords,$keywordCount, ?string $pageUrl
     ) {
         $responseArray = array();
         $keywordPlanIdeaServiceClient = $googleAdsClient->getKeywordPlanIdeaServiceClient();
-        if (empty($keywords) && is_null($pageUrl)) {
-            return redirect('keyword-planner')->with('status', 'At least one of keywords or page URL is required, but neither was specified.'); 
-        }
         $requestOptionalArgs = [];
         if (empty($keywords)) {
             $requestOptionalArgs['urlSeed'] = new UrlSeed(['url' => $pageUrl]);
@@ -115,6 +116,7 @@ class KeywordPlanner extends Controller
                 'keywordPlanNetwork' => KeywordPlanNetwork::GOOGLE_SEARCH_AND_PARTNERS
             ] + $requestOptionalArgs
         );
+        $count = 0;
         foreach ($response->iterateAllElements() as $result) {
 
             $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
@@ -129,6 +131,8 @@ class KeywordPlanner extends Controller
                 $competition = "LOW";
             }
             array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'cpc' => $cpc]);
+            if($keywordCount== $count) break;
+            $count++;
         }
        return $responseArray ?? [];
     }
@@ -146,7 +150,7 @@ class KeywordPlanner extends Controller
             $relatedSearchesArray = $this->getInnerTextOfDiv($class, $response);
             if(!empty($relatedSearchesArray)) {
                 $keywordString = implode(',', $relatedSearchesArray);
-                return $keywordString ?? null;
+                return  array('count'=>count($relatedSearchesArray), 'keyword' => $keywordString)  ?? null;
             }
         }
         return null;
