@@ -247,7 +247,6 @@
                                                             disabled="disabled" style="cursor: not-allowed;"></td>
                                                 </tr>
                                                 @php $i++; @endphp
-                                            @endphp
                                     @endforeach
                                 @endif
                             </tbody>
