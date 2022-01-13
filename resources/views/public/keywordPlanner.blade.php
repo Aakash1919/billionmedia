@@ -19,22 +19,22 @@
                             <div class="-kewleft-side">
                                 <label>Keyword</label>
                                 <input type="text" required name="keyword" class="form-control" autofocus
-                                    placeholder="Keyword">
+                                    placeholder="Keyword" value= '{{$request->get("keyword") ?? '' }}'>
                             </div>
                             <div class="-kewright-side">
                                 <label>Analysis</label>
                                 <select name="action" class="form-control" style="padding-left: 8px;"
                                     placeholder="Similar keywords">
-                                    <option value="similar_keywords" selected="">Similar keywords</option>
-                                    <option value="questions">Questions</option>
-                                    <option value="similar_searches">Related searches</option>
-                                    <option value="autocomplete">Auto complete</option>
+                                    <option value="similar_keywords" {{ isset($request->get("action")) && $request->get("action") == 'similar_keywords' ? 'selected': '' }}>Similar keywords</option>
+                                    <option value="questions" {{ isset($request->get("action")) && $request->get("action") == 'questions' ? 'selected': '' }}>Questions</option>
+                                    <option value="similar_searches" {{ isset($request->get("action")) && $request->get("action") == 'similar_searches' ? 'selected': '' }}>Related searches</option>
+                                    <option value="autocomplete" {{ isset($request->get("action")) && $request->get("action") == 'autocomplete' ? 'selected': '' }}>Auto complete</option>
                                 </select>
                             </div>
                             <div class="-kewful-side">
                                 <label>Search engine</label>
                                 <input type="text" name="url" list="engines" class="form-control"
-                                    placeholder="Google.com">
+                                    placeholder="Google.com" value="'{{$request->get("url") ?? '' }}'">
                             </div>
                             <div class="btn-keyword">
                                 <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
@@ -110,11 +110,10 @@
            @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
             <div class="tblliul">
                 <ul>
-                    <li class="active"><a href="#">Similar keywords</a></li>
-                    <li><a href="#">Questions</a></li>
-                    <li><a href="#">Related searches</a></li>
-                    <li><a href="#">Auto complete</a></li>
-                    <li><a href="#">Related terms</a></li>
+                    <li {{ isset($request->get("action")) && $request->get("action") == 'similar_keywords' ? 'active': '' }}><a href="javascript:void(0)">Similar keywords</a></li>
+                    <li {{ isset($request->get("action")) && $request->get("action") == 'questions' ? 'active': '' }} ><a href="javascript:void(0)">Questions</a></li>
+                    <li {{ isset($request->get("action")) && $request->get("action") == 'similar_searches' ? 'active': '' }}><a href="javascript:void(0)">Related searches</a></li>
+                    <li {{ isset($request->get("action")) && $request->get("action") == 'autocomplete' ? 'active': '' }}><a href="javascript:void(0)">Auto complete</a></li>
                 </ul>
             </div>
 
