@@ -220,7 +220,6 @@
                             </tfoot>
                             <tbody>
                                 @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
-                                    @foreach($keywordResponse['data'] as $key => $value)
                                     @php $maxSearch = $keywordResponse['data']['maxSearch']; @endphp
                                     @foreach($keywordResponse['data'] as $key => $value)
                                         @php 
