@@ -32,11 +32,13 @@ class Controller extends BaseController
         };
     }
 
-    public function crawlGoogleResults($query = '', $page = 0, $url = 'http://www.google.co.in/search') {
-        $queryParams = ['q' => $query, 'start'=>$page];
-        $responseArray = $this->sendCurlGet($url, $queryParams);
-        $response = isset($responseArray['content']) ? (string) $responseArray['content'] : '';
-        return $response;
+    public function crawlGoogleResults($queryParams = [], $url = 'https://www.google.co.in/search') {
+        if(!empty($queryParams)) {
+            $responseArray = $this->sendCurlGet($url, $queryParams);
+            $response = isset($responseArray['content']) ? (string) $responseArray['content'] : '';
+            return $response;
+        }
+        return false;
+        
     }
-
 }

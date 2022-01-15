@@ -33,6 +33,7 @@ class KeywordPlanner extends Controller
             if($request->has('action')) {
                 $action = $request->get('action');
                 $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                print_r($keyword);die;
                 $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
                 return view('public.keywordPlanner', compact('keywordResponse', 'request'));
             }
@@ -49,6 +50,9 @@ class KeywordPlanner extends Controller
                     break;
                 case 'similar_searches' :
                     $keywordArray = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
+                    break;
+                case 'autocomplete' :
+                    $keywordArray = $this->getAutoCompleteSearchResults($keyword);
                     break;
             }
         }
@@ -148,7 +152,8 @@ class KeywordPlanner extends Controller
  */
     public function getSearchesBasedOnClass($keyword = null, $class = null) {
         if(isset($keyword) && isset($class)) {
-            $response = $this->crawlGoogleResults($keyword);
+            $queryParams = ['q' => $keyword, 'start'=>0];
+            $response = $this->crawlGoogleResults($queryParams);
             $relatedSearchesArray = $this->getInnerTextOfDiv($class, $response);
             if(!empty($relatedSearchesArray)) {
                 $keywordString = implode(',', $relatedSearchesArray);
@@ -156,6 +161,26 @@ class KeywordPlanner extends Controller
             }
         }
         return array('count'=>0, 'keyword' => '');
+    }
+
+    /**
+     * Google Autocomplete Functionality
+     * @url : http://suggestqueries.google.com/complete/search?client=chrome&q=test
+     * 
+     * @param $keyword : Keyword on the bases of whom we have to calculate the results
+     */
+
+    public function getAutoCompleteSearchResults($keyword = null, $url ='https://suggestqueries.google.com/complete/search') {
+        if(isset($keyword)) {
+            $queryParams = ['client'=>'chrome', 'q' => $keyword];
+            $jsonResponse = $this->crawlGoogleResults($queryParams , $url);
+            $response = json_decode($jsonResponse);
+            if(isset($response[1]) && is_array($response[1])) {
+                $keywordString = implode(',', $response[1]);
+                return  array('count'=>count($response[1]), 'keyword' => $keywordString);
+            }
+            return array('count'=>0, 'keyword' => '');
+        }
     }
 
 }

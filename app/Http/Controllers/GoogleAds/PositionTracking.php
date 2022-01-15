@@ -15,11 +15,12 @@ class PositionTracking extends Controller
 
     public function getRank($param = 'fast.com') {
         $rankArray = [];
-        for($i=0; $i<10; $i = $i+10) {
-            $response = $this->keywordPlannerObject->crawlGoogleResults('google search api', $i);
+        for($page=0; $page<10; $page = $page+10) {
+            $queryParams = ['q' => 'google search api', 'start'=>$page];
+            $response = $this->keywordPlannerObject->crawlGoogleResults($queryParams);
             $position = strpos($response, $param);
             if(isset($position)) {
-                array_push($rankArray, ['page'=>$i/10, 'position' => $position]);
+                array_push($rankArray, ['page'=>$page/10, 'position' => $position]);
             };
             $position = 0;
         }
