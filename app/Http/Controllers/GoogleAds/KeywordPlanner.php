@@ -33,7 +33,6 @@ class KeywordPlanner extends Controller
             if($request->has('action')) {
                 $action = $request->get('action');
                 $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
-                print_r($keyword);die;
                 $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
                 return view('public.keywordPlanner', compact('keywordResponse', 'request'));
             }
