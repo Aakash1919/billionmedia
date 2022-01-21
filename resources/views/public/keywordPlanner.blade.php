@@ -5,8 +5,7 @@
  $keyword = isset($request) ? $request->get('keyword') : '';
  $url = isset($request) ? $request->get('url') : '';
 @endphp
-
-Aakash Choudhary
+aakash choudhary asdasd
 <div class="keyword-saction-one research-keyword">
     <div class="container">
         <div class="keyword-box-one">
