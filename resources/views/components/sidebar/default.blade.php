@@ -24,6 +24,13 @@
                 <div class="menu-title">Keyword Planner</div>
             </a>
         </li>
+        <li>
+            <a href="{{ route('rank-tracking') }}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Position Tracking</div>
+            </a>
+        </li>
     </ul>
     <!--end navigation-->
 </div>

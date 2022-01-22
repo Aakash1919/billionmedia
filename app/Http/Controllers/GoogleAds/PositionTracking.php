@@ -13,6 +13,10 @@ class PositionTracking extends Controller
         $this->keywordPlannerObject = new KeywordPlanner();
     }
 
+    public function positionTracking() {
+        return view('user.positionTracking');
+    }
+
     public function getRank($param = 'fast.com') {
         $rankArray = [];
         for($page=0; $page<10; $page = $page+10) {
