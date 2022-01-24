@@ -71,6 +71,7 @@
                         </div>
 
 <div class="social-btn">
+    <h3>Connect with social network</h3>
     <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a>
     <a href="#" class="google"><img src="assets/images/google.png">Sign in with Google</a>
     <a href="#" class="linkdin"><img src="assets/images/linkedin.png">Sign in with LinkedIn</a>
