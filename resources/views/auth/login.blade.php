@@ -69,7 +69,7 @@
                                 @endif
                             </div>
                         </div>
-
+ test
 <div class="social-btn">
     <h3>Connect with social network</h3>
     <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a>
