@@ -6,8 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
+                <div class="hadder-login">
+                <h3>Sign Up Free</h3>
+                <p>Create an Billion media account</p>
+                </div>
 
-                <div class="card-body">
+                <div class="card-body register-from">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -68,6 +72,14 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="social-btn">
+                        <h3>Connect with social network</h3>
+                        <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a>
+                        <a href="#" class="google"><img src="assets/images/google.png">Sign in with Google</a>
+                        <a href="#" class="linkdin"><img src="assets/images/linkedin.png">Sign in with LinkedIn</a>
+                        </div>
+
                     </form>
                 </div>
             </div>
