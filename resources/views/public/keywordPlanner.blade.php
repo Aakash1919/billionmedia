@@ -7,6 +7,7 @@
 @endphp
 
 <div class="keyword-saction-one research-keyword">
+
     <div class="container">
         <div class="keyword-box-one">
             <h3>Keyword Research</h3>

@@ -29,26 +29,112 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title">
-                    Keyword Tool
-                </div>
-            </div>
-            <hr>
-            <form class="form-inline" method="post" action="{{ route('keyword-planner-post') }}">
-                @csrf
-                <div class="form-group mx-sm-3 mb-4">
-                    <label for="inputKeyword" class="sr-only">Keyword</label>
-                    <input type="text" class="form-control" name="keyword" id="inputKeyword" placeholder="Keyword" required>
-                </div>
-                <div class="form-group mx-sm-3 mb-4">
-                    <label for="inputUrl" class="sr-only">URL</label>
-                    <input type="text" class="form-control" name="Url" id="inputUrl" placeholder="Please insert URL if you want to check in particular URL else leave blank">
-                </div>
-                <button type="submit" class="btn btn-primary mx-sm-3 mb-4">Search Keyword</button>
+
+<div class="hadder-row">
+<div class="container">  
+<div class="col-md-6"><span>Keyword Research <em><img src="assets/images/right.png"></em></span> 
+<button type="button" class="btn btn-primary stig" data-toggle="modal" data-target="#mb-trk">
+Settings</button></div>
+<div class="col-md-6">
+<div class="lt-udt">
+<p>You have 2 of 3 checks left today</p></div> </div>
+</div>
+</div>
+
+  <div class="keyword-saction-one research-keyword">
+  <div class="container">
+    <div class="keyword-box-one">
+      <div class="tab-saction tab-keword">
+        <div id="tab-1" class="tab-content current">
+          <div class="table-price">
+            <form class="keword-from">
+              <div class="-kewleft-side">
+                <label>Keyword</label>
+                <input type="text" required name="keyword" class="form-control" autofocus placeholder="Keyword">
+              </div>
+              <div class="-kewright-side">
+                <label>Analysis</label>
+                <div class="slect-erow">
+                <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
+                  <option value="similar_keywords" selected="">Similar keywords</option>
+                  <option value="questions">Questions</option>
+                  <option value="similar_searches">Related searches</option>
+                  <option value="autocomplete">Auto complete</option>
+                  <option value="related_keywords">Related terms</option>
+                </select>
+               </div>
+              </div>
+              <div class="-kewful-side">
+                <label>Search engine</label>
+                <input type="text" name="searchengine" list="engines" class="form-control" placeholder="Google.com">
+              </div>
+              <div class="btn-keyword">
+                <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
+              </div>
             </form>
+          </div>
         </div>
+        <div id="tab-2" class="tab-content">
+          <div class="table-price">
+            <form class="keword-from">
+              <div class="-kewful-side url-domain">
+                <label>URL / Domain</label>
+                <input class="form-control seocheckurlinput" type="text" required name="url" placeholder="example.com" autofocus>
+              </div>
+              <div class="-kewful-side url-domain">
+                <label>Search engine </label>
+                <input type="text" name="searchengine" list="engines" class="form-control" placeholder="Google.com">
+              </div>
+              <div class="btn-keyword">
+                <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="tab-3" class="tab-content">
+          <div class="table-price">
+            <form class="keword-from">
+              <div class="-kewful-side">
+                <label>Your domain</label>
+                <input class="form-control seocheckurlinput" type="text" required name="comparedomain" placeholder="example.com">
+              </div>
+              <div class="-kewleft-side">
+                <label>Domain A </label>
+                <input class="form-control seocheckurlinput" type="text" required name="domainA" placeholder="example.com">
+              </div>
+              <div class="-kewright-side">
+                <label>Domain B </label>
+                <input class="form-control seocheckurlinput" type="text" required name="domainA" placeholder="example.com">
+              </div>
+              <div class="-kewleft-side analysis">
+                <label>Search engine</label>
+                <input class="form-control seocheckurlinput" type="text" required name="domainA" placeholder="example.com">
+              </div>
+              <div class="-kewright-side analysis">
+                <label>Analysis</label>
+                <div class="flex">
+                  <li class="switcher active">
+                    <label class="flex clear-margin"> <a>
+                      <input type="radio" name="mode" value="gap" checked="">
+                      </a>&nbsp;Gap</label>
+                  </li>
+                  <li class="switcher" style="margin-left: 40px;">
+                    <label class="flex clear-margin"> <a>
+                      <input type="radio" name="mode" value="intersect">
+                      </a>&nbsp;Intersections</label>
+                  </li>
+                </div>
+              </div>
+              <div class="btn-keyword">
+                <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
         @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
         <div class="card">

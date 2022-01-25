@@ -4,19 +4,20 @@
 <div class="page-wrapper">
     <div class="page-content">
      
-
-
-    <div class="keyword-sact">
-<div class="container">
- 
-	<div class="row  alent-ctsd">
-	<div class="col-md-6"><span>Rank Tracking </span> <button type="button" class="btn btn-primary stig" data-toggle="modal" data-target="#mb-trk">
+<div class="hadder-row">
+<div class="container">  
+<div class="col-md-6"><span>Keyword Research <em><img src="assets/images/right.png"></em></span> 
+<button type="button" class="btn btn-primary stig" data-toggle="modal" data-target="#mb-trk">
 Settings</button></div>
-	<div class="col-md-6">
-		<div class="lt-udt">
-		Last Updated: <br>
+<div class="col-md-6">
+<div class="lt-udt">
+Last Updated: <br>
 <p>January 11, 2022 13:01 PM</p></div> </div>
-	</div>
+</div>
+</div>
+
+<div class="keyword-sact">
+<div class="container">
 	
 	
 	<div class="modal fade" id="mb-trk" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -118,42 +119,45 @@ Settings</button></div>
 <div class="rankig-bar">
 	
 	<Div class="sdf">SHOWING RANKINGS FOR: </Div>
+<div class="all-bx">  
+<div class="ght-dds">
+<img src="assets/images/pc_grey.svg" alt="#">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mb-rak"></button>
+</div>
+<div class="ght-pdf ">
+<img src="assets/images/phone_grey.8be9c41e.svg" alt="#">
+<a href="pdf/google.com_position_tracking.pdf" target="_blank">Export PDF</a>		  
+</div>
+</div>
 	<form class="keword-from ranksd">
         <div class="keword-ranksd">
               <div class="ght-side">
-                              <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
+              <div class="slect-erow">
+                  <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
                   <option value="similar_keywords" selected="">Google</option>
                   <option value="questions">Google</option>
                 </select>
-				  
+                </div>
               </div> 
 		<div class="ght-side">
-                              <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
+    <div class="slect-erow">
+                  <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
                   <option value="similar_keywords" selected="">Google</option>
                   <option value="questions">Google</option>
                 </select>
-				  
+</div>
               </div>
 		<div class="ght-side">
+    <div class="slect-erow">
                     <select name="action" class="form-control" style="padding-left: 8px;" placeholder="Similar keywords">
                   <option value="similar_keywords" selected="">Google</option>
                   <option value="questions">Google</option>
                 </select>
-				  
+</div>
               </div>
-		<div class="ght-dds">
-			<img src="assets/images/pc_grey.svg" alt="#">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mb-rak"></button>
-			
+</div>
 
-		</div>
-		
-              <div class="ght-pdf ">
-		<img src="assets/images/phone_grey.8be9c41e.svg" alt="#">
-		<a href="pdf/google.com_position_tracking.pdf" target="_blank">Export PDF</a>
-				  
-		</div></div>
-			</form>
+</form>
 	
 </div> 
 </div>

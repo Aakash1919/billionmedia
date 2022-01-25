@@ -4,8 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card rest-pasword">
                 <div class="card-header">{{ __('Reset Password') }}</div>
+
+                <div class="hadder-login">
+                <h3>Password recovery</h3>
+                <p>If you have forgotten your password, you can use this form to set a new one. If you need more help, just contact our support department.</p>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

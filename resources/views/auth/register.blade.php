@@ -64,7 +64,10 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
+                        <div class="rigestr-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                        <label class="form-check-label" for="remember">I accept the <a href="#">Terms & conditions</a></label>
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -73,20 +76,14 @@
                             </div>
                         </div>
 
-                        <div class="rigestr-check">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                        <label class="form-check-label" for="remember">I accept the <a href="#">Terms & conditions</a></label>
-                        </div>
-
                         <div class="alrdy-btn">
-                        <p>Already have an account? <a href="#">Log in now</a></p>
+                        <p>Already have an account? <a href="http://billionmedia.test/login">Log in now</a></p>
                         </div>
 
                         <div class="social-btn">
                         <h3>Connect with social network</h3>
                         <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a>
                         <a href="#" class="google"><img src="assets/images/google.png">Sign in with Google</a>
-                        <a href="#" class="linkdin"><img src="assets/images/linkedin.png">Sign in with LinkedIn</a>
                         </div>
 
                     </form>
