@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card rigestr-page">
                 <div class="card-header">{{ __('Register') }}</div>
                 <div class="hadder-login">
                 <h3>Sign Up Free</h3>
@@ -71,6 +71,10 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                        </div>
+
+                        <div class="alrdy-btn">
+                        <p>Already have an account? <a href="#">Log in now</a></p>
                         </div>
 
                         <div class="social-btn">
