@@ -1199,3 +1199,36 @@ input:focus:focus-visible {
 #remember:focus {
 	box-shadow: inherit !important;
 }
+.email-fild {
+	position: relative;
+}
+.pssword-fild {
+	position: relative;
+}
+.email-fild::after {
+	content: '';
+	position: absolute;
+	right: 21px;
+	background: url("/assets/images/Vector-3.png");
+	width: 17px;
+	height: 14px;
+	top: 50px;
+	z-index: 1;
+	opacity: 0.5;
+	background-size: cover;
+	background-position: 100%;
+	border-radius: 2px;
+}
+.pssword-fild::after {
+	content: '';
+	position: absolute;
+	right: 23px;
+	background: url("/assets/images/Vector-1.png");
+	width: 14px;
+	height: 10px;
+	top: 50px;
+	z-index: 1;
+	opacity: 0.6;
+	background-size: cover;
+	background-position: 100%;
+}
