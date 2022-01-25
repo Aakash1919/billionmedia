@@ -68,9 +68,14 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Sign Up Free') }}
                                 </button>
                             </div>
+                        </div>
+
+                        <div class="rigestr-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                        <label class="form-check-label" for="remember">I accept the <a href="#">Terms & conditions</a></label>
                         </div>
 
                         <div class="alrdy-btn">
