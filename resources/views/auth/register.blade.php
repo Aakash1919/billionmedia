@@ -79,7 +79,9 @@
                         <div class="alrdy-btn">
                         <p>Already have an account? <a href="http://billionmedia.test/login">Log in now</a></p>
                         </div>
-
+                        <div class="or-box">
+                        <div class="inner-or-box">Or</div>   
+                         </div>
                         <div class="social-btn">
                         <h3>Connect with social network</h3>
                         <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a>

@@ -11,7 +11,6 @@
 Settings</button></div>
 <div class="col-md-6">
 <div class="lt-udt">
-Last Updated: <br>
 <p>January 11, 2022 13:01 PM</p></div> </div>
 </div>
 </div>
