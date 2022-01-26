@@ -31,6 +31,14 @@
                 <div class="menu-title">Position Tracking</div>
             </a>
         </li>
+        <li>
+            <a href="{{ route('create-project') }}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Add Project</div>
+            </a>
+        </li>
+        
     </ul>
     <!--end navigation-->
 </div>

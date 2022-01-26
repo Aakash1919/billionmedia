@@ -17,6 +17,10 @@ class PositionTracking extends Controller
         return view('user.positionTracking');
     }
 
+    public function createProject() {
+        return view('user.createProject');
+    }
+
     public function getRank($param = 'fast.com') {
         $rankArray = [];
         for($page=0; $page<10; $page = $page+10) {
