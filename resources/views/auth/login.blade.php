@@ -19,7 +19,6 @@
                                     </p>
                                 </div>
                                 <div class="social-btn">
-                                    <h3>Connect with social network</h3>
                                     <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with
                                         Facebook</a>
                                     <a href="#" class="google"><img src="assets/images/google.png">Sign in with
@@ -96,6 +95,7 @@
         </div>
         <div class="col-md-6">
             <div class="right-login-new">
+             <img src="assets/images/seo-image.png">
             </div>
         </div>
     </div>
