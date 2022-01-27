@@ -150,5 +150,28 @@ return false;
 });
 </script>
 
+<script>
+$("ul").on("click", ".init", function() {
+    $(this).closest("ul").children('li:not(.init)').toggle();
+});
+
+var allOptions = $("ul").children('li:not(.init)');
+$("ul").on("click", "li:not(.init)", function() {
+    allOptions.removeClass('selected');
+    $(this).addClass('selected');
+    $("ul").children('.init').html($(this).html());
+    allOptions.toggle();
+});
+</script>
+
+<script>
+ $('.tab').on('click', function(evt) {
+  evt.preventDefault();
+  $(this).toggleClass('active');
+  var sel = this.getAttribute('data-toggle-target');
+  $('.tab-content').removeClass('active').filter(sel).addClass('active');
+});
+</script>
+
 </body>
 </html>
