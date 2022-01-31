@@ -215,7 +215,7 @@
 .rank-bar {
 	background: #f7f7f7;
 	margin-top: 0;
-	padding: 20px 0;
+	padding: 20px 0 30px;
 	display: inline-block;
 	width: 100%;
 }
@@ -487,6 +487,7 @@ tr.odd {
 	flex-wrap: wrap;
 	align-items: center;
 	margin: 20px 0 0 0;
+	padding: 0 0 0;
 }
 .map-grp {
 	width: 33%;
@@ -1117,7 +1118,7 @@ input[type=file] {
 	margin: 0 0 10px 0;
 }
 .bg-login form .col-md-6.offset-md-4 {
-	margin: 25px 0 0 20px;
+	margin: 25px 0 0 0;
 }
 .bg-login form .form-check {
 	padding: 0;
@@ -2561,4 +2562,7 @@ ul.list-unstyled .check-bx input {
 	margin-left: 0 !important;
 	border: 1px solid #Edcdcdc !important;
 	padding: 8px 9px !important;
+}
+.keword-ranksd .ght-side:last-child {
+	margin-right: 0;
 }

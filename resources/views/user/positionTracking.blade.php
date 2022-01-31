@@ -52,10 +52,26 @@
 
           <!---[Grap]--->
 
+
           @if(isset($keywordDetail))
           <div class="trc-tlt">TRACKED KEYWORDS <span class="cls">(1/25)</span></div>
           <div class="kesy">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-plus-circle"></i> ADD KEYWORDS</button>
+          @include('components.Button.default', array('attributes' => array(
+                                'href' => 'javascript:void(0)',
+                                'id' => 'keyword_btn',
+                                'class' => 'btn btn-primary',
+                                'data-toggle' => 'modal',
+                                'data-target' => '#keywordmodal',
+                                'icon' => 'fas fa-plus-circle',
+                                'title'=> 'Add KeyWord'
+                            )))
+          @include('components.Modals.default', array('attributes' => array(
+          'id' => 'keywordmodal',
+          'title' => null,
+          'view' => 'components.forms.threeStepForm',
+          'viewParameters' => []
+      )))
+            
             <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
             <span class="cont-ps">0 of 9 Selected</span>
           </div>
