@@ -312,11 +312,17 @@ display: none;
   float: right;
 }
 .table-volsd th {
-	background: #E8EBEC;
+	background: #333 !important;
 	font-size: 13px;
 	font-weight: 600;
 	letter-spacing: 1px;
-	padding: 16px 10px !important;
+	padding: 15px 20px !important;
+	border-right: 1px solid #dcdcdc;
+}
+.table-volsd th:first-child {
+	float: left;
+	width: 100%;
+	padding: 16px 18px !important;
 }
 .rk-url div {
 	font-size: 12px;
@@ -357,10 +363,13 @@ td.rk-url {
 	font-size: 15px;
 	letter-spacing: 1px;
 }
-
 .table-volsd td {
-  border-right: 1px solid #dfdfdf;
-  vertical-align: middle;
+	border-right: 1px solid #dfdfdf;
+	vertical-align: middle;
+	padding: 12px 19px !important;
+	font-weight: 500;
+	color: #666;
+	font-size: 13px;
 }
 
 .form-check input {
@@ -379,17 +388,17 @@ tr.odd {
 	/* letter-spacing: 0.08em; */
 	border: 1px solid #ff725e !important;
 	border-radius: 4px;
-	height: 40px;
+	height: 35px;
 	line-height: 1em;
-	min-width: 85px;
-	padding: 0px 15px 0px 15px;
-	color: #fff !important;
+	min-width: 40px;
+	padding: 0;
+	color: #000;
 	text-align: center;
-	margin: 0 10px 0 0;
+	margin: 0;
 	background-color: #ff725e;
 	font-weight: 500;
 	letter-spacing: -0.l1px;
-	font-size: 12px;
+	font-size: 28px;
 }
 .kesy button:hover {
 	background: #333;
@@ -1846,6 +1855,7 @@ input:focus:focus-visible {
 	display: inline-block;
 	border: none !important;
 	font-weight: 100;
+	color: #000 !important;
 }
 .modal-header {
 	border: none !important;
@@ -2340,9 +2350,10 @@ textarea:focus-visible {
 .right-box-rankk textarea {
 	border: none;
 	font-size: 14px;
-	padding: 0;
+	padding: 10px 0;
 	font-weight: 300;
 	height: 188px;
+	width: 100%;
 }
 .box-left-rank img {
 	width: auto;
@@ -2549,10 +2560,6 @@ ul.list-unstyled .check-bx input {
 	margin: 2rem 0 0 3rem;
 	width: 69% !important;
 }
-.table th {
-	background-color: #666 !important;
-	border: 1px solid;
-}
 .form-check {
 	display: block;
 	min-height: inherit !important;
@@ -2565,4 +2572,74 @@ ul.list-unstyled .check-bx input {
 }
 .keword-ranksd .ght-side:last-child {
 	margin-right: 0;
+}
+.card.rank-tranking-table {
+	margin: 22px 22px;
+	box-shadow: inherit !important;
+	padding: 0 !important;
+}
+.card.rank-tranking-table .card-body {
+	padding: 0;
+}
+.card.rank-tranking-table table .table-dark th {
+	background-color: #333;
+	font-style: normal;
+	font-size: 16px;
+	font-weight: 600;
+	border-right: 1px solid #dcdcdc;
+	padding: 13px 20px;
+}
+.card.rank-tranking-table table .table-dark th:last-child {
+	border-right: none;
+}
+.card.rank-tranking-table table tbody td {
+	border: 1px solid #dcdcdc;
+	font-style: normal;
+	color: #666;
+	font-weight: 400;
+	font-size: 15px;
+	padding: 13px 18px;
+	vertical-align: middle;
+	position: relative;
+}
+.card.rank-tranking-table table tbody th {
+	font-style: normal;
+	font-size: 17px;
+	font-weight: 500;
+	padding: 11px 20px;
+	vertical-align: middle;
+	border-left: 1px solid #dcdcdc;
+	width: 3%;
+	text-align: center;
+}
+.card.rank-tranking-table table tbody td a {
+	color: #ff725e;
+	font-size: 24px;
+	position: absolute;
+	top: 5px;
+	left: 23px;
+}
+.keyword-sact .btn {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 22px;
+	color: #fff !important;
+	text-align: center;
+	letter-spacing: 0.5px;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background-color: #ff725e !important;
+	border: 1px solid #ff725e !important;
+	padding: 8px 15px;
+	font-size: 1rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	height: inherit !important;
+}
+#line {
+	border-right: 1px solid #dcdcdc;
 }

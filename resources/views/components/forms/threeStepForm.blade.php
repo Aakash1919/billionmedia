@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h6>Paste keywords</h6>
                     <div class="right-box-rankk">
                         <textarea name="keywords" placeholder="Enter text here..." required></textarea>

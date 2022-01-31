@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-    <div class="card">
+    <div class="card rank-tranking-table">
         <div class="card-body">
             @if(isset($projects))
             <table class="table mb-0">

@@ -68,7 +68,7 @@
           @include('components.Modals.default', array('attributes' => array(
                                 'id' => 'keywordmodal',
                                 'title' => 'Add Keyword',
-                                'view' => 'components.forms.threeStepForm',
+                                'view' => 'components.forms.singleForm',
                                 'viewParameters' => []
                             )))
             
