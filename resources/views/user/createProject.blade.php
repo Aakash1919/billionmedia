@@ -42,16 +42,4 @@
     <script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
     <script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-    <script>
-        $(document).on("click", "#cust_btn", function () {
-
-            $("#threeStepForm").modal("toggle");
-        })
-        $(document).ready(function () {
-            $(".close").click(function () {
-                $("#myModal").toggle();
-                $('body.modal-open .fade.show').removeClass('show');
-            });
-        });
-    </script>
     @endpush

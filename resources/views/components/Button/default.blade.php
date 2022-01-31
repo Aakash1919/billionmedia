@@ -20,4 +20,20 @@
         <span class="{{ $attributes['icon'] ?? ''}}"></span> 
     @endif
     {{ $attributes['title'] ?? '' }}</a>
+    @push('javascript')
+    <script>
+        
+        $(document).on("click", "#{{ $attributes['id'] ?? ''  }}", function () {
+
+            $("{{ $attributes['data-target'] ?? ''  }}").modal("toggle");
+        })
+        $(document).ready(function () {
+            $(".close").click(function () {
+                $("{{ $attributes['data-target'] ?? ''  }}").toggle();
+                $('body.modal-open .fade.show').removeClass('show');
+            });
+        });
+    </script>
+    @endpush
 @endif
+

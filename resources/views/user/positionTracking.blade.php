@@ -66,11 +66,11 @@
                                 'title'=> 'Add KeyWord'
                             )))
           @include('components.Modals.default', array('attributes' => array(
-          'id' => 'keywordmodal',
-          'title' => null,
-          'view' => 'components.forms.threeStepForm',
-          'viewParameters' => []
-      )))
+                                'id' => 'keywordmodal',
+                                'title' => 'Add Keyword',
+                                'view' => 'components.forms.threeStepForm',
+                                'viewParameters' => []
+                            )))
             
             <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
             <span class="cont-ps">0 of 9 Selected</span>
