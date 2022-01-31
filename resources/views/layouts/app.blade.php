@@ -18,8 +18,11 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css')}}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/semi-dark.css')}}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/header-colors.css')}}" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
     <title>{{ config('app.name', 'BillionMedia') }}</title>
     <link href="{{ asset('assets/css/app.css')}}" rel="stylesheet">
+	@stack('style')
 </head>
 <body>
 	<div class="wrapper">
@@ -30,18 +33,8 @@
 	</div>
 	<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 	<script src="{{ asset('assets/js//jquery.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
-	<script src="{{ asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-	<script src="{{ asset('assets/plugins/highcharts/js/highcharts.js')}}"></script>
-	<script src="{{ asset('assets/plugins/highcharts/js/exporting.js')}}"></script>
-	<script src="{{ asset('assets/plugins/highcharts/js/variable-pie.js')}}"></script>
-	<script src="{{ asset('assets/plugins/highcharts/js/export-data.js')}}"></script>
-	<script src="{{ asset('assets/plugins/highcharts/js/accessibility.js')}}"></script>
-	<script src="{{ asset('assets/plugins/apexcharts-bundle/js/apexcharts.min.js')}}"></script>
-	<script src="{{ asset('assets/js/index.js')}}"></script>
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+	@stack('javascript')
 	<script src="{{ asset('assets/js/app.js')}}"></script>
 	<script>
     $(document).ready(function(){
@@ -58,120 +51,6 @@
 
 })
 </script> 
-<script>
-	$(document).on("click","#cust_btn",function(){
-  
-  $("#myModal").modal("toggle"); 
-})
-$(document).ready(function(){
-  $(".close").click(function(){
-    $("#myModal").toggle();
-	$('body.modal-open .fade.show').removeClass('show');
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-
-var current_fs, next_fs, previous_fs; //fieldsets
-var opacity;
-var current = 1;
-var steps = $("fieldset").length;
-
-setProgressBar(current);
-
-$(".next").click(function(){
-
-current_fs = $(this).parent();
-next_fs = $(this).parent().next();
-
-//Add Class Active
-$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-//show the next fieldset
-next_fs.show();
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-next_fs.css({'opacity': opacity});
-},
-duration: 500
-});
-setProgressBar(++current);
-});
-
-$(".previous").click(function(){
-
-current_fs = $(this).parent();
-previous_fs = $(this).parent().prev();
-
-//Remove class active
-$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-//show the previous fieldset
-previous_fs.show();
-
-//hide the current fieldset with style
-current_fs.animate({opacity: 0}, {
-step: function(now) {
-// for making fielset appear animation
-opacity = 1 - now;
-
-current_fs.css({
-'display': 'none',
-'position': 'relative'
-});
-previous_fs.css({'opacity': opacity});
-},
-duration: 500
-});
-setProgressBar(--current);
-});
-
-function setProgressBar(curStep){
-var percent = parseFloat(100 / steps) * curStep;
-percent = percent.toFixed();
-$(".progress-bar")
-.css("width",percent+"%")
-}
-
-$(".submit").click(function(){
-return false;
-})
-
-});
-</script>
-
-<script>
-$("ul").on("click", ".init", function() {
-    $(this).closest("ul").children('li:not(.init)').toggle();
-});
-
-var allOptions = $("ul").children('li:not(.init)');
-$("ul").on("click", "li:not(.init)", function() {
-    allOptions.removeClass('selected');
-    $(this).addClass('selected');
-    $("ul").children('.init').html($(this).html());
-    allOptions.toggle();
-});
-</script>
-
-<script>
- $('.tab').on('click', function(evt) {
-  evt.preventDefault();
-  $(this).toggleClass('active');
-  var sel = this.getAttribute('data-toggle-target');
-  $('.tab-content').removeClass('active').filter(sel).addClass('active');
-});
-</script>
-
+@stack('lastScripts')
 </body>
 </html>

@@ -21,7 +21,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">Tool</a></li>
 
-                                <li class="start-fre"><a href="#">Start Free Trial</a></li>
+                                <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
                             </ul>
                         </div>
                     </nav>

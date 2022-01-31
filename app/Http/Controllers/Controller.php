@@ -6,6 +6,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Models\Countries;
+use App\Models\Languages;
+use Illuminate\Http\Request;
+use DB;
 
 class Controller extends BaseController
 {
@@ -40,5 +44,25 @@ class Controller extends BaseController
         }
         return false;
         
+    }
+
+    public function getCountries(Request $request) {
+        $jsonArray = array();
+        if($request->has('term')) {
+            $countries = Countries::where('name', 'like', '%' . $request->get('term') . '%')->get();
+            foreach($countries as $country) {
+                $singleCountry = array(
+                    'id' => $country->id,
+                    'label' => $country->name,
+                    'value' => $country->name
+                );
+                array_push($jsonArray, $singleCountry);
+            }
+            return response()->json($jsonArray);
+        }
+        
+    }
+    public function getLanguages() {
+        return Languages::all();
     }
 }

@@ -27,7 +27,7 @@ Route::get('/plan-and-pricing', [App\Http\Controllers\PublicController::class, '
 Route::get('/blogs', [App\Http\Controllers\PublicController::class, 'blogs'])->name('public.blogs');
 Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner');
 Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
-
+Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'getCountries'])->name('get-countries');
 
 /**
  * User routes
@@ -35,7 +35,13 @@ Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::cla
 Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->middleware('auth')->name('google-authorize');
 Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'index'])->middleware('auth')->name('keyword-planner');
-Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
 Route::get('/rank-tracking', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'positionTracking'])->middleware('auth')->name('rank-tracking');
-Route::get('/create-your-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'createProject'])->middleware('auth')->name('create-project');
+Route::get('/rank-tracking/{id?}', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'rankTracking'])->middleware('auth')->name('rank-tracking-id');
+
+
+/**
+ * User Post Routes
+ */
+Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
+Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
 
