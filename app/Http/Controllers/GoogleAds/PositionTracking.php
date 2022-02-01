@@ -85,6 +85,7 @@ class PositionTracking extends Controller
     public function saveProjectKeywords($projectID = null, $keywords = null, $refreshToken=null) {
         if(isset($projectID) && isset($keywords)) {
             $websiteUrl = UserProjects::find($projectID)->value('website_url');
+            $websiteUrl = str_replace(['http://','https://'],"",$websiteUrl);
             $keywordsArray = explode(',', $keywords);
             foreach($keywordsArray as $keyword) {
                $keywordStat = $this->keywordPlannerObject->getGlobalKeywordAnalytics($refreshToken, ['keyword'=>$keyword, 'count'=>1]);
