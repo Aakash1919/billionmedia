@@ -34,7 +34,7 @@
         name: 'Brands',
         colorByPoint: true,
         data: [{
-            name: 'Chrome',
+            name: 'keyword10',
             y: 61.41,
             sliced: true,
             selected: true
