@@ -105,9 +105,8 @@
                 <td class="pgn">{{$keyword->current_position ?? 'N/T'}}</td>
                 <td class="rk-url"><div class="rk-yellow">{{$keyword->keyword}}</div></td>
                 <td class="pgn"> 2 </td>
-                <td class="pgn">55.6m </td>
-                <td class="pgn"> 91</td>
-                {{-- <td class="ptgn">http://www.google.com/ </td> --}}
+                <td class="pgn">{{ json_decode($keyword->stats)->data->{0}->searches }}</td>
+                <td class="ptgn">${{ json_decode($keyword->stats)->data->{0}->cpc }}</td>
                 <td class="pgnd"> <img src="{{asset('assets/images/pc_grey.svg')}}" alt="#"> </td>
               </tr>
               @endforeach
