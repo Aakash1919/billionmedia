@@ -3,7 +3,12 @@
 @section('content')
 <div class="page-wrapper">
   <div class="page-content">
-
+    @if (session('status'))
+    @include('components.Alerts.default', array('attributes' => array(
+        'title' => 'Message',
+        'message' => 'Keyword Added Successfully'
+        )))
+    @endif
     <div class="hadder-row">
       <div class="container">
         <div class="col-md-6"><span>Keyword Research <em><img src="{{asset('assets/images/right.png') }}"></em></span>
@@ -42,7 +47,7 @@
 
             <div class="row">
               <div class="col-md-6">
-                @include('components.Charts.line')
+                @include('components.Charts.line' )
               </div>
               <div class="col-md-6">
                 @include('components.Charts.pie')
@@ -54,26 +59,27 @@
 
 
           @if(isset($keywordDetail))
-          <div class="trc-tlt">TRACKED KEYWORDS <span class="cls">(1/25)</span></div>
+          <div class="trc-tlt">TRACKED KEYWORDS <span class="cls">({{ count($keywordDetail) }}/25)</span></div>
           <div class="kesy">
-          @include('components.Button.default', array('attributes' => array(
-                                'href' => 'javascript:void(0)',
-                                'id' => 'keyword_btn',
-                                'class' => 'btn btn-primary',
-                                'data-toggle' => 'modal',
-                                'data-target' => '#keywordmodal',
-                                'icon' => 'fas fa-plus-circle',
-                                'title'=> 'Add KeyWord'
-                            )))
-          @include('components.Modals.default', array('attributes' => array(
-                                'id' => 'keywordmodal',
-                                'title' => 'Add Keyword',
-                                'view' => 'components.forms.singleForm',
-                                'viewParameters' => []
-                            )))
-            
-            <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
-            <span class="cont-ps">0 of 9 Selected</span>
+            @if(count($keywordDetail) < 26)
+              @include('components.Button.default', array('attributes' => array(
+                                    'href' => 'javascript:void(0)',
+                                    'id' => 'keyword_btn',
+                                    'class' => 'btn btn-primary',
+                                    'data-toggle' => 'modal',
+                                    'data-target' => '#keywordmodal',
+                                    'icon' => 'fas fa-plus-circle',
+                                    'title'=> 'Add KeyWord'
+                                )))
+              @include('components.Modals.default', array('attributes' => array(
+                                  'id' => 'keywordmodal',
+                                  'title' => 'Add Keyword',
+                                  'view' => 'components.forms.singleForm',
+                                  'viewParameters' => []
+                              )))
+            @endif
+            {{-- <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
+            <span class="cont-ps">0 of 9 Selected</span> --}}
           </div>
           <table class="table table-xs-responsive table-volsd  table-striped" summary="An example of a responsive table using Bootstrap breakpoints." aria-role="table">
             <thead>
@@ -84,7 +90,7 @@
                 <th>CHANGE </th>
                 <th>VOL </th>
                 <th>SD </th>
-                <th>URL </th>
+                {{-- <th>URL </th> --}}
                 <th> </th>
               </tr>
             </thead>
@@ -96,12 +102,12 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   </div>
                 </td>
-                <td class="pgn">2</td>
+                <td class="pgn">{{$keyword->current_position ?? 'N/T'}}</td>
                 <td class="rk-url"><div class="rk-yellow">{{$keyword->keyword}}</div></td>
                 <td class="pgn"> 2 </td>
                 <td class="pgn">55.6m </td>
                 <td class="pgn"> 91</td>
-                <td class="ptgn">http://www.google.com/ </td>
+                {{-- <td class="ptgn">http://www.google.com/ </td> --}}
                 <td class="pgnd"> <img src="{{asset('assets/images/pc_grey.svg')}}" alt="#"> </td>
               </tr>
               @endforeach

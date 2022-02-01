@@ -10,7 +10,7 @@
         type: 'pie'
     },
     title: {
-        text: 'Mothly Results'
+        text: 'Monthly Result'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
