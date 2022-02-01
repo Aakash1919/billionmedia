@@ -62,9 +62,13 @@ class KeywordPlanner extends Controller
     {
         $refreshToken = Auth::user()->google_refresh_token;   
         if($request->has('keyword') && isset($refreshToken)) {
-            $keywordArray = array('count'=>100, 'keyword' => $request->get('keyword'));
-            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keywordArray, $request->get('url'));
-            return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+            $url = $request->get('url') ?? null;
+            if($request->has('action')) {
+                $action = $request->get('action');
+                $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
+                return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+            }
         }else {
             return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
