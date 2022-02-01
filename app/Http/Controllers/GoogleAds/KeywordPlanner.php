@@ -14,14 +14,19 @@ use Google\Ads\GoogleAds\V9\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V9\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V9\Services\UrlSeed;
 use Google\ApiCore\ApiException;
+use Illuminate\Support\Facades\Redirect;
 use Auth;
 use DB;
+
 
 class KeywordPlanner extends Controller
 {
    
     public function index() {
         $refreshToken = Auth::user()->google_refresh_token;
+        if(!isset($refreshToken)) {
+            return Redirect::to('google-authorize');
+        }
         return view('user.keywordPlanner',compact('refreshToken'));
     }
 
