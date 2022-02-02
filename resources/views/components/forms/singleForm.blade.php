@@ -12,13 +12,8 @@
     }
 </style>
 @endpush
-@if (count($errors) > 0)
-@include('components.Alerts.default', array('attributes' => array(
-    'title' => 'Validation Errors',
-    'errors' => $errors->all()
-            )))
-@endif
-<form id="msform" method="post" action="{{route('save-project')}}">
+
+<form id="msform" method="post" action="{{route('add-project-keyword')}}">
     @csrf
     
     <fieldset>
@@ -28,6 +23,7 @@
                     <h2 class="fs-title">Add Keywords to Rank Tracking</h2>
                 </div>
             </div>
+            <input type="hidden" name="projectID" value="{{ Crypt::encryptString($projectID) ?? null}}">
             <div class="row">
                 <div class="col-md-12">
                     <h6>Paste keywords</h6>

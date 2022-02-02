@@ -4,7 +4,7 @@
     Highcharts.chart('line', {
   
       title: {
-        text: 'Suave Creators'
+        text: 'Rank Tracked'
       },
   
       yAxis: {

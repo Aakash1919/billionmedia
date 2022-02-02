@@ -114,14 +114,14 @@
             </div>
 
            @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
-            <div class="tblliul">
+            {{-- <div class="tblliul">
                 <ul>
-                    <li {{ isset($action) && $action == 'similar_keywords' ? 'class="active"': '' }}><a href="javascript:void(0)">Similar keywords</a></li>
-                    <li {{ isset($action) && $action == 'questions' ? 'class="active"': '' }} ><a href="javascript:void(0)">Questions</a></li>
-                    <li {{ isset($action) && $action == 'similar_searches' ? 'class="active"': '' }}><a href="javascript:void(0)">Related searches</a></li>
-                    <li {{ isset($action) && $action == 'autocomplete' ? 'class="active"': '' }}><a href="javascript:void(0)">Auto complete</a></li>
+                    <li class={{ isset($action) && $action == 'similar_keywords' ? "active": '' }}><a href="javascript:void(0)">Similar keywords</a></li>
+                    <li class={{ isset($action) && $action == 'questions' ? "active": '' }} ><a href="javascript:void(0)">Questions</a></li>
+                    <li class={{ isset($action) && $action == 'similar_searches' ? "active": '' }}><a href="javascript:void(0)">Related searches</a></li>
+                    <li class={{ isset($action) && $action == 'autocomplete' ? "active": '' }}><a href="javascript:void(0)">Auto complete</a></li>
                 </ul>
-            </div>
+            </div> --}}
 
             <div class="tab-saction tablle">
                 <div id="tablecontainer">

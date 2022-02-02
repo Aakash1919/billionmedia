@@ -10,7 +10,7 @@
         type: 'pie'
     },
     title: {
-        text: 'Mothly Results'
+        text: 'Monthly Result'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -34,33 +34,33 @@
         name: 'Brands',
         colorByPoint: true,
         data: [{
-            name: 'Chrome',
+            name: 'keyword10',
             y: 61.41,
             sliced: true,
             selected: true
         }, {
-            name: 'Internet Explorer',
+            name: 'Keyword1',
             y: 11.84
         }, {
-            name: 'Firefox',
+            name: 'Keyword2',
             y: 10.85
         }, {
-            name: 'Edge',
+            name: 'Keyword3',
             y: 4.67
         }, {
-            name: 'Safari',
+            name: 'Keyword4',
             y: 4.18
         }, {
-            name: 'Sogou Explorer',
+            name: 'Keyword5',
             y: 1.64
         }, {
-            name: 'Opera',
+            name: 'Keyword6',
             y: 1.6
         }, {
-            name: 'QQ',
+            name: 'Keyword7',
             y: 1.2
         }, {
-            name: 'Other',
+            name: 'Keyword8',
             y: 2.61
         }]
     }]

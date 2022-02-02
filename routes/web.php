@@ -37,11 +37,13 @@ Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthentica
 Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'index'])->middleware('auth')->name('keyword-planner');
 Route::get('/rank-tracking', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'positionTracking'])->middleware('auth')->name('rank-tracking');
 Route::get('/rank-tracking/{id?}', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'rankTracking'])->middleware('auth')->name('rank-tracking-id');
-
+Route::get('/getRank', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'getRank'])->middleware('auth');
 
 /**
  * User Post Routes
  */
 Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
 Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
+Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
+
 

@@ -14,14 +14,19 @@ use Google\Ads\GoogleAds\V9\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V9\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V9\Services\UrlSeed;
 use Google\ApiCore\ApiException;
+use Illuminate\Support\Facades\Redirect;
 use Auth;
 use DB;
+
 
 class KeywordPlanner extends Controller
 {
    
     public function index() {
         $refreshToken = Auth::user()->google_refresh_token;
+        if(!isset($refreshToken)) {
+            return Redirect::to('google-authorize');
+        }
         return view('user.keywordPlanner',compact('refreshToken'));
     }
 
@@ -62,9 +67,13 @@ class KeywordPlanner extends Controller
     {
         $refreshToken = Auth::user()->google_refresh_token;   
         if($request->has('keyword') && isset($refreshToken)) {
-            $keywordArray = array('count'=>100, 'keyword' => $request->get('keyword'));
-            $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keywordArray, $request->get('url'));
-            return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+            $url = $request->get('url') ?? null;
+            if($request->has('action')) {
+                $action = $request->get('action');
+                $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
+                return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+            }
         }else {
             return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
         }
