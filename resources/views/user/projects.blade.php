@@ -3,13 +3,29 @@
 @section('content')
 <div class="page-wrapper">
   <div class="page-content">
-    <div class="hadder-row">
+    <div class="hadder-row ranktrnking">
         <div class="container">
           <div class="col-md-6"><span>All Projects <em>
           </div>
           <div class="col-md-6">
             <div class="lt-udt">
-              <p>{{ date('F d Y', time())}}</p>
+            <div class="keywordbtn">
+      @include('components.Button.default', array('attributes' => array(
+                                  'href' => 'javascript:void(0)',
+                                  'id' => 'cust_btn',
+                                  'class' => 'btn btn-info btn-lg',
+                                  'data-toggle' => 'modal',
+                                  'data-target' => '#threeStepForm',
+                                  'icon' => null,
+                                  'title'=> 'Add Your First Project'
+                              )))
+       @include('components.Modals.default', array('attributes' => array(
+                              'id' => 'threeStepForm',
+                              'title' => null,
+                              'view' => 'components.forms.threeStepForm',
+                              'viewParameters' => []
+                           )))
+  </div>
             </div>
           </div>
         </div>

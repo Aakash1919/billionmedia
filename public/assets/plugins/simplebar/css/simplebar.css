@@ -2643,3 +2643,25 @@ ul.list-unstyled .check-bx input {
 #line {
 	border-right: 1px solid #dcdcdc;
 }
+.keywordbtn #cust_btn {
+	background-color: #ff725e;
+	border: none;
+	color: #fff;
+	font-size: 13px;
+	letter-spacing: 0px;
+	padding: 10px 10px;
+	font-weight: 700;
+	margin: 0 0 0 0;
+	font-style: normal;
+}
+.keywordbtn {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	padding: 0 23px;
+}
+.hadder-row.ranktrnking span {
+	margin: 9px 0 0 0;
+	display: inline-block;
+	width: auto;
+}
