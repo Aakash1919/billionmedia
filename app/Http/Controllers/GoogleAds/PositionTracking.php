@@ -110,7 +110,8 @@ class PositionTracking extends Controller
                     $keywords = explode(',', $response['keyword']);
                     foreach($keywords as  $keys => $value) {
                         if(str_contains($value, $url)) {
-                            array_push($rankArray, ['page'=>++$page, 'position' => ++$keys]);
+                            $position = ($page+1) * ($keys+1);
+                            array_push($rankArray, ['page'=>0, 'position' => ++$position]);
                         }
                     }
                 }
