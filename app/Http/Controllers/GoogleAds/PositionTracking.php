@@ -94,7 +94,7 @@ class PositionTracking extends Controller
                $UserProjectKeyword->project_id = $projectID;
                $UserProjectKeyword->stats = json_encode($keywordStat);
                $UserProjectKeyword->previous_position = $UserProjectKeyword->current_position;
-               $UserProjectKeyword->current_position = isset($rankStats[0]['position']) ? $rankStats[0]['position'] : 'N/T';
+               $UserProjectKeyword->current_position = isset($rankStats[0]['position']) ? $rankStats[0]['position'] : '100+';
                $UserProjectKeyword->keyword = $keyword;
                $UserProjectKeyword->save();
             }
