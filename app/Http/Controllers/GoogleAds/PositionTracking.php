@@ -101,17 +101,21 @@ class PositionTracking extends Controller
         }
     }
 
-    public function getRank($url = null, $keyword =null) {
+    public function getRank($url = null, $keyword = null) {
         $rankArray = [];
         if(isset($url) && $keyword) {
             for($page=0; $page<60; $page = $page+10) {
-                $queryParams = ['q' => $keyword, 'start'=>$page];
-                $response = $this->keywordPlannerObject->crawlGoogleResults($queryParams);
-                $position = strpos($response, $url);
-                if(isset($position) && !empty($position)) {
-                    array_push($rankArray, ['page'=>$page/10, 'position' => $position]);
-                };
+                $response = $this->keywordPlannerObject->getSearchesBasedOnClass($keyword, 'BNeawe UPmit AP7Wnd', $page);
+                if(isset($response['keyword'])) {
+                    $keywords = explode(',', $response['keyword']);
+                    foreach($keywords as  $keys => $value) {
+                        if(str_contains($value, $url)) {
+                            array_push($rankArray, ['page'=>++$page, 'position' => ++$keys]);
+                        }
+                    }
+                }
             }
+            
         }
         return $rankArray;
     }

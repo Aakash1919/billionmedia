@@ -158,9 +158,9 @@ class KeywordPlanner extends Controller
  *        Class for Related Searches : BNeawe s3v9rd AP7Wnd lRVwie
  *        class for Related Questions : Lt3Tzc
  */
-    public function getSearchesBasedOnClass($keyword = null, $class = null) {
+    public function getSearchesBasedOnClass($keyword = null, $class = null, $start = 0) {
         if(isset($keyword) && isset($class)) {
-            $queryParams = ['q' => $keyword, 'start'=>0];
+            $queryParams = ['q' => $keyword, 'start'=>$start];
             $response = $this->crawlGoogleResults($queryParams);
             $relatedSearchesArray = $this->getInnerTextOfDiv($class, $response);
             if(!empty($relatedSearchesArray)) {
