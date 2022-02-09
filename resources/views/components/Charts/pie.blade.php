@@ -43,12 +43,14 @@
         name: 'Brands',
         colorByPoint: true,
         data: [
-            @foreach($attributes as $key => $value)
-            {
-                name: '{{trim($value->keyword)}}',
-                y: {{ (json_decode($value->stats)->data->{0}->searches ?? 0) / $total  }}
-            },
-            @endforeach
+            @if(!empty($attributes)) 
+                @foreach($attributes as $key => $value)
+                {
+                    name: '{{trim($value->keyword)}}',
+                    y: {{ (json_decode($value->stats)->data->{0}->searches ?? 0) / $total  }}
+                },
+                @endforeach
+            @endif
             ]
     }]
 });
