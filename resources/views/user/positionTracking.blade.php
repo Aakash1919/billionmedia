@@ -49,7 +49,9 @@
                 @include('components.Charts.line' )
               </div>
               <div class="col-md-6">
-                @include('components.Charts.pie')
+                @include('components.Charts.pie', array(
+                  'attributes' => $keywordDetail
+                ))
               </div>
             </div>
           </div>

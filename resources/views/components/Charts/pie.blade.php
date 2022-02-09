@@ -1,4 +1,13 @@
 <div id="pie"></div>
+@php
+    if(!empty($attributes)) {
+        $total = 1;
+        foreach ($attributes as $key => $keyword) {
+            $total += json_decode($keyword->stats)->data->{0}->searches ?? 0;
+        }
+    }
+    
+@endphp
 @push('lastScripts')
 <script>
     
@@ -33,36 +42,14 @@
     series: [{
         name: 'Brands',
         colorByPoint: true,
-        data: [{
-            name: 'keyword10',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Keyword1',
-            y: 11.84
-        }, {
-            name: 'Keyword2',
-            y: 10.85
-        }, {
-            name: 'Keyword3',
-            y: 4.67
-        }, {
-            name: 'Keyword4',
-            y: 4.18
-        }, {
-            name: 'Keyword5',
-            y: 1.64
-        }, {
-            name: 'Keyword6',
-            y: 1.6
-        }, {
-            name: 'Keyword7',
-            y: 1.2
-        }, {
-            name: 'Keyword8',
-            y: 2.61
-        }]
+        data: [
+            @foreach($attributes as $key => $value)
+            {
+                name: '{{trim($value->keyword)}}',
+                y: {{ (json_decode($value->stats)->data->{0}->searches ?? 0) / $total  }}
+            },
+            @endforeach
+            ]
     }]
 });
 </script>
