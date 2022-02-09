@@ -33,11 +33,7 @@
             <div class="wor-col">
               <div class="rnk-gn">0 <div class="nk-arow dna"></div>
               </div>
-              <div class="wordp">Keywords<br>moved up</div>
-            </div>
-            <div class="wor-col">
-              <div class="rnk-gn">0 </div>
-              <div class="wordp">Keywords<br>moved up</div>
+              <div class="wordp">Keywords<br>moved Down</div>
             </div>
           </div>
 
