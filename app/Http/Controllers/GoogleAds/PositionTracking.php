@@ -84,11 +84,11 @@ class PositionTracking extends Controller
 
     public function saveProjectKeywords($projectID = null, $keywords = null, $refreshToken=null) {
         if(isset($projectID) && isset($keywords)) {
-            $websiteUrl = UserProjects::find($projectID)->value('website_url');
+            $websiteUrl = UserProjects::where('id',$projectID)->value('website_url');
             $websiteUrl = str_replace(['http://','https://'],"",$websiteUrl);
             $keywordsArray = explode(',', $keywords);
             foreach($keywordsArray as $keyword) {
-               $keywordStat = $this->keywordPlannerObject->getGlobalKeywordAnalytics($refreshToken, ['keyword'=>$keyword, 'count'=>1]);
+              $keywordStat = $this->keywordPlannerObject->getGlobalKeywordAnalytics($refreshToken, ['keyword'=>$keyword, 'count'=>1]);
                $rankStats = $this->getRank($websiteUrl, $keyword);
                $UserProjectKeyword = new UserProjectKeyword();
                $UserProjectKeyword->project_id = $projectID;
@@ -104,17 +104,19 @@ class PositionTracking extends Controller
     public function getRank($url = null, $keyword = null) {
         $rankArray = [];
         if(isset($url) && $keyword) {
+            $i=1;
             for($page=0; $page<60; $page = $page+10) {
                 $response = $this->keywordPlannerObject->getSearchesBasedOnClass($keyword, 'BNeawe UPmit AP7Wnd', $page);
                 if(isset($response['keyword'])) {
                     $keywords = explode(',', $response['keyword']);
                     foreach($keywords as  $keys => $value) {
                         if(str_contains($value, $url)) {
-                            $position = ($page+1) * ($keys+1);
-                            array_push($rankArray, ['page'=>0, 'position' => ++$position]);
+                            $position = $i * ($keys+1);
+                            array_push($rankArray, ['page'=>0, 'position' => $position]);
                         }
                     }
                 }
+                $i++;
             }
             
         }
