@@ -2665,3 +2665,6 @@ ul.list-unstyled .check-bx input {
 	display: inline-block;
 	width: auto;
 }
+#url-type {
+	margin-bottom: 2rem !important;
+}

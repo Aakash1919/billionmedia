@@ -74,6 +74,23 @@
                                   'view' => 'components.forms.singleForm',
                                   'viewParameters' => []
                               )))
+
+               @include('components.Button.default', array('attributes' => array(
+                                    'href' => 'javascript:void(0)',
+                                    'id' => 'competitor_btn',
+                                    'class' => 'btn btn-primary',
+                                    'data-toggle' => 'modal',
+                                    'data-target' => '#competitormodal',
+                                    'icon' => 'fas fa-plus-circle',
+                                    'title'=> 'Add Competitor'
+                                )))
+               @include('components.Modals.default', array('attributes' => array(
+                                  'id' => 'competitormodal',
+                                  'title' => 'Add Competitor',
+                                  'view' => 'components.forms.competitorForm',
+                                  'viewParameters' => []
+                              )))
+
             @endif
             {{-- <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
             <span class="cont-ps">0 of 9 Selected</span> --}}
