@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="page-wrapper">
-  <div class="page-content">
-    @if (session('status'))
+  <div class="page-content"> @if (session('status'))
     @include('components.Alerts.default', array('attributes' => array(
-        'title' => 'Message',
-        'message' => 'Keyword Added Successfully'
-        )))
+    'title' => 'Message',
+    'message' => 'Keyword Added Successfully'
+    )))
     @endif
     <div class="hadder-row">
       <div class="container">
@@ -20,64 +19,57 @@
         </div>
       </div>
     </div>
-
-
-
-<div class="competitor-page-saction-one">
-    <h2>Competitor Tracking</h2>
-    <p>Here are the domains that are your competitors</p>
-    <div class="float-left"><a href="#">pixxelu.com</a></div>
-    <div class="float-right"><ul class="list-unstyled">
-        <li class="init"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;">
-        Hindi - India</li>
-        <li class="pocti" data-value="value 1"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;"> Hindi - India</li>
-    </ul></div>
-</div>
-
-<div class="competitor-page-saction-tow">
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <main>
-      <div id="bar-chart"></div>
-      <h5>Monthly Traffic</h5>
-      <div id="line-chart"></div>  
-    </main>
-</div>
-
-<div class="competitor-page-saction-tow">
-<div class="left-three">
- <h3>Tracked Competitors <span> 0 out of 2</span></h3>   
-</div>  
-<div class="right-three">
-<a href="#" class="add-competitor">ADD COMPETITORS</a>
-<a href="#" class="export">Export</a>
-</div> 
-
-<div class="tbl">
-    <table>
-        <tr>
-          <th><label class="container"><input type="checkbox" checked=""><span class="checkmark"></span></label></th>
-          <th>Contact</th>
-          <th>Country</th>
-          <th>Country</th>
-        <th>Country</th>
-        <th>Country</th>
-        </tr>
-      </table>
-      <div height="400" class="sc-bUQzRK fxExc"><img src="/assets/images/no_content.42e65572.svg" class="sc-tsHpd dGgJti"><br>You haven't added any competitors to this project. Click on "Add Competitors" above to start tracking your competitors.</div>
-</div>
-</div>
-
- 
-</div>
+    <div class="competitor-page-saction-one">
+      <h2>Competitor Tracking</h2>
+      <p>Here are the domains that are your competitors</p>
+      <div class="float-left"><a href="#">pixxelu.com</a></div>
+      <div class="float-right">
+        <ul class="list-unstyled">
+          <li class="init"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;"> Hindi - India</li>
+          <li class="pocti" data-value="value 1"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;"> Hindi - India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="competitor-page-saction-tow"> 
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <main>
+        <div id="bar-chart"></div>
+        <h5>Monthly Traffic</h5>
+        <div id="line-chart"></div>
+      </main>
+    </div>
+    <div class="competitor-page-saction-tow">
+      <div class="left-three">
+        <h3>Tracked Competitors <span> 0 out of 2</span></h3>
+      </div>
+      <div class="right-three"> <a href="#" class="add-competitor">ADD COMPETITORS</a> <a href="#" class="export">Export</a> </div>
+      <div class="tbl">
+        <table>
+          <tr>
+            <th><label class="container">
+                <input type="checkbox" checked="">
+                <span class="checkmark"></span></label></th>
+            <th>Contact</th>
+            <th>Country</th>
+            <th>Country</th>
+            <th>Country</th>
+            <th>Country</th>
+          </tr>
+        </table>
+        <div height="400" class="sc-bUQzRK fxExc"><img src="/assets/images/no_content.42e65572.svg" class="sc-tsHpd dGgJti"><br>
+          You haven't added any competitors to this project. Click on "Add Competitors" above to start tracking your competitors.</div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 @endsection
-@push('javascript')
-<script src="{{ asset('assets/plugins/highcharts/js/highcharts.js')}}"></script>
-<script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
-<script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
-<script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+@push('javascript') 
+<script src="{{ asset('assets/plugins/highcharts/js/highcharts.js')}}"></script> 
+<script src="{{ asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script> 
+<script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script> 
+<script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script> 
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
 <script>
     $("ul").on("click", ".init", function() {
     $(this).closest("ul").children('li:not(.init)').toggle();
@@ -90,7 +82,7 @@ $("ul").on("click", "li:not(.init)", function() {
     $("ul").children('.init').html($(this).html());
     allOptions.toggle();
 });
-</script>
+</script> 
 <script>
     google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawCharts);
@@ -258,5 +250,5 @@ function drawCharts() {
   var pieChart = new google.visualization.PieChart(document.getElementById('pie-chart'));
   pieChart.draw(pieData, pieOptions);
 }
-</script>
+</script> 
 @endpush
