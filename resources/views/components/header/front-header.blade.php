@@ -19,7 +19,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">Tooooo</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">suraj</a></li>
 
                                 <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
                             </ul>
