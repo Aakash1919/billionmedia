@@ -46,4 +46,7 @@ Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::
 Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
 
+Route::get('/competitor-tracking', function () {
+    return view('user.competitorTracking');
+})->name('user.competitorTracking');
 
