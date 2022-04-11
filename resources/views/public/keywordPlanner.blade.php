@@ -283,12 +283,12 @@
                         <div class="content-box-inrr">
                             <h3>Free Keyword Research Tool </h3>
                             <span>Discover new ranking opportunities for your website</span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                            <p>Our keyword research tool is one of the core features of our service offering. As we’ll explain below, it uses unique crawlers to search the length and
+                                 breadth of the internet to provide you with the information you need.</p>
+                            <p>Below, we’ll go over some of the basics, like what a keyword generator tool is, how keywords help pages and websites rank in Google, and we’ll reveal more about our own keyword research tool,
+                                 which you can start using now for free.</p>
+                            <p>If you’d like to dive straight in and use our tool, just click here to sign up for a free account.
+                                 No billing information is required! If you have any questions or would like our help, please contact us.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -303,61 +303,90 @@
                     </div>
                     <div class="col-md-6">
                         <div class="content-box-inrr">
-                            <h3>Create your own keyword set using a wide range of filter options </h3>
-                            <span>Add the keywords to your Seobility project with just one click</span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="content-box-inrr">
-                            <h3>What’s the difference between the Keyword Research Tool and Google's Keyword
-                                Planner? </h3>
-                            <span>The Keyword Research Tool helps you analyze organic search results</span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                            <h3>What Is A Keyword In SEO? </h3>
+                         
+                            <p>A keyword in the world of search engine optimisation (SEO) is a means by which search engines like Google
+                                 and Bing learn and understand what your page is about.</p>
+                            <p>A keyword (or keyphrase) could be 1 word long, or it could be 5 or more. So don’t be misled
+                                 when you read “keyword” and expect to see a singular word.</p>
+                            <p>Keywords are now used on all types of websites beyond search engines, such as Amazon and YouTube, 
+                                as well as e-commerce sites like Etsy. </p>
+                            
+                             
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="content-box-inrr key-list">
-                            <h3>Keyword research based on a target keyword </h3>
-                            <span>The Keyword Research Tool helps you analyze organic search results</span>
-                            <ul>
-                                <li><strong>Lorem</strong> Ipsum is simply dummy text of the printing and
-                                    typesetting</li>
-                                <li><strong>Lorem</strong> Ipsum is simply dummy text of the printing and
-                                    typesetting</li>
-                                <li><strong>Lorem</strong> Ipsum is simply dummy text of the printing and
-                                    typesetting</li>
-                                <li><strong>Lorem</strong> Ipsum is simply dummy text of the printing and
-                                    typesetting</li>
-                                <li><strong>Lorem</strong> Ipsum is simply dummy text of the printing and
-                                    typesetting</li>
+                        <h3>The Different Types Of Keywords</h3>
+                                <span>There are also different types of keywords, such as:</span>
+                                <ul>
+                                <li><strong>Focus keyword -  </strong> this is usually the main keyword that you’re aiming to rank for on that particular page.</li>
+                                <li><strong>Keyword variations  - </strong> in addition to your focus keyword, you can also search for variations of that phrase. For example, if your focus keyword is “beanie hats”,
+                                 you could also include in your article variations like “men’s beanie hats” or “beanie hats for women.”</li>
+                                <li><strong>Related keywords - </strong>keywords that relate to your focus keyword but might not contain the words that make up the phrase should also be included. As we’ll see below, these types of keywords are important in giving your article context, which helps search engines better understand what your content is about. For example, if we stick with the “beanie hat” keyword, 
+                                related terms could include “woollen cap for men” or “Prada beanie”. </li>
+                                <li><strong>Questions - </strong>one of the main reasons people use search engines is to find answers to questions that they have. As a result, searches that begin with the likes of who, what, where and how are some of the most popular. 
+                                Including these questions in your article and providing answers is a great use of your keyword research. </li>
                             </ul>
+                            <P>If you’re looking for a keyword search tool that enables you to search for all of these types of terms, why not try out SEO Science for free? Just <a href="#">click here </a>or the link at the top of this page to get started. </p>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="content-box-inrr">
-                            <h3>Competitor Keyword Research</h3>
-                            <span>The Keyword Research Tool helps you analyze organic search results</span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                            <h3>How Do Keywords Help Pages And Websites Rank?</h3>
+                           <p>So now we know what a keyword is in terms of SEO, how do they help pages and websites rank in search engines? </p>
+                           <p>We know that keywords help search engines understand what our content is about. 
+                               Let’s look at how they actually do that.</p>
+                               <p>Let’s stick with the beanie hats example. To successfully use that keyword, it would be important to include the phrase “beanie hat” within your article a few times. Each usage of the keyword sends a signal 
+                                   to the likes of Google that helps it understand what the content is about. </p>
+             <p>When we write content tailored for search engines, it’s important that we don’t just rely on one keyword but rather that we include a bunch of other relevant or related keywords. These terms provide extra context to the article
+                                        to help search engine crawlers and bots better understand the content.</P>
+          <p>For example, you may also include in your article phrases like “woollen beanie hat” or “green beanie hat”, 
+                                            or seemingly unrelated phrases like “hat and gloves” or “scarf and hat”. </p>
+    <p>Including a variety of relevant keywords gives your article greater context and increases the chances of your page ranking
+                                                 for more than just the keyword “beanie hat.”</p>
+             <p>You may also include questions and answers in your article, such as “how to crochet a beanie hat” or “how do you wear a beanie hat?”</p>
+             <p>The SEO Science keyword planner can help you with all of these things. It enables you 
+                 to make custom lists of relevant and question-based keywords to give your article greater context. </p>
+                 <p>You can carry out free keyword research today using our tool by<a href="#"> clicking here</a> or the button at the top of this page.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="content-box-inrr">
+                            <h3>What Is The SEO Science Keyword Research Tool?</h3>
+                            <p>The SEO Science keyword research tool has been designed by industry professionals to provide 
+                                you with every type of keyword possible</p>
+                            <p>It’s been designed to be super user-friendly, so if you’ve never used a keyword finder or generator before, you’ll be in good hands. We also have lots of useful walk-through videos that you can watch,
+                                 as well as this video below which shows you all of the features of our keyword research tool:</p>
+           
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="content-box-inrr key-list">
+                        <h3>What Makes Our Keyword Research Tool Unique?</h3>
+                                <span>Let’s tell you a bit more about why we believe our keyword research tool is unique. </span>
+                                <ul>
+                                <li>Our tool has been specially designed to provide you with the latest and most relevant question-based keywords on the web. These keyphrases have been taken specifically 
+                                    from search engines so you know that people have genuinely been searching for them. </li>
+                                <li>You’re able to check Cost Per Click (CPC) values of each keyword, which is ideal if you’re looking for a Google Adwords tool to help with paid advertising campaigns.</li>
+                                <li>All keywords have an accurate monthly search volume estimate attached to them, enabling you to work out which search terms are worth pursuing. </li>
+                                <li>You can download and export lists of keywords for you to work on offline.</li>
+                            </ul>
+                            <P>While these are our core features, the SEO Science keyword research tool is continuously being worked on and improved.
+                                 If you have any feedback you’d like to share,<a href="#"> please click here.</a></p>
+                                 <p>And to give the keyword checker a go for free,<a href="#"> please click here.</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="content-box-inrr">
+                            <h3>We Can Help You Boost Your Website Traffic</h3>
+                            <p>At SEO Science we’re devoted to helping you improve your website to help you generate more traffic.</p>
+                            <p>Our keyword research tool is just the beginning. We also have a rank tracker and site audit feature, both of which you can try for free. And we’re certain that by using all of our services,
+                                 your site and its pages will begin to improve and generate more traffic in no time. </p>
+                                 <p>Helping you improve your website traffic is just one of things we can do for you. We can also help you convert that traffic into 
+                                     leads and new business for your organisation.</p>
+                                     <p>To find out more, <a href="#">click here </a>or the button at the top of this page.   </p>
+           
                         </div>
                     </div>
                 </div>

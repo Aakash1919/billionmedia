@@ -3586,3 +3586,15 @@ input:focus-visible {
 .checkbox-all {
 	text-align: center !important;
 }
+.content-box-inrr.term {
+    margin-bottom: 2rem;
+}
+.feat-nav {display: none !important;}
+
+.solu-nav {display: none !important;}
+
+li.nav-item.free-nav {display: none !important;}
+
+li.nav-item.plan-nav {display: none !important;}
+
+li.nav-item.blog-nav {display: none !important;}

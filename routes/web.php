@@ -29,6 +29,11 @@ Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::clas
 Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
 Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'getCountries'])->name('get-countries');
 
+
+Route::get('/terms-conditions', function () {
+    return view('public.termsandConditions');
+})->name('public.termsandConditions');
+
 /**
  * User routes
  */

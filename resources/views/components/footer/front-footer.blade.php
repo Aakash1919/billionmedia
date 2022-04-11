@@ -11,6 +11,8 @@
                         <li><a href="#">TF*IDF Tool</a></li>
                         <li><a href="keyword-research-tool.html">Keyword Research Tool</a></li>
                         <li><a href="#">Plans &amp; Pricing</a></li>
+                        <li><a href="terms-conditions">Terms & condition</a></li>
+
                     </ul>
                 </div>
             </div>

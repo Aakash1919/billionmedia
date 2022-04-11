@@ -14,13 +14,13 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active"><a class="nav-link" href="{{ route('public.features')}}">Features</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.solutions')}}">Solutions</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">tool</a></li>
-
+                                <li class="nav-item feat-nav active"><a class="nav-link" href="{{ route('public.features')}}">Features</a></li>
+                                <li class="nav-item solu-nav"><a class="nav-link" href="{{ route('public.solutions')}}">Solutions</a></li>
+                                <li class="nav-item free-nav"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
+                                <li class="nav-item plan-nav"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
+                                <li class="nav-item blog-nav"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">Keyword Research</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.termsandConditions') }}">Terms condition</a></li>
                                 <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
                             </ul>
                         </div>
