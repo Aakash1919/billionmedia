@@ -34,6 +34,10 @@ Route::get('/terms-conditions', function () {
     return view('public.termsandConditions');
 })->name('public.termsandConditions');
 
+Route::get('/privacy-policy', function () {
+    return view('public.privacypolicy');
+})->name('public.privacypolicy');
+
 /**
  * User routes
  */
