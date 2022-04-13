@@ -38,6 +38,14 @@ Route::get('/privacy-policy', function () {
     return view('public.privacypolicy');
 })->name('public.privacypolicy');
 
+Route::get('/site-audit', function () {
+    return view('public.siteaudit');
+})->name('public.siteaudit');
+
+Route::get('/keyword-Rank', function () {
+    return view('public.keywordRank');
+})->name('public.keywordRank');
+
 /**
  * User routes
  */
