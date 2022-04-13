@@ -20,10 +20,10 @@
                                 <li class="nav-item plan-nav"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
                                 <li class="nav-item blog-nav"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">keywordResearch</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.termsandConditions') }}">Terms condition</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.privacypolicy') }}">PrivacyPolicy</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.siteaudit') }}">SiteAudit</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.keywordRank') }}">keywordRank</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.siteaudit') }}">SiteAudit</a></li>
+                               
                                 
                                 <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
                             </ul>

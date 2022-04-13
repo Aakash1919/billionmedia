@@ -12,6 +12,7 @@
                         <li><a href="keyword-research-tool.html">Keyword Research Tool</a></li>
                         <li><a href="#">Plans &amp; Pricing</a></li>
                         <li><a href="terms-conditions">Terms & condition</a></li>
+                        <li><a href="privacy-policy">privacy Policy</a></li>
 
                     </ul>
                 </div>

@@ -69,7 +69,7 @@
                                           load speed—as well as any other issues that may damage user experience, such as broken internal and external links. </p>
                                      <p>The website audit will also feed back any issues to do with specific pages,
                                           such as those that lack a meta description and pages with titles that are too long for search engines to read. </p>
-                                          <span>You can try the site analysis tool for free today by clicking here. </span>
+                                          <span>You can try the site analysis tool for free today by <a href="#">clicking here</a>. </span>
                                     
                                 </div>
                                 </div>
