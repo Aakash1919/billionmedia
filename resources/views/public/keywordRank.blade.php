@@ -4,7 +4,7 @@
 <div class="content-box-kewod">
      <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>Keyword Rank </h3>
                            
@@ -18,8 +18,19 @@
                                    how it can help you, and how you can try it for free today. </p>     
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>What Is A Keyword Rank Tracker?</h3>
                            
@@ -32,7 +43,9 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+                  
+
+                    <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>What Are The Benefits Of Using A Keyword Rank Tracker?</h3>
                            
@@ -44,7 +57,21 @@
                                   
                         </div>
                     </div>
-                    <div class="col-md-12">
+
+                    <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>How The SEO Science Keyword Rank Tracker Tool Can Help You</h3>
                            
@@ -54,8 +81,9 @@
                                   especially if you’re relying on other SEO tools and suites that only provide updates irregularly or once per month.  </p>   
                         </div>
                     </div>
+                    
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>Start Tracking Your Keywords Today</h3>
                            
@@ -64,6 +92,11 @@
                                  live reports on your SERP rankings which you can use to take more concrete action in regards to your SEO strategy. </p>   
                                 <p>To register, just <a href="#">click here</a>.</p> 
                                 <p>If you’d like to learn a bit more about the SEO Science rank tracker tool, please don’t hesitate to get in touch. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
                         </div>
                     </div>
 </div>

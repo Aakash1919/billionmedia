@@ -8,10 +8,11 @@
 
 <div class="keyword-saction-one research-keyword">
 
-    <div class="container">
+    
         <div class="keyword-box-one">
             <h3>Keyword Research</h3>
             <p>You have 2 of 3 checks left today</p>
+            <div class="container">
             <div class="tab-saction tab-keword">
                 <ul class="tabs">
                     <li class="tab-link current" data-tab="tab-1">Related keywords</li>
@@ -276,6 +277,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+           
             @else
             <div class="content-box-kewod">
                 <div class="row">
@@ -394,7 +397,7 @@
             @endif
         </div>
     </div>
-</div>
+
 @push('scripts')
 <script>
     $(document).ready(function () {

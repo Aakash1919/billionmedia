@@ -3659,3 +3659,18 @@ li.nav-item.blog-nav {display: none !important;}
 .content-box-inrr.key-list.privacy h5 {
     margin: 20px 0 0;
 }
+.content-box-kewod .col-md-6:nth-child(7) img {
+    float: left;
+}
+ul.site-conent {
+    margin: 0 !important;
+}
+.content-box-kewod .col-md-6:nth-child(9) img {
+    float: left;
+}
+.col-md-6:nth-child(7) .content-box-inrr.site img {
+    float: right;
+}
+.col-md-12.mart {
+    margin: 0 0 3.5rem;
+}
