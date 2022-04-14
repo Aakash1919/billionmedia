@@ -22,13 +22,6 @@
                     </div>
                 </div>
             </div>
-            <ul class="logo-imge-bnnr">
-                <span>AS FEATURED ON:</span>
-                <li><a href="#"><img src="{{ asset('assets/front/images/logo-1.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/front/images/logo-2.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/front/images/logo-3.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/front/images/logo-4.png') }}"></a></li>
-            </ul>
         </div>
     </div>
 </div>
@@ -40,18 +33,18 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="about-saction-left">
-                    <img src="{{ asset('assets/front/images/businessman-using-smartphone.jpg') }}">
+                    <img src="{{ asset('assets/images/image01-1.png') }}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="about-saction-right">
                     <h3>About Us</h3>
-                    <h2>Boosts Your Website Traffic!</h2>
-                    <span>Adumn nec unum copiosae. Sea ex everti labores, ad option iuvaret qui muva.</span>
-                    <p>Ea pro tibique comprehensam, sed ea verear numquam molestie. Nam te omittam comprehensam. Ne nam
-                        nonumy putent fuisset, reque fabulas usu ne. Ex vel populo appellantur. Eos ne delenit admodum.
-                    </p>
-                    <a href="#">Learn More <img src="{{ asset('assets/front/images/right-arrow.png') }}"></a>
+                    <h2>What Is SEO Science? </h2>
+                    <span>SEO Science is a complete search engine optimisation tool.</span>
+                    <p>It helps both individuals and companies assess, improve and develop their website’s SEO performance, using cutting edge technology and professional insights gleaned through years working in the industry.</p>
+                    <p>You can conduct keyword research using our unique crawlers, track the performance of keywords, and conduct site audits of your site to identify areas of improvement to help give you the edge over your competitors.</p>
+                    <p>SEO Science is free to use, with a paid package that gives you full and complete access to all services.</p>
+                    <p>You can also browse our site for lots of helpful guides on improving your website’s performance. And you can check out our YouTube channel which has lots of quick videos packed with useful tips.</p>
                 </div>
             </div>
         </div>
@@ -64,203 +57,86 @@
 
 <div class="saction-tow">
     <div class="container">
-        <h2>Billion Media can boost<br> up your web traffic</h2>
-        <p>We’ve got the tools you need to improve your website’s performance<br> and turn more browsers into buyers.
-        </p>
-        <div class="saction-tow-box">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-11.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>Keyword Research</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-9.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>Content Explorer</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
+        <h2>How Can SEO <br>Science Help Me?</h2>
+        <p>SEO Science is designed to help you improve your online presence in a number of ways. We help you do this through our various tools and services, which we’ll discuss below.</p>
+        
 
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-8.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>On-Site & Data Explorer</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-7.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>Rank Tracker</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-6.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>On-Site & Data Explorer</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="saction-tow-box-inner">
-                        <div class="icon-imge">
-                            <img src="{{ asset('assets/front/images/icon-5.png') }}">
-                        </div>
-                        <div class="erwo-image"><img src="{{ asset('assets/front/images/icon-10.png') }}"></div>
-                        <h3>On-Site & Data Explorer</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="new-boxhome">
+<div class="row">
+<div class="col-md-6">
+<div class="new-boxhome-inner">
+<h3>SEO Keyword Research </h3>
+<span>Our SEO keyword research tool is one of the core services that we offer. If you’re unfamiliar with such a tool, it’s simply a means of finding out crucial information about search terms that you’d like to target for your own website. </span>    
+<em>The SEO Science keyword tool provides data on:</em>
+<ul>
+    <li>Your desired keyword and variations of that term that could be used in your written content</li>
+    <li>Any search terms that are related to your focus keyword</li>
+    <li>Questions relating to that keyword which other people have used search engines to find the answer for</li>
+</ul>
+
+</div>
+</div>
+<div class="col-md-6">
+<div class="new-boxhome-inner">
+    <img src="{{ asset('assets/images/new-home-14-banner-img.png') }}">
+</div>
+</div>
+</div>    
+</div>
+
+
+        
     </div>
 </div>
 
 
-<div class="saction-price">
-    <div class="container">
-        <h2>Simple, transparent pricing</h2>
-        <p>No contracts. No surprise fees.</p>
-        <div class="tab-saction">
-            <ul class="tabs">
-                <li class="tab-link current" data-tab="tab-1">MONTHLY</li>
-                <li class="tab-link" data-tab="tab-2">YEARLY</li>
-            </ul>
-            <div id="tab-1" class="tab-content current">
-                <div class="table-price">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="home-price-new">
-                                <div class="tit-pric">Starter</div>
-                                <div class="price-pric">$39<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>1 user</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
+<div class="saction-neww">
+<div class="container">
+    <span>When you conduct your search, you’ll be provided with other pieces of data too, such as the monthly search volume of each keyword and whether it has any cost per click value, which can be very useful if you’re planning to use paid advertisements such as on Google. </span>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ asset('assets/images/image09.png') }}">
+        </div>
+        <div class="col-md-6">
+            <div class="saction-neww-inner">
+                <div class="saction-neww-inner">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-head" id="headingOne">
+                            <h2 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Rank Tracking
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                            <p>As well as conducting keyword research and putting together content designed to help you rank for those search terms, it’s also important to track the performance of your efforts. Without doing so, you could be left in the dark as to whether or not all your hard work has paid off.</p>
+                            <p>That’s why SEO Science has a rank tracking function. It provides you with daily updates on how your keywords are performing. </p>       
+                           <p>This is very useful in working out whether your content has done the job in getting indexed and ranked, and whether any updates you make to that page have had either a positive or negative impact on its search engine performance. </p>        
                             </div>
+                          </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="home-price-new home-price-pro">
-                                <div class="tit-pric">Pro</div>
-                                <div class="price-pric">$99<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>3 users</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
+                        <div class="card">
+                          <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Site Audits
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>We feel one of the most important actions you can carry out on a regular basis is to carry out a site audit of your site.</p>
+                             <p>Over time, errors can develop on your website, such as unminified CSS and Javascript files, which can slow down and hamper the performance of your website. </p>
+                             <p>With our site audit, you can identify these types of issues, as well as problems to do with the images used, linking structure, broken internal and external links, and issues to do with anchor text. </p>
+                             <p>Our site audit service also provides guidance on the steps that you can take to fix these problems quickly to get your site back on track.</p>
                             </div>
+                          </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="home-price-new">
-                                <div class="tit-pric">Enterprise</div>
-                                <div class="price-pric">$150<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>Unlimited</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="tab-2" class="tab-content">
-                <div class="table-price">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="home-price-new">
-                                <div class="tit-pric">Starter</div>
-                                <div class="price-pric">$60<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>1 user</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="home-price-new home-price-pro">
-                                <div class="tit-pric">Pro</div>
-                                <div class="price-pric">$150<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>3 users</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="home-price-new">
-                                <div class="tit-pric">Enterprise</div>
-                                <div class="price-pric">$200<em>/mo</em></div>
-                                <ul>
-                                    <li>All limited links</li>
-                                    <li>Own analytics platform</li>
-                                    <li>Chat support</li>
-                                    <li>Number of users <strong>Unlimited</strong></li>
-                                    <li>Optimize hashtags</li>
-                                    <li>Account manager</li>
-                                    <li>Number of articles</li>
-                                    <li>Satisfaction guaranteed</li>
-                                </ul>
-                                <a href="#">Choose plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                      </div>
+                </div>  
             </div>
         </div>
-    </div>
+    </div>    
+</div>        
 </div>
 
 
