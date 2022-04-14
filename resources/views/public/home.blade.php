@@ -95,11 +95,44 @@
     <span>When you conduct your search, you’ll be provided with other pieces of data too, such as the monthly search volume of each keyword and whether it has any cost per click value, which can be very useful if you’re planning to use paid advertisements such as on Google. </span>
     <div class="row">
         <div class="col-md-6">
-            <div class="saction-neww-inner">
-            </div>
+            <img src="{{ asset('assets/images/image09.png') }}">
         </div>
         <div class="col-md-6">
             <div class="saction-neww-inner">
+                <div class="saction-neww-inner">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-head" id="headingOne">
+                            <h2 class="mb-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Rank Tracking
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                            <p>As well as conducting keyword research and putting together content designed to help you rank for those search terms, it’s also important to track the performance of your efforts. Without doing so, you could be left in the dark as to whether or not all your hard work has paid off.</p>
+                            <p>That’s why SEO Science has a rank tracking function. It provides you with daily updates on how your keywords are performing. </p>       
+                           <p>This is very useful in working out whether your content has done the job in getting indexed and ranked, and whether any updates you make to that page have had either a positive or negative impact on its search engine performance. </p>        
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Site Audits
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                             <p>We feel one of the most important actions you can carry out on a regular basis is to carry out a site audit of your site.</p>
+                             <p>Over time, errors can develop on your website, such as unminified CSS and Javascript files, which can slow down and hamper the performance of your website. </p>
+                             <p>With our site audit, you can identify these types of issues, as well as problems to do with the images used, linking structure, broken internal and external links, and issues to do with anchor text. </p>
+                             <p>Our site audit service also provides guidance on the steps that you can take to fix these problems quickly to get your site back on track.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>  
             </div>
         </div>
     </div>    

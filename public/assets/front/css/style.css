@@ -3732,3 +3732,47 @@ li.nav-item.blog-nav {display: none !important;}
 	font-size: 21px;
 	line-height: 30px;
 }
+
+.accordion {
+	margin-top: 40px;
+  }
+  .accordion .card {
+	border: none;
+	margin-bottom: 20px;
+  }
+  .accordion .card h2 {
+	background: url('/assets/images/Vector.svg') no-repeat calc(100% - 10px) center;
+	background-size: 20px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+}
+  .accordion .card h2.collapsed {
+	background-image: url('/assets/images/Vector-1.svg');
+  }
+  .accordion .card-body {
+	padding-left: 0;
+	padding-right: 0;
+  }
+  .saction-neww-inner .card {
+	background-color: #fff;
+	border-radius: 0;
+	padding: 15px;
+	box-shadow: 0 0 10px 0 #dcdcdc;
+	text-align: left;
+}
+.saction-neww-inner .card {
+	background-color: #fff;
+	border-radius: 0 !important;
+	padding: 15px !important;
+	box-shadow: 0 0 10px 0 #dcdcdc;
+	text-align: left;
+}
+.saction-neww-inner .card p {
+	margin: 13px 0 0 0;
+	line-height: 20px;
+	font-size: 14px;
+}
+.saction-neww .row {
+	margin-top: 7rem;
+}
