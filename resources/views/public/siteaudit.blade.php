@@ -4,7 +4,7 @@
 <div class="content-box-kewod">
     <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                         <div class="content-box-inrr key-list site">
                                 <h3>Site Audit </h3>
                                 <p>An SEO site audit is an important task to undertake if you’re managing one or a number of websites. If you’re really
@@ -16,37 +16,64 @@
                                 </div>
                                 </div>
 
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                        <div class="content-box-inrr">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+
+
+                    
+
+                                <div class="col-md-12 mart">
                                 <div class="content-box-inrr key-list site">
                                 <h3>What Is An SEO Site Audit?</h3>
                                 <p>A site audit in SEO terms is the process of carrying out an analytical assessment of the performance of your site. </p>
 
                                      <p>Most site analysis tools will examine the key performance indicators, all of which feed into the user’s experience. </p>
                           <span>Some of these areas include:</span>
-                          <ul>
+                          <ul class="site-conent">
                               <li>	Site load speed</li>
                               <li>	Page load speed</li>
                               <li>	Any broken internal or external links</li>
                               <li>	And on a more technical level, whether there are any redundant Javascript or CSS files</li>
 </ul>
 <p>Some site audits can also assess the structure of your website, which is important in helping Google and other search engines understand your content. </p>
+</div>
+</div>
+<div class="col-md-6 mart">
+                                <div class="content-box-inrr key-list site">
+
 <h5>Common Issues That Site Audits Reveal</h5>
 <p>We’ve named some issues that can crop up in site audits, but which are most common?</p>
 <p>Perhap the biggest area of concern is site and page load speed. In their most recent updates for mobile and desktop users, Google has highlighted load speeds as one of their “Core Web Vitals”,
      which is tied into the user’s experience when browsing a site.</p>
      <p>This means that websites that load slowly are less likely to rank well in search engines. This is because statistically, the longer a page takes to load, the more likely that user is to bounce away from the page before it finally does.
           This is according to <a href="#" target="_blank">data published by Google</a>, who have said:</p>
-          <em>“The probability of bounce increases 32% as page load time goes from 1 second to 3 seconds.”</em>
+          
+                                </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                        <div class="content-box-inrr site">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+                                <div class="col-md-12 mart">
+                                <div class="content-box-inrr key-list site">
+                                <em>“The probability of bounce increases 32% as page load time goes from 1 second to 3 seconds.”</em>
           <p>So if your website is slow, you could be missing out on traffic, which in turn could be harming your business. </p>
           <p>You can check your website’s load speed now for mobile and desktop devices by visiting Google’s Page Speed Insights tool. 
               In a few seconds it’ll provide you with a detailed report of your site’s performance and give you some guidance on how to fix it.</p>
           <p>However, the advice given can be quite technical. You may prefer to use the SEO Science website audit tool.
                You can try it for free and your report comes with guidance on how to take steps to fix any issues that are revealed. </p>
                <span>If you still can’t resolve the problems, get in touch with us and we’ll do our best to help. </sapn>
-                                </div>
-                                </div>
+</div>
+</div>
 
-                                <div class="col-md-12">
+                        
+
+                                <div class="col-md-6">
                         <div class="content-box-inrr key-list site">
                                 <h3>Why Should You Carry Out Regular Site Audits?</h3>
                                 <p>A failure to carry out regular site audits runs the risk of issues developing on your website, 
@@ -59,8 +86,20 @@
                                     
                                 </div>
                                 </div>
+                                <div class="col-md-6">
+                        <div class="content-box-inrr site">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
 
-                                <div class="col-md-12">
+
+                    <div class="col-md-6">
+                        <div class="content-box-inrr site">
+                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                        </div>
+                    </div>
+
+                                <div class="col-md-6">
                         <div class="content-box-inrr key-list site">
                                 <h3>How Can The SEO Science Site Audit Tool Help Me?</h3>
                                 <p>As we’ve touched upon above, the SEO Science site audit checker will scan your whole site to identify any potential performance issues.  </p>
