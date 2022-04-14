@@ -253,25 +253,26 @@ body{
 	width: 100%;
 	padding: 66px 0;
 	background-color: #f9f9f9;
+	text-align: center;
 }
 .saction-tow h2 {
 	text-align: center;
 	color: #263238;
-	font-size: 48px;
+	font-size: 45px;
 	font-weight: bold;
-	line-height: 48px;
+	line-height: 44px;
 	margin: 0 0 0 0;
 	display: inline-block;
 	width: 100%;
 }
 .saction-tow p {
-	margin: 19px 0 0 0;
+	margin: 19px auto;
 	display: inline-block;
-	width: 100%;
+	width: 62%;
 	text-align: center;
 	color: #263238;
-	font-size: 20px;
-	line-height: 24px;
+	font-size: 16px;
+	line-height: 21px;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -2813,9 +2814,9 @@ input:focus-visible {
 }
 .about-saction-right p {
 	font-size: 16px;
-	line-height: 28px;
-	margin: 30px 0 0 0;
-	width: 83%;
+	line-height: 25px;
+	margin: 27px 0 0 0;
+	width: 100%;
 }
 .about-saction-right a {
 	display: inline-block;
@@ -2830,7 +2831,7 @@ input:focus-visible {
 	margin: 0 0 0 9px;
 }
 .about-saction-right {
-	margin-top: 6rem;
+	margin-top: 0rem;
 }
 .heading {
 	text-align: center;
@@ -3658,4 +3659,76 @@ li.nav-item.blog-nav {display: none !important;}
 }
 .content-box-inrr.key-list.privacy h5 {
     margin: 20px 0 0;
+}
+
+.new-boxhome {
+	text-align: left;
+	display: inline-block;
+	margin: 70px 0 0 0;
+}
+.new-boxhome h3 {
+	color: #263238;
+	font-weight: bold;
+	font-size: 30px;
+}
+.new-boxhome span {
+	margin: 10px 0 0 0;
+	color: #666;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: 300;
+	display: inline-block;
+	width: 100%;
+}
+.new-boxhome em {
+	margin: 3rem 0 0 3rem;
+	display: inline-block;
+	font-style: normal;
+	color: #263238;
+	font-weight: bold;
+	font-size: 20px;
+}
+.new-boxhome ul {
+	display: inline-block;
+	width: 100%;
+	margin: 25px 0 0 3rem;
+}
+.new-boxhome ul li {
+	position: relative;
+	display: inline-block;
+	width: 89%;
+	margin: 0 0 27px 0;
+	padding: 0 0 0 40px;
+	color: #333;
+	font-size: 15px;
+	line-height: 20px;
+}
+.new-boxhome ul li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	background: url(/assets/images/home-17-thick.png);
+	width: 25px;
+	height: 25px;
+	background-position: center;
+	background-size: cover;
+}
+.new-boxhome img {
+	width: 100%;
+	float: right;
+}
+.saction-neww {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding: 6rem 0;
+}
+.saction-neww span {
+	display: inline-block;
+	margin: 0 auto;
+	width: 84%;
+	color: #263238;
+	font-weight: 600;
+	font-size: 21px;
+	line-height: 30px;
 }
