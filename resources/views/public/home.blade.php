@@ -240,6 +240,24 @@
         </div>
     </div>
 </div>
+
+
+
+<div class="signup-saction">
+<div class="container">
+    <h3>Sign Up For SEO Science Today For Free</h3>
+    <p>You can sign up for the SEO Science free package today. As part of this free package you can carry out keyword research, track a number of keywords and carry out site audits of your website. </p>
+<p>You can also subscribe to our paid package which gives you full and unlimited access to all of our services.</p>
+<ul>
+<li><a href="#" class="sign">Sign up</a></li>
+<li><a href="#" class="cont">Contact us</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
 @push('scripts')
 <script>
     $(document).ready(function () {

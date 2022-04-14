@@ -3776,3 +3776,50 @@ li.nav-item.blog-nav {display: none !important;}
 .saction-neww .row {
 	margin-top: 7rem;
 }
+.signup-saction {
+	display: inline-block;
+	width: 100%;
+	background-color: #f9f9f9;
+	text-align: center;
+	padding: 6rem 0;
+}
+.signup-saction h3 {
+	display: inline-block;
+	width: 51%;
+	margin: 0 auto;
+	color: #263238;
+	font-size: 40px;
+	font-weight: 600;
+}
+.signup-saction p {
+	color: #666;
+	margin: 1rem auto 10px;
+	width: 70%;
+	font-size: 16px;
+	line-height: 20px;
+}
+.signup-saction li {
+	display: inline-block;
+	width: auto;
+	margin: 0 15px;
+}
+.signup-saction ul {
+	display: inline-block;
+	margin: 3rem 0 0 0;
+}
+.signup-saction li a {
+	width: 150px;
+	display: inline-block;
+	line-height: 46px;
+	border-radius: 8px;
+	height: 45px;
+	font-size: 20px;
+}
+.sign {
+	background-color: #FF725E;
+	color: #fff;
+}
+.cont {
+	background-color: #263238;
+	color: #fff !important;
+}
