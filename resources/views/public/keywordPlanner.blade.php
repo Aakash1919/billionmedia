@@ -278,7 +278,7 @@
                 </div>
             </div>
             </div>
-           
+            </div>
             @else
             <div class="content-box-kewod">
                 <div class="row">
@@ -395,7 +395,7 @@
                 </div>
             </div>
             @endif
-        </div>
+        
     </div>
 
 @push('scripts')

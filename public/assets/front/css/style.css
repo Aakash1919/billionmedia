@@ -3658,6 +3658,24 @@ li.nav-item.blog-nav {display: none !important;}
 .content-box-inrr.key-list.privacy h5 {
     margin: 20px 0 0;
 }
+<<<<<<< HEAD
+.content-box-kewod .col-md-6:nth-child(7) img {
+    float: left;
+}
+ul.site-conent {
+    margin: 0 !important;
+}
+.content-box-kewod .col-md-6:nth-child(9) img {
+    float: left;
+}
+.col-md-6:nth-child(7) .content-box-inrr.site img {
+    float: right;
+}
+.col-md-12.mart {
+    margin: 0 0 3.5rem;
+}
+
+=======
 
 .new-boxhome {
 	text-align: left;
@@ -3843,3 +3861,4 @@ li.nav-item.blog-nav {display: none !important;}
 	font-size: 16px;
 	margin: 7px 0;
 }
+>>>>>>> 82675fb01a19f01c2e5229b9f25d2027ae5e3157
