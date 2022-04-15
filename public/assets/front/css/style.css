@@ -150,7 +150,7 @@ body{
 }
 .banner-saction-box-left h2 {
 	color: #263238;
-	font-size: 55px;
+	font-size: 50px;
 	font-weight: 600;
 	line-height: 60px;
 	display: inline-block;
@@ -162,13 +162,11 @@ body{
 .banner-saction-box-left p {
 	margin: 20px 0 0 0;
 	color: #263238;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 400;
 	display: inline-block;
 	line-height: 31px;
 	font-family: 'Open Sans', sans-serif;
-}
-.banner-saction-box-left p strong {
 }
 .banner-saction-box-left .search {
 	display: inline-block;
@@ -3660,6 +3658,7 @@ li.nav-item.blog-nav {display: none !important;}
 .content-box-inrr.key-list.privacy h5 {
     margin: 20px 0 0;
 }
+<<<<<<< HEAD
 .content-box-kewod .col-md-6:nth-child(7) img {
     float: left;
 }
@@ -3676,3 +3675,190 @@ ul.site-conent {
     margin: 0 0 3.5rem;
 }
 
+=======
+
+.new-boxhome {
+	text-align: left;
+	display: inline-block;
+	margin: 70px 0 0 0;
+}
+.new-boxhome h3 {
+	color: #263238;
+	font-weight: bold;
+	font-size: 30px;
+}
+.new-boxhome span {
+	margin: 10px 0 0 0;
+	color: #666;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: 300;
+	display: inline-block;
+	width: 100%;
+}
+.new-boxhome em {
+	margin: 3rem 0 0 0rem;
+	display: inline-block;
+	font-style: normal;
+	color: #263238;
+	font-weight: bold;
+	font-size: 20px;
+}
+.new-boxhome ul {
+	display: inline-block;
+	width: 100%;
+	margin: 25px 0 0 0rem;
+}
+.new-boxhome ul li {
+	position: relative;
+	display: inline-block;
+	width: 89%;
+	margin: 0 0 27px 0;
+	padding: 0 0 0 40px;
+	color: #333;
+	font-size: 15px;
+	line-height: 20px;
+}
+.new-boxhome ul li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	background: url(/assets/images/home-17-thick.png);
+	width: 25px;
+	height: 25px;
+	background-position: center;
+	background-size: cover;
+}
+.new-boxhome img {
+	width: 100%;
+	float: right;
+}
+.saction-neww {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding: 4rem 0;
+}
+.saction-neww span {
+	display: inline-block;
+	margin: 0 auto;
+	width: 88%;
+	color: #263238;
+	font-weight: 300;
+	font-size: 23px;
+	line-height: 30px;
+}
+.saction-neww span em {
+	font-style: normal;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+  .saction-neww-inner .card {
+	background-color: #fff;
+	border-radius: 0;
+	padding: 15px;
+	box-shadow: 0 0 10px 0 #dcdcdc;
+	text-align: left;
+}
+.saction-neww-inner .card {
+	background-color: #fff;
+	border-radius: 0 !important;
+	padding: 15px !important;
+	box-shadow: 0 0 10px 0 #dcdcdc;
+	text-align: left;
+}
+.saction-neww-inner .card p {
+	margin: 13px 0 0 0;
+	line-height: 20px;
+	font-size: 14px;
+}
+.saction-neww .row {
+	margin-top: 7rem;
+}
+.signup-saction {
+	display: inline-block;
+	width: 100%;
+	background-color: #f9f9f9;
+	text-align: center;
+	padding: 6rem 0;
+}
+.signup-saction h3 {
+	display: inline-block;
+	width: 51%;
+	margin: 0 auto;
+	color: #263238;
+	font-size: 40px;
+	font-weight: 600;
+}
+.signup-saction p {
+	color: #666;
+	margin: 1rem auto 10px;
+	width: 70%;
+	font-size: 16px;
+	line-height: 20px;
+}
+.signup-saction li {
+	display: inline-block;
+	width: auto;
+	margin: 0 15px;
+}
+.signup-saction ul {
+	display: inline-block;
+	margin: 3rem 0 0 0;
+}
+.signup-saction li a {
+	width: 150px;
+	display: inline-block;
+	line-height: 46px;
+	border-radius: 8px;
+	height: 45px;
+	font-size: 20px;
+}
+.sign {
+	background-color: #FF725E;
+	color: #fff;
+}
+.cont {
+	background-color: #263238;
+	color: #fff !important;
+}
+.saction-neww-inner {
+	text-align: left;
+}
+.saction-neww-inner h2 {
+	margin: 0;
+	color: #263238;
+	font-size: 35px;
+	font-weight: bold;
+}
+.saction-neww-inner p {
+	font-size: 16px;
+	line-height: 25px;
+	color: #666;
+}
+.blog-detlas-saction {
+	display: inline-block;
+	width: 100%;
+	margin: 3rem 0;
+}
+.blog-detlas-saction-left h2 {
+	font-size: 40px;
+	display: inline-block;
+	margin: 25px 0 0 0;
+}
+.blog-detlas-saction-left p {
+	font-size: 16px;
+	line-height: 25px;
+	color: #666;
+}
+.blog-detlas-saction-left h3 {
+	font-size: 30px;
+	font-weight: 500;
+}
+.blog-detlas-saction-left li {
+	display: inline-block;
+	width: 100%;
+	font-size: 16px;
+	margin: 7px 0;
+}
+>>>>>>> 82675fb01a19f01c2e5229b9f25d2027ae5e3157

@@ -46,6 +46,10 @@ Route::get('/keyword-Rank', function () {
     return view('public.keywordRank');
 })->name('public.keywordRank');
 
+Route::get('/blog-details', function () {
+    return view('public.blogDetails');
+})->name('public.blogDetails');
+
 /**
  * User routes
  */

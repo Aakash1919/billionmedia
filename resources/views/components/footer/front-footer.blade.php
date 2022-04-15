@@ -24,7 +24,7 @@
             <div class="col-md-3">
                 <div class="box-footer">
                     <h3>Contact:</h3>
-                    <p>support@Billion Media</p>
+                    <p>info@seoscience.com</p>
                     <ul class="social-icon">
                         <li><a href="#"><img src="{{ asset('assets/front/images/Icon.png') }}"></a></li>
                         <li><a href="#"><img src="{{ asset('assets/front/images/Icon(2).png') }}"></a></li>
