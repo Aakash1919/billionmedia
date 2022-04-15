@@ -3660,7 +3660,6 @@ li.nav-item.blog-nav {display: none !important;}
 .content-box-inrr.key-list.privacy h5 {
     margin: 20px 0 0;
 }
-<<<<<<< HEAD
 .content-box-kewod .col-md-6:nth-child(7) img {
     float: left;
 }
@@ -3675,121 +3674,5 @@ ul.site-conent {
 }
 .col-md-12.mart {
     margin: 0 0 3.5rem;
-=======
-
-.new-boxhome {
-	text-align: left;
-	display: inline-block;
-	margin: 70px 0 0 0;
-}
-.new-boxhome h3 {
-	color: #263238;
-	font-weight: bold;
-	font-size: 30px;
-}
-.new-boxhome span {
-	margin: 10px 0 0 0;
-	color: #666;
-	line-height: 20px;
-	font-size: 16px;
-	font-weight: 300;
-	display: inline-block;
-	width: 100%;
-}
-.new-boxhome em {
-	margin: 3rem 0 0 3rem;
-	display: inline-block;
-	font-style: normal;
-	color: #263238;
-	font-weight: bold;
-	font-size: 20px;
-}
-.new-boxhome ul {
-	display: inline-block;
-	width: 100%;
-	margin: 25px 0 0 3rem;
-}
-.new-boxhome ul li {
-	position: relative;
-	display: inline-block;
-	width: 89%;
-	margin: 0 0 27px 0;
-	padding: 0 0 0 40px;
-	color: #333;
-	font-size: 15px;
-	line-height: 20px;
-}
-.new-boxhome ul li::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	background: url(/assets/images/home-17-thick.png);
-	width: 25px;
-	height: 25px;
-	background-position: center;
-	background-size: cover;
-}
-.new-boxhome img {
-	width: 100%;
-	float: right;
-}
-.saction-neww {
-	display: inline-block;
-	width: 100%;
-	text-align: center;
-	padding: 6rem 0;
-}
-.saction-neww span {
-	display: inline-block;
-	margin: 0 auto;
-	width: 84%;
-	color: #263238;
-	font-weight: 600;
-	font-size: 21px;
-	line-height: 30px;
 }
 
-.accordion {
-	margin-top: 40px;
-  }
-  .accordion .card {
-	border: none;
-	margin-bottom: 20px;
-  }
-  .accordion .card h2 {
-	background: url('/assets/images/Vector.svg') no-repeat calc(100% - 10px) center;
-	background-size: 20px;
-	cursor: pointer;
-	font-size: 18px;
-	font-weight: bold;
-}
-  .accordion .card h2.collapsed {
-	background-image: url('/assets/images/Vector-1.svg');
-  }
-  .accordion .card-body {
-	padding-left: 0;
-	padding-right: 0;
-  }
-  .saction-neww-inner .card {
-	background-color: #fff;
-	border-radius: 0;
-	padding: 15px;
-	box-shadow: 0 0 10px 0 #dcdcdc;
-	text-align: left;
-}
-.saction-neww-inner .card {
-	background-color: #fff;
-	border-radius: 0 !important;
-	padding: 15px !important;
-	box-shadow: 0 0 10px 0 #dcdcdc;
-	text-align: left;
-}
-.saction-neww-inner .card p {
-	margin: 13px 0 0 0;
-	line-height: 20px;
-	font-size: 14px;
-}
-.saction-neww .row {
-	margin-top: 7rem;
->>>>>>> dfd392b6cfa9316a23409afcf11963f0580fb552
-}

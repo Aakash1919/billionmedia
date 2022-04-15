@@ -2,7 +2,9 @@
 @section('content')
 
 <div class="content-box-kewod">
-     <div class="container">
+    
+         <section class="keyrank">
+         <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="content-box-inrr rank">
@@ -20,10 +22,15 @@
                     </div>
                     <div class="col-md-6">
                         <div class="content-box-inrr">
-                            <img src="{{ asset('assets/front/images/dummy.png') }}">
+                            <img src="{{ asset('assets/front/images/seorank.png') }}">
                         </div>
                     </div>
-
+</div>
+</div>
+</section>
+<section class="keyrank-2">
+    <div class="container">
+    <div class="row">
                     <div class="col-md-6">
                         <div class="content-box-inrr">
                             <img src="{{ asset('assets/front/images/dummy.png') }}">
@@ -42,9 +49,13 @@
                              <p>This is what a keyword rank tracker helps you do.  </p>     
                         </div>
                     </div>
+</div>
+</div>
+                    </section>        
 
-                  
-
+                    <section class="keyrank-2 scnd-box">
+                        <div class="container">
+                        <div class="row">
                     <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>What Are The Benefits Of Using A Keyword Rank Tracker?</h3>
@@ -63,8 +74,14 @@
                             <img src="{{ asset('assets/front/images/dummy.png') }}">
                         </div>
                     </div>
+</div>
+</div>
+</section>
 
 
+<section class="keyrank-2 third-box">
+                        <div class="container">
+                        <div class="row">
                     <div class="col-md-6">
                         <div class="content-box-inrr">
                             <img src="{{ asset('assets/front/images/dummy.png') }}">
@@ -81,8 +98,13 @@
                                   especially if you’re relying on other SEO tools and suites that only provide updates irregularly or once per month.  </p>   
                         </div>
                     </div>
-                    
+</div>
+</div>
+</section>
 
+<section class="keyrank-2 frth-box">
+                        <div class="container">
+                        <div class="row">
                     <div class="col-md-6">
                         <div class="content-box-inrr rank">
                             <h3>Start Tracking Your Keywords Today</h3>
@@ -101,6 +123,9 @@
                     </div>
 </div>
 </div>
+</section>
 </div>
+</div>
+
 
 @endsection
