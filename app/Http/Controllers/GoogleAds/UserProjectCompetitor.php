@@ -27,7 +27,7 @@ class UserProjectCompetitor extends Controller
 
     public function view($id, Request $request) {
         $projectID = Crypt::decryptString($id);
-        echo $projectID;
+        
         return view('user.competitorTracking');
     }
 }
