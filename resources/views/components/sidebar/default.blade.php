@@ -25,19 +25,12 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('rank-tracking') }}">
+            <a href="{{ route('rank-tracking-id') }}">
                 <div class="parent-icon"><i class='fadeIn animated bx bx-repost'></i>
                 </div>
                 <div class="menu-title">Position Tracking</div>
             </a>
-        </li> 
-        <li>
-            <a href="{{ route('user.competitorTracking') }}">
-                <div class="parent-icon"><i class='fadeIn animated bx bx-repost'></i>
-                </div>
-                <div class="menu-title">Competitor Tracking</div>
-            </a>
-        </li>        
+        </li>      
     </ul>
     <!--end navigation-->
 </div>

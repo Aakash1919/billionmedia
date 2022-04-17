@@ -20,14 +20,14 @@
       </div>
     </div>
     <div class="competitor-page-saction-one">
-      <h2>Competitor Tracking</h2>
-      <p>Here are the domains that are your competitors</p>
-      <div class="float-left"><a href="#">pixxelu.com</a></div>
-      <div class="float-right">
-        <ul class="list-unstyled">
-          <li class="init"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;"> Hindi - India</li>
-          <li class="pocti" data-value="value 1"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/in.svg" style="display: inline-block; width: 1.3333em; height: 1em; vertical-align: middle; margin-top: -3px;"> Hindi - India</li>
-        </ul>
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Competitor Tracking</h2>
+          <p>Here are the domains that are your competitors</p>
+        </div>
+        <div class="col-sm-4">
+          <div class="float-left"><a href="#">pixxelu.com</a></div>
+        </div>  
       </div>
     </div>
     <div class="competitor-page-saction-tow"> 
@@ -40,20 +40,18 @@
     </div>
     <div class="competitor-page-saction-tow">
       <div class="left-three">
-        <h3>Tracked Competitors <span> 0 out of 2</span></h3>
+        <h3>Detailed Analysis</h3>
       </div>
-      <div class="right-three"> <a href="#" class="add-competitor">ADD COMPETITORS</a> <a href="#" class="export">Export</a> </div>
       <div class="tbl">
         <table>
           <tr>
             <th><label class="container">
                 <input type="checkbox" checked="">
                 <span class="checkmark"></span></label></th>
-            <th>Contact</th>
-            <th>Country</th>
-            <th>Country</th>
-            <th>Country</th>
-            <th>Country</th>
+            <th>Common Keywords</th>
+            <th>Keyword Gaps</th>
+            <th>Estimated Traffic</th>
+            <th>Backlinks</th>
           </tr>
         </table>
         <div height="400" class="sc-bUQzRK fxExc"><img src="/assets/images/no_content.42e65572.svg" class="sc-tsHpd dGgJti"><br>

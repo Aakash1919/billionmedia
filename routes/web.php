@@ -28,23 +28,10 @@ Route::get('/blogs', [App\Http\Controllers\PublicController::class, 'blogs'])->n
 Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner');
 Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
 Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'getCountries'])->name('get-countries');
-
-
-Route::get('/terms-conditions', function () {
-    return view('public.termsandConditions');
-})->name('public.termsandConditions');
-
-Route::get('/privacy-policy', function () {
-    return view('public.privacypolicy');
-})->name('public.privacypolicy');
-
-Route::get('/site-audit', function () {
-    return view('public.siteaudit');
-})->name('public.siteaudit');
-
-Route::get('/keyword-Rank', function () {
-    return view('public.keywordRank');
-})->name('public.keywordRank');
+Route::get('/terms-conditions', [App\Http\Controllers\PublicController::class, 'termsAndCondition'])->name('public.termsandConditions');
+Route::get('/privacy-policy', [App\Http\Controllers\PublicController::class, 'privacyPolicy'])->name('public.privacypolicy');
+Route::get('/site-audit', [App\Http\Controllers\PublicController::class, 'siteAudit'])->name('public.siteaudit');
+Route::get('/keyword-Rank', [App\Http\Controllers\PublicController::class, 'keywrdRank'])->name('public.keywordRank');
 
 Route::get('/blog-details', function () {
     return view('public.blogDetails');
@@ -56,7 +43,6 @@ Route::get('/blog-details', function () {
 Route::get('/home', [App\Http\Controllers\User\UserController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/google-authorize', [App\Http\Controllers\GoogleAds\GoogleAuthenticate::class, 'main'])->middleware('auth')->name('google-authorize');
 Route::get('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'index'])->middleware('auth')->name('keyword-planner');
-Route::get('/rank-tracking', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'positionTracking'])->middleware('auth')->name('rank-tracking');
 Route::get('/rank-tracking/{id?}', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'rankTracking'])->middleware('auth')->name('rank-tracking-id');
 Route::get('/getRank', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'getRank'])->middleware('auth');
 
@@ -68,9 +54,6 @@ Route::get('/getRank', [App\Http\Controllers\GoogleAds\PositionTracking::class, 
 Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
 Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
-
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
-Route::get('/competitor-tracking', function () {
-    return view('user.competitorTracking');
-})->name('user.competitorTracking');
+Route::get('/competitor-tracking/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'view'])->name('user.competitorTracking');
 
