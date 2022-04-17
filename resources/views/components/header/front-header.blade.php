@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="logo-box">
-                    <a href="/"><img src="{{ asset('assets/front/images/logo.png') }}" alt="LOGO"></a>
+                    <a href="/"><img src="{{ asset('assets/images/seo-science.svg') }}" alt="LOGO"></a>
                 </div>
             </div>
             <div class="col-md-9">
@@ -14,13 +14,17 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active"><a class="nav-link" href="{{ route('public.features')}}">Features</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.solutions')}}">Solutions</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">Tool</a></li>
-
+                                <li class="nav-item feat-nav active"><a class="nav-link" href="{{ route('public.features')}}">Features</a></li>
+                                <li class="nav-item solu-nav"><a class="nav-link" href="{{ route('public.solutions')}}">Solutions</a></li>
+                                <li class="nav-item free-nav"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
+                                <li class="nav-item plan-nav"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
+                                <li class="nav-item blog-nav"><a class="nav-link" href="{{ route('public.blogs') }}">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">keywordResearch</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keywordRank') }}">keywordRank</a></li>
+                                
+                                <li class="nav-item"><a class="nav-link" href="{{ route('public.siteaudit') }}">SiteAudit</a></li>
+                               
+                                
                                 <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
                             </ul>
                         </div>

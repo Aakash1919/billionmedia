@@ -29,6 +29,27 @@ Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::clas
 Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
 Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'getCountries'])->name('get-countries');
 
+
+Route::get('/terms-conditions', function () {
+    return view('public.termsandConditions');
+})->name('public.termsandConditions');
+
+Route::get('/privacy-policy', function () {
+    return view('public.privacypolicy');
+})->name('public.privacypolicy');
+
+Route::get('/site-audit', function () {
+    return view('public.siteaudit');
+})->name('public.siteaudit');
+
+Route::get('/keyword-Rank', function () {
+    return view('public.keywordRank');
+})->name('public.keywordRank');
+
+Route::get('/blog-details', function () {
+    return view('public.blogDetails');
+})->name('public.blogDetails');
+
 /**
  * User routes
  */
@@ -49,4 +70,7 @@ Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::cl
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
 
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
+Route::get('/competitor-tracking', function () {
+    return view('user.competitorTracking');
+})->name('user.competitorTracking');
 

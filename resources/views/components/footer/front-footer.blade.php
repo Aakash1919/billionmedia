@@ -5,12 +5,10 @@
                 <div class="box-footer">
                     <h3>Features</h3>
                     <ul>
-                        <li><a href="#">Site Audit</a></li>
-                        <li><a href="#">Website Rankings</a></li>
-                        <li><a href="#">Backlink Analysis</a></li>
-                        <li><a href="#">TF*IDF Tool</a></li>
-                        <li><a href="keyword-research-tool.html">Keyword Research Tool</a></li>
-                        <li><a href="#">Plans &amp; Pricing</a></li>
+                       
+                        <li><a href="terms-conditions">Terms & condition</a></li>
+                        <li><a href="privacy-policy">privacy Policy</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -26,7 +24,7 @@
             <div class="col-md-3">
                 <div class="box-footer">
                     <h3>Contact:</h3>
-                    <p>support@Billion Media</p>
+                    <p>info@seoscience.com</p>
                     <ul class="social-icon">
                         <li><a href="#"><img src="{{ asset('assets/front/images/Icon.png') }}"></a></li>
                         <li><a href="#"><img src="{{ asset('assets/front/images/Icon(2).png') }}"></a></li>
