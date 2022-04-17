@@ -13,9 +13,8 @@
 </style>
 @endpush
 
-<form id="msform" method="post" action="{{route('add-project-keyword')}}">
+<form id="msform" method="post" action="{{route('add-competitor')}}">
     @csrf
-    
     <fieldset>
         <div class="form-card rank-tra">
             <div class="row">
@@ -24,19 +23,6 @@
                 </div>
             </div>
             <input type="hidden" name="projectID" value="{{ Crypt::encryptString($projectID) ?? null}}">
-            <div class="row">
-                <div class="col-md-12">
-                <input type="url" id="url-type" class="url" type="url" placeholder="https://wwwlink/hear">
-                    <h6>Paste keywords</h6>
-                    <div class="right-box-rankk">
-                        <textarea name="keywords" placeholder="Enter text here..." required></textarea>
-                    </div>
-                    <h4 class="you-can">You can track 25 more keywords
-                        <em>0/25</em>
-                    </h4>
-                </div>
-            </div>
-            
         </div>
         <input type="submit" class="action-button" value="Finsh" />
     </fieldset>
