@@ -55,7 +55,7 @@ Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::
 Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
-Route::get('/competitor-tracking/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'view'])->name('user.competitorTracking');
+Route::get('/competitor-tracking/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'view'])->middleware('auth')->name('user.competitorTracking');
 
 Route::get('/blog', function () {
     return view('user.blog');
