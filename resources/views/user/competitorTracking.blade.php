@@ -334,7 +334,7 @@ function drawCharts() {
 			  if($(this).css('display')=='none'){
 				toggle_switch.html('View All');
 			  }else{
-				toggle_switch.html('View All');
+				toggle_switch.html('Close All');
 			  }
 			});
 		  });
