@@ -353,8 +353,9 @@
                                 <div class="focs-keyword-cntnt">
                                 <h2>Focus keyword </h2>
                                
-                                <p> his is usually the main keyword that you’re aiming to rank
+                                <p> his is usually the main keyword that you’re aiming to rank  
                                      for on that particular page</p>
+
 </div></div></li>
                                 <li><div class="focs-keyword">
                                 <div class="focs-keyword-img">
@@ -406,16 +407,18 @@
                         <div class="key-left-box ft-rght ">
                             <h3>How Do Keywords Help Pages And Websites Rank?</h3>
                             <div class="p-cntn-left">
-                           <p><strong>01.</strong>So now we know what a keyword is in terms of SEO, how do they help pages and websites rank in search engines? </p>
+                           <p><strong>01.</strong>So now we know what a keyword is in terms of SEO, how do they help pages and websites rank in search engines? 
                           We know that keywords help search engines understand what our content is about. 
                                Let’s look at how they actually do that.</p>
                                <p><strong>02.</strong>Let’s stick with the beanie hats example. To successfully use that keyword, it would be important to include the phrase “beanie hat” within your article a few times. Each usage of the keyword sends a signal 
                                    to the likes of Google that helps it understand what the content is about. </p>
              <p><strong>03.</strong>When we write content tailored for search engines, it’s important that we don’t just rely on one keyword but rather that we include a bunch of other relevant or related keywords. These terms provide extra context to the article
-                                        to help search engine crawlers and bots better understand the content.</P></div>
-                                        <div class="p-cntn-right">
-          <p><strong>04.</strong>For example, you may also include in your article phrases like “woollen beanie hat” or “green beanie hat”, 
+                                        to help search engine crawlers and bots better understand the content.</P>
+                                        <p><strong>04.</strong>For example, you may also include in your article phrases like “woollen beanie hat” or “green beanie hat”, 
                                             or seemingly unrelated phrases like “hat and gloves” or “scarf and hat”. </p>
+                                        </div>
+                                        <div class="p-cntn-right">
+         
     <p><strong>05.</strong>Including a variety of relevant keywords gives your article greater context and increases the chances of your page ranking
                                                  for more than just the keyword “beanie hat.”</p>
              <p><strong>06.</strong>You may also include questions and answers in your article, such as “how to crochet a beanie hat” or “how do you wear a beanie hat?”</p>
@@ -441,31 +444,31 @@
             </div>
             <div class="col-md-6 ">
             <div class="proces-contnet">
-                <h2>01.</h2>
+                <h2>SEO Science Keyword Research Tool?</h2>
                             <p>The SEO Science keyword research tool has been designed by industry professionals to provide 
-                                you with every type of keyword possible</p></div></div>
-                                <div class="col-md-6 dipdwn">
-            <div class="proces-contnet">  
-            <h2>02.</h2>
-
-                            <p>It’s been designed to be super user-friendly, so if you’ve never used a keyword finder or generator before, you’ll be in good hands. We also have lots of useful walk-through videos that you can watch,
+                                you with every type of keyword possible</p>
+                                <p>It’s been designed to be super user-friendly, so if you’ve never used a keyword finder or generator before, you’ll be in good hands. We also have lots of useful walk-through videos that you can watch,
                                  as well as this video below which shows you all of the features of our keyword research tool:</p>
-           
-                        </div>
-                        </div>
-           
-                        <div class="col-md-6 dipdwn">
-                        <div class="proces-img">
-                        <img src="{{ asset('assets/images/process_2.jpg') }}">
-            </div>
-            </div>
-            </div>
+                                </div></div>
+                               
+            
             </div>
             </div>
             </section>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="content-box-inrr key-list">
+                   
+            <section class="tol-unique">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="tol-img">
+                        <img src="{{ asset('assets/images/features_left.png') }}">
+                        <P>While these are our core features, the SEO Science keyword research tool is continuously being worked on and improved.
+                                 If you have any feedback you’d like to share,<a href="#"> please click here.</a></p>
+                                 <p>And to give the keyword checker a go for free,<a href="#"> please click here.</a></p>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="new-boxhome tol-content">
                         <h3>What Makes Our Keyword Research Tool Unique?</h3>
                                 <span>Let’s tell you a bit more about why we believe our keyword research tool is unique. </span>
                                 <ul>
@@ -475,23 +478,37 @@
                                 <li>All keywords have an accurate monthly search volume estimate attached to them, enabling you to work out which search terms are worth pursuing. </li>
                                 <li>You can download and export lists of keywords for you to work on offline.</li>
                             </ul>
-                            <P>While these are our core features, the SEO Science keyword research tool is continuously being worked on and improved.
-                                 If you have any feedback you’d like to share,<a href="#"> please click here.</a></p>
-                                 <p>And to give the keyword checker a go for free,<a href="#"> please click here.</a></p>
+                         
                         </div>
+            </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="content-box-inrr">
-                            <h3>We Can Help You Boost Your Website Traffic</h3>
-                            <p>At SEO Science we’re devoted to helping you improve your website to help you generate more traffic.</p>
+            </div>
+
+            </div>
+            </section>
+            <section class="keyplan">
+                    <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="key-left-box">
+                            <h3>We Can Help You Boost Your Website Traffic</h3>    
+                                     <p>At SEO Science we’re devoted to helping you improve your website to help you generate more traffic.</p>
                             <p>Our keyword research tool is just the beginning. We also have a rank tracker and site audit feature, both of which you can try for free. And we’re certain that by using all of our services,
                                  your site and its pages will begin to improve and generate more traffic in no time. </p>
                                  <p>Helping you improve your website traffic is just one of things we can do for you. We can also help you convert that traffic into 
                                      leads and new business for your organisation.</p>
-                                     <p>To find out more, <a href="#">click here </a>or the button at the top of this page.   </p>
-           
+                                     <p>To find out more, <a href="#">click here </a>or the button at the top of this page.   </p>  
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="key-right-box web-tref">
+                            <img src="{{ asset('assets/images/home21.png') }}">
+                        </div>
+            </div>
+                    </div>
+            </div>        
+            </section>
+                 
                 </div>
             </div>
             @endif
@@ -500,6 +517,7 @@
             </div>
            
 @push('scripts')
+
 <script>
     $(document).ready(function () {
 
@@ -518,4 +536,6 @@
 
 
 @endpush
+
+
 @endsection
