@@ -24,4 +24,20 @@ class PublicController extends Controller
         return view('public.blog');
     } 
 
+    public function termsAndCondition() {
+        return view('public.termsandConditions');
+    }
+
+    public function privacyPolicy() {
+        return view('public.privacypolicy');
+    }
+
+    public function siteAudit() {
+        return view('public.siteaudit');
+    }
+
+    public function keywrdRank() {
+        return view('public.keywordRank');
+    }
+
 }

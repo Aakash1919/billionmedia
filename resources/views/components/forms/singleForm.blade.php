@@ -23,7 +23,7 @@
                     <h2 class="fs-title">Add Keywords to Rank Tracking</h2>
                 </div>
             </div>
-            <input type="hidden" name="projectID" value="{{ Crypt::encryptString($projectID) ?? null}}">
+            <input type="hidden" name="projectID" value="{{ Crypt::encryptString($project->id) ?? null}}">
             <div class="row">
                 <div class="col-md-12">
                     <h6>Paste keywords</h6>

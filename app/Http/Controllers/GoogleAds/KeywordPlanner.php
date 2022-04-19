@@ -14,10 +14,9 @@ use Google\Ads\GoogleAds\V9\Services\KeywordAndUrlSeed;
 use Google\Ads\GoogleAds\V9\Services\KeywordSeed;
 use Google\Ads\GoogleAds\V9\Services\UrlSeed;
 use Google\ApiCore\ApiException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Auth;
-use DB;
-
+use Illuminate\Support\Facades\DB;
 
 class KeywordPlanner extends Controller
 {

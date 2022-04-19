@@ -23,4 +23,12 @@ class UserProjects extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function projectCompetitors() {
+        return $this->hasMany(UserProjectCompetitor::class,'project_id','id');
+    }
+
+    public function projectKeywords() {
+        return $this->hasMany(UserProjectKeyword::class, 'project_id', 'id');
+    }
 }

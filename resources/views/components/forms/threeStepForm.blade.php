@@ -27,8 +27,8 @@
                     <h2 class="fs-title">Create Your Project</h2>
                 </div>
             </div>
-            <input type="text" name="website_url" placeholder="Website URL"  required/>
             <input type="text" name="website_name" placeholder="Website name" required/>
+            <input type="text" name="website_url" placeholder="Website URL"  required/>
         </div>
         <input type="button" class="next action-button" value="Next" />
     </fieldset>
