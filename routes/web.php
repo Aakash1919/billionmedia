@@ -71,3 +71,7 @@ Route::get('/competitor-tracking', function () {
     return view('user.competitorTracking');
 })->name('user.competitorTracking');
 
+Route::get('/blog', function () {
+    return view('user.blog');
+})->name('user.blog');
+

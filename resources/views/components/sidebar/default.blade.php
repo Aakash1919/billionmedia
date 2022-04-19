@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+            <img src="{{asset('assets/images/seo-science.svg')}}" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">BillionMedia</h4>
@@ -37,7 +37,14 @@
                 </div>
                 <div class="menu-title">Competitor Tracking</div>
             </a>
-        </li>        
+        </li>  
+        <li>
+            <a href="{{ route('user.blog') }}">
+                <div class="parent-icon"><img src="{{ asset('assets/images/drawing.png') }}">
+                </div>
+                <div class="menu-title">Blog</div>
+            </a>
+        </li>       
     </ul>
     <!--end navigation-->
 </div>

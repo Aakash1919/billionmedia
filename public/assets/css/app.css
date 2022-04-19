@@ -5762,3 +5762,22 @@ ul.list-unstyled {
 	padding: 30px 0;
 	display: inline-block;
 }
+.sidebar-wrapper .metismenu a img {
+	width: 20px;
+	margin: 0 4px 0 0;
+}
+.blog-buttion a {
+	background-color: #ff725e;
+	border: none;
+	color: #fff;
+	font-size: 13px;
+	letter-spacing: 0px;
+	padding: 10px 20px;
+	font-weight: 700;
+	margin: 0 0 0 0;
+	font-style: normal;
+	border-radius: 4px;
+}
+.blog-buttion {
+	text-align: right;
+}
