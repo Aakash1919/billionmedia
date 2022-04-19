@@ -5781,3 +5781,24 @@ ul.list-unstyled {
 .blog-buttion {
 	text-align: right;
 }
+.tbl table tr th {
+	color: #fff;
+}
+.tbl .card.rank-tranking-table {
+	margin: 0;
+}
+.tbl .nav-toggle {
+	border: 1px solid rgb(242, 101, 54);
+	border-radius: 4px;
+	color: rgb(242, 101, 54);
+	background-color: transparent;
+	font-size: 12px;
+	padding: 3px 7px;
+	position: absolute;
+	right: 13px;
+	top: 9px;
+}
+.tbl .nav-toggle img {
+	width: 12px;
+	margin: 0 0px 0 6px;
+}

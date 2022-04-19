@@ -30,7 +30,6 @@
                 </div>
                 <div class="menu-title">Position Tracking</div>
             </a>
-<<<<<<< HEAD
         </li> 
         <li>
             <a href="{{ route('user.competitorTracking') }}">
@@ -46,9 +45,6 @@
                 <div class="menu-title">Blog</div>
             </a>
         </li>       
-=======
-        </li>      
->>>>>>> 1e49b7c2efd40ae85f2782c3ac761c4152c6ddc7
     </ul>
     <!--end navigation-->
 </div>

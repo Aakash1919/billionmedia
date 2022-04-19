@@ -43,19 +43,95 @@
         <h3>Detailed Analysis</h3>
       </div>
       <div class="tbl">
-        <table>
-          <tr>
-            <th><label class="container">
-                <input type="checkbox" checked="">
-                <span class="checkmark"></span></label></th>
-            <th>Common Keywords</th>
-            <th>Keyword Gaps</th>
-            <th>Estimated Traffic</th>
-            <th>Backlinks</th>
-          </tr>
-        </table>
-        <div height="400" class="sc-bUQzRK fxExc"><img src="/assets/images/no_content.42e65572.svg" class="sc-tsHpd dGgJti"><br>
-          You haven't added any competitors to this project. Click on "Add Competitors" above to start tracking your competitors.</div>
+        <div class="card rank-tranking-table">
+          <div class="card-body">
+            <table class="table mb-0">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Competitor Domain</th>
+                  <th scope="col">Common Keywords</th>
+                  <th scope="col">Keywords Gap</th>
+                  <th scope="col">Estimated Traffic</th>
+                  <th scope="col">Backlinks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>logisticsmgmt.com</td>
+                  <td>12</td>
+                  <td>1,000 <button href="#collapse1" class="nav-toggle">View All</button>
+                  </div></td>
+                  <td>185,538</td>
+                  <td><a href="#"> <i class="lni lni-pencil-alt"></i> </a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="collapse1" style="display:none">
+              <table class="table mb-0">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Keyword</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Est. Visits</th>
+                    <th scope="col">CPC</th>
+                    <th scope="col">Paid Difficulty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>logisticsmgmt.com</td>
+                    <td>12</td>
+                    <td>1,000</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>logisticsmgmt.com</td>
+                    <td>12</td>
+                    <td>1,000</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>logisticsmgmt.com</td>
+                    <td>12</td>
+                    <td>1,000</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>logisticsmgmt.com</td>
+                    <td>12</td>
+                    <td>1,000</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>logisticsmgmt.com</td>
+                    <td>12</td>
+                    <td>1,000</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                    <td>185,538</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> 
       </div>
     </div>
   </div>
@@ -249,4 +325,20 @@ function drawCharts() {
   pieChart.draw(pieData, pieOptions);
 }
 </script> 
+<script>
+  $(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			var collapse_content_selector = $(this).attr('href');
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+				toggle_switch.html('View All');
+			  }else{
+				toggle_switch.html('View All');
+			  }
+			});
+		  });
+
+		});
+</script>
 @endpush
