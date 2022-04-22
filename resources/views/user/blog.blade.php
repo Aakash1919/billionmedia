@@ -13,7 +13,7 @@
           <button type="button" class="btn btn-primary stig">Blog</button>
         </div>
         <div class="col-md-6">
-          <div class="blog-buttion"> <a href="#">Add Your Blog</a> </div>
+          <div class="blog-buttion"> <a href="{{route('user.viewBlog')}}">Add Your Blog</a> </div>
         </div>
       </div>
     </div>
@@ -31,20 +31,20 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>The complete mobile optimization guide for SEO</td>
-              <td>Friday, 15 April 2022</td>
-              <td>Active</td>
-              <td><a href="#"> <i class="lni lni-pencil-alt"></i> </a></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>The complete mobile optimization guide for SEO</td>
-              <td>Friday, 15 April 2022</td>
-              <td>Active</td>
-              <td><a href="#"> <i class="lni lni-pencil-alt"></i> </a></td>
-            </tr>
+            @php
+                $i=0;
+            @endphp
+            @forelse ($blogs as $blog)
+              <tr>
+                <th scope="row">{{++$i}}</th>
+                <td>{{$blog->title ?? ''}}</td>
+                <td>{{date('D, d F Y', strtotime($blog->created_at))}}</td>
+                <td>{{isset($blog->status) && $blog->status==1 ? 'Active' : 'Inactive' }}</td>
+                <td><a href="{{route('user.viewBlog')}}/{{$blog->id ?? ''}}"> <i class="lni lni-pencil-alt"></i> </a></td>
+              </tr>
+            @empty
+                
+            @endforelse
           </tbody>
         </table>
       </div>

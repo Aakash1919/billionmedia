@@ -33,9 +33,8 @@ Route::get('/privacy-policy', [App\Http\Controllers\PublicController::class, 'pr
 Route::get('/site-audit', [App\Http\Controllers\PublicController::class, 'siteAudit'])->name('public.siteaudit');
 Route::get('/keyword-Rank', [App\Http\Controllers\PublicController::class, 'keywrdRank'])->name('public.keywordRank');
 
-Route::get('/blog-details', function () {
-    return view('public.blogDetails');
-})->name('public.blogDetails');
+
+Route::get('/blog-details/{slug?}', [App\Http\Controllers\PublicController::class, 'viewBlog'])->name('public.blogDetails');
 
 /**
  * User routes
@@ -57,7 +56,11 @@ Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::c
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
 Route::get('/competitor-tracking/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'view'])->middleware('auth')->name('user.competitorTracking');
 
-Route::get('/blog', function () {
-    return view('user.blog');
-})->name('user.blog');
+Route::get('/blog', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('user.blog');
+Route::get('/blog/view/{id?}', [App\Http\Controllers\Admin\BlogController::class, 'view'])->name('user.viewBlog');
+Route::post('/blog/save-blog', [App\Http\Controllers\Admin\BlogController::class, 'save'])->name('save-blog');
+
+
+
+
 

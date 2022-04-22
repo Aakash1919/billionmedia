@@ -4,9 +4,9 @@
 <div class="banner-blog">
     <div class="container">
         <div class="row">
-            <h2>Se Ranking Blog</h2>
+            <h2>Seo Ranking Blog</h2>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>/</li>
                 <li>Blog</li>
             </ul>
@@ -19,63 +19,18 @@
             <div class="col-md-9">
                 <div class="left-all-blog">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/blog1') }}">
-                                <span>SEO Insights </span>
-                                <div class="title"><a href="blog-details.html">The complete mobile optimization guide
-                                        for SEO</a></div>
-                                <div class="postyear">Nov 25, 2021</div>
-                                <div class="posttime">11 min read</div>
-                                <p>Since 2019 Google has been paying extra attention to mobile optimization and page
-                                    usability when ranking websites. If your website is not mobile-friendly, you risk
-                                    losing organic traffic. Learn more about the best mobile optimization practices and
-                                    tools that can help improve the usability and SEO of your website.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/blog1.png') }}">
-                                <span>SEO Insights </span>
-                                <div class="title"><a href="blog-details.html">20 pro tips on using SE Ranking</a></div>
-                                <div class="postyear">Nov 22, 2021</div>
-                                <div class="posttime">28 min read</div>
-                                <p>There are a vast number of ways how SE Ranking can help take your SEO and marketing
-                                    efforts to the next level, and we've decided to give you some useful tips. Here, we
-                                    want to point out 20 pro ways of leveraging SE Ranking that you may have overlooked.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/blog1') }}">
-                                <span>SEO Insights </span>
-                                <div class="title"><a href="blog-details.html">Best Black Friday & Cyber Monday Deals of
-                                        2021 for Digital Marketers</a></div>
-                                <div class="postyear">Nov 22, 2021</div>
-                                <div class="posttime">35 min read</div>
-                                <p>With Black Friday & Cyber Monday just around the corner, awesome deals and sales are
-                                    already starting to pop up everywhere you look. To save you the hassle of going
-                                    through all of them yourself, we want to give you a hand-picked list of the top
-                                    marketing and SEO offers that you can use!</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="post-blog-box">
-                                <img src="{{ asset('assets/front/images/blog1') }}">
-                                <span>SEO Insights </span>
-                                <div class="title">
-                                    <<a href="blog-details.html">Historical data: The long-awaited Competitive Research
-                                        and Keyword Research tool update</a>
+                        @foreach ($blogs as $blog)
+                            <div class="col-md-6">
+                                <div class="post-blog-box">
+                                    <img src="{{ isset($blog->image) ? asset('assets/images/blogs/' . $blog->image) : '' }}">
+                                    <span>SEO Insights </span>
+                                    <div class="title"><a href="{{route('public.blogDetails')}}/{{$blog->slug ?? ''}}">{{$blog->title ?? ''}}</a></div>
+                                    <div class="postyear">{{date('M d, Y', strtotime($blog->Created_at))}}</div>
+                                    <div class="posttime">11 min read</div>
+                                    <p>{{$blog->short_description ?? ''}}</p>
                                 </div>
-                                <div class="postyear">Nov 17, 2021</div>
-                                <div class="posttime">10 min read</div>
-                                <p>Meet one of SE Ranking’s cool new features: historical data. From now on, you can
-                                    access the Competitive Research tool to get organic and paid domain traffic data
-                                    from previous periods going back to February 2020. On top of that, you can also go
-                                    through a keyword’s historical data under the Keyword Research tool.</p>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

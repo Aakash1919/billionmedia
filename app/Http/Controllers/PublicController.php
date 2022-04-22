@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blogs;
+
 class PublicController extends Controller
 {
 
     public function index() {
-        return view('public.home');
+        $blogs = Blogs::paginate(3);
+        return view('public.home', compact('blogs'));
     }
     public function features() {
         return view('public.features');
@@ -21,8 +24,14 @@ class PublicController extends Controller
         return view('public.pricing');
     } 
     public function blogs() {
-        return view('public.blog');
+        $blogs = Blogs::all();
+        return view('public.blog', compact('blogs'));
     } 
+
+    public function viewBlog($slug=null) {
+        $blogDetail = Blogs::where('slug', $slug)->first();
+        return view('public.blogDetails', compact('blogDetail'));
+    }
 
     public function termsAndCondition() {
         return view('public.termsandConditions');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\GoogleAds;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UserProjectCompetitor as ModelsUserProjectCompetitor;
+use App\Models\UserProjects;
 use Illuminate\Support\Facades\Crypt;
 
 class UserProjectCompetitor extends Controller
@@ -28,6 +29,11 @@ class UserProjectCompetitor extends Controller
     public function view($id=null, Request $request) {
         if(isset($id)) {
             $projectID = Crypt::decryptString($id);
+            $projectCompetitorRelation = ModelsUserProjectCompetitor::where('competitor_id',$projectID)->first();
+            $projectCompetitor = UserProjects::find($projectCompetitorRelation->competitor_id);
+            $project = UserProjects::find($projectCompetitorRelation->project_id);
+            
+            return view('user.competitorTracking', compact('project', 'projectCompetitor'));
         }
         
         return view('user.competitorTracking');

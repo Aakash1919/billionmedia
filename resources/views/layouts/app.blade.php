@@ -23,6 +23,8 @@
     <title>{{ config('app.name', 'BillionMedia') }}</title>
     <link href="{{ asset('assets/css/app.css')}}" rel="stylesheet">
 	@stack('style')
+	@stack('headScripts')
+
 </head>
 <body>
 	<div class="wrapper">

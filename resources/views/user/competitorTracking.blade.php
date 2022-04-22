@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-6">
           <div class="lt-udt">
-            <p>January 11, 2022 13:01 PM</p>
+            <p>{{date('M d Y h:i A')}}</p>
           </div>
         </div>
       </div>
@@ -23,10 +23,10 @@
       <div class="row">
         <div class="col-sm-8">
           <h2>Competitor Tracking</h2>
-          <p>Here are the domains that are your competitors</p>
+          <p>Your competitor analysis is show below</p>
         </div>
         <div class="col-sm-4">
-          <div class="float-left"><a href="#">pixxelu.com</a></div>
+          <div class="float-left"><a href="#">{{$project->website_name ?? ''}}</a></div>
         </div>  
       </div>
     </div>
@@ -40,7 +40,7 @@
     </div>
     <div class="competitor-page-saction-tow">
       <div class="left-three">
-        <h3>Detailed Analysis</h3>
+        <h3>Common Keywords</h3>
       </div>
       <div class="tbl">
         <div class="card rank-tranking-table">
@@ -49,87 +49,74 @@
               <thead class="table-dark">
                 <tr>
                   <th scope="col">S.No</th>
-                  <th scope="col">Competitor Domain</th>
-                  <th scope="col">Common Keywords</th>
-                  <th scope="col">Keywords Gap</th>
-                  <th scope="col">Estimated Traffic</th>
-                  <th scope="col">Backlinks</th>
+                  <th scope="col">Keyword</th>
+                  <th scope="col">Volume</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Est. Visits</th>
+                  <th scope="col">CPC</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>logisticsmgmt.com</td>
-                  <td>12</td>
-                  <td>1,000 <button href="#collapse1" class="nav-toggle">View All</button>
-                  </div></td>
-                  <td>185,538</td>
-                  <td><a href="#"> <i class="lni lni-pencil-alt"></i> </a></td>
-                </tr>
+                @php $i = 0; @endphp
+                @if(isset($project))
+                  @foreach ($project->projectKeywords as $keyword)
+                    @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
+                      @if ($keyword->keyword==$competitorKeyword->keyword)
+                        <tr>
+                          <td>{{++$i}}</td>
+                          <td>{{ $keyword->keyword ?? 'N/T' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
+                          <td>{{ $keyword->current_position ?? 'N/T' }}</td>
+                          <td>185,538</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->cpc ?? '' }}</td>
+                        </tr>
+                      @endif  
+                    @endforeach
+                  @endforeach
+                @endif
               </tbody>
             </table>
-            <div id="collapse1" style="display:none">
-              <table class="table mb-0">
-                <thead class="table-dark">
-                  <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">Keyword</th>
-                    <th scope="col">Volume</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Est. Visits</th>
-                    <th scope="col">CPC</th>
-                    <th scope="col">Paid Difficulty</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>logisticsmgmt.com</td>
-                    <td>12</td>
-                    <td>1,000</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>logisticsmgmt.com</td>
-                    <td>12</td>
-                    <td>1,000</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>logisticsmgmt.com</td>
-                    <td>12</td>
-                    <td>1,000</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>logisticsmgmt.com</td>
-                    <td>12</td>
-                    <td>1,000</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>logisticsmgmt.com</td>
-                    <td>12</td>
-                    <td>1,000</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                    <td>185,538</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="left-three">
+        <h3>Keyword Gap</h3>
+      </div>
+      <div class="tbl">
+        <div class="card rank-tranking-table">
+          <div class="card-body">
+            <table class="table mb-0">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">S.No</th>
+                  <th scope="col">Keyword</th>
+                  <th scope="col">Volume</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Est. Visits</th>
+                  <th scope="col">CPC</th>
+                </tr>
+              </thead>
+              <tbody>
+                @php $i = 0; @endphp
+                @if(isset($projectCompetitor))
+                  @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
+                    @foreach ($project->projectKeywords as $keyword)
+                      @if ($keyword->keyword!=$competitorKeyword->keyword)
+                        <tr>
+                          <td>{{++$i}}</td>
+                          <td>{{ $competitorKeyword->keyword ?? 'N/T' }}</td>
+                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->searches ?? '' }}</td>
+                          <td>{{ $competitorKeyword->current_position ?? 'N/T' }}</td>
+                          <td>185,538</td>
+                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->cpc ?? '' }}</td>
+                        </tr>
+                        @php break; @endphp
+                      @endif  
+                    @endforeach
+                  @endforeach
+                @endif              
+              </tbody>
+            </table>
           </div>
         </div> 
       </div>
@@ -144,7 +131,7 @@
 <script src="{{ asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script> 
 <script src="{{ asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script> 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
-<script>
+{{-- <script>
     $("ul").on("click", ".init", function() {
     $(this).closest("ul").children('li:not(.init)').toggle();
 });
@@ -156,7 +143,7 @@ $("ul").on("click", "li:not(.init)", function() {
     $("ul").children('.init').html($(this).html());
     allOptions.toggle();
 });
-</script> 
+</script>  --}}
 <script>
     google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawCharts);
@@ -326,19 +313,19 @@ function drawCharts() {
 }
 </script> 
 <script>
-  $(document).ready(function() {
-		  $('.nav-toggle').click(function(){
-			var collapse_content_selector = $(this).attr('href');
-			var toggle_switch = $(this);
-			$(collapse_content_selector).toggle(function(){
-			  if($(this).css('display')=='none'){
-				toggle_switch.html('View All');
-			  }else{
-				toggle_switch.html('Close All');
-			  }
-			});
-		  });
+  // $(document).ready(function() {
+	// 	  $('.nav-toggle').click(function(){
+	// 		var collapse_content_selector = $(this).attr('href');
+	// 		var toggle_switch = $(this);
+	// 		$(collapse_content_selector).toggle(function(){
+	// 		  if($(this).css('display')=='none'){
+	// 			toggle_switch.html('View All');
+	// 		  }else{
+	// 			toggle_switch.html('Close All');
+	// 		  }
+	// 		});
+	// 	  });
 
-		});
+	// 	});
 </script>
 @endpush
