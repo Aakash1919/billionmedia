@@ -195,7 +195,7 @@
                     <div class="col-md-4">
                         <div class="post-saction-boxxx"> <img
                                 src="{{ isset($blog->image) ? asset('assets/images/blogs/' . $blog->image) : '' }}">
-                            <div class="year-date">{{ date('M d, Y', strtotime($blog->Created_at)) }}</div>
+                            <div class="year-date">{{ date('M d, Y', strtotime($blog->created_at)) }}</div>
                             <h3><a
                                     href="{{ route('public.blogDetails') }}/{{ $blog->slug ?? '' }}">{{ $blog->title ?? '' }}</a>
                             </h3>

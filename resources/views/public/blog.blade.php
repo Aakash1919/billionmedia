@@ -25,7 +25,7 @@
                                     <img src="{{ isset($blog->image) ? asset('assets/images/blogs/' . $blog->image) : '' }}">
                                     <span>SEO Insights </span>
                                     <div class="title"><a href="{{route('public.blogDetails')}}/{{$blog->slug ?? ''}}">{{$blog->title ?? ''}}</a></div>
-                                    <div class="postyear">{{date('M d, Y', strtotime($blog->Created_at))}}</div>
+                                    <div class="postyear">{{date('M d, Y', strtotime($blog->created_at))}}</div>
                                     <div class="posttime">11 min read</div>
                                     <p>{{$blog->short_description ?? ''}}</p>
                                 </div>
@@ -55,23 +55,13 @@
                         </div>
                         <div class="post-listt">
                             <h3>Our top posts</h3>
-                            <div class="side-post-bx">
-                                <a href="#"><span>SEO Insights </span>Voice search and SEO</a>
-                                <div class="year">Oct 30, 2021</div>
-                                <div class="time">33 min read</div>
-                            </div>
-                            <div class="side-post-bx">
-                                <a href="#"><span>SEO Insights </span>Building a safe backlink profile — Interview with
-                                    ex-Googler Kaspar Szymanski</a>
-                                <div class="year">Oct 30, 2021</div>
-                                <div class="time">33 min read</div>
-                            </div>
-                            <div class="side-post-bx">
-                                <a href="#"><span>SEO Insights </span>Why every website needs a favicon and how to get
-                                    it right</a>
-                                <div class="year">Oct 30, 2021</div>
-                                <div class="time">33 min read</div>
-                            </div>
+                            @foreach ($topBlogs as $blog)
+                                <div class="side-post-bx">
+                                    <a href="#"><span>SEO Insights </span>{{$blog->title ?? ''}}</a>
+                                    <div class="year">{{date('M d, Y', strtotime($blog->created_at))}}</div>
+                                    <div class="time">33 min read</div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

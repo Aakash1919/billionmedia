@@ -25,7 +25,8 @@ class PublicController extends Controller
     } 
     public function blogs() {
         $blogs = Blogs::all();
-        return view('public.blog', compact('blogs'));
+        $topBlogs =  Blogs::paginate(3);
+        return view('public.blog', compact('blogs', 'topBlogs'));
     } 
 
     public function viewBlog($slug=null) {
