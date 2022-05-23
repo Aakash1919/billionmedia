@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="logo-box">
-                    <a href="/"><img src="{{ asset('assets/images/seo-science.svg') }}" alt="LOGO"></a>
+                    <a href="/"><img src="{{ asset('assets/images/seo-science-logo.png') }}" alt="LOGO"></a>
                 </div>
             </div>
             <div class="col-md-9">

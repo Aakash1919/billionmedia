@@ -124,7 +124,7 @@ body{
 	display: inline-block;
 	width: 100%;
 	background-color: #fff;
-	padding: 17px 0 18px 0;
+	padding: 20px 0;
 	box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.04);
 	position: relative;
 }
@@ -139,7 +139,10 @@ body{
 }
 .logo-box img {
 	display: inline-block;
-	margin: 13px 0 0;
+	margin: 0 0 0;
+	width: 23%;
+	position: absolute;
+	top: -15px;
 }
 .banner-saction {
 	display: inline-block;
