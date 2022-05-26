@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{ asset('assets/front/css/slick-them-one.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/front/css/slick-them-tow.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap">
-  <title>{{ config('app.name', 'BillionMedia') }}</title>
+  <title>Seoscience to SEO Science</title>
 </head>
 <body>
   @include('components.header.front-header')

@@ -188,7 +188,7 @@
     </div>
     <div class="post-saction-home">
         <div class="container">
-            <h2>Read Our Lates News</h2>
+            <h2>Read Our Latest News</h2>
             <p>Our Latest Blogs</p>
             <div class="row">
                 @foreach ($blogs as $blog)
