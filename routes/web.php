@@ -26,7 +26,8 @@ Route::get('/free-seo-tool', [App\Http\Controllers\PublicController::class, 'fre
 Route::get('/plan-and-pricing', [App\Http\Controllers\PublicController::class, 'pricing'])->name('public.pricing');
 Route::get('/blogs', [App\Http\Controllers\PublicController::class, 'blogs'])->name('public.blogs');
 Route::get('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner');
-Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
+// Route::post('/keyword-tool', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'publicPlanner'])->name('public.keyword-planner-post');
+Route::post('/keyword-tool', [App\Http\Controllers\DataForSeo\ApiController::class, 'getKeywordResults'])->name('public.keyword-planner-post');
 Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'getCountries'])->name('get-countries');
 Route::get('/terms-conditions', [App\Http\Controllers\PublicController::class, 'termsAndCondition'])->name('public.termsandConditions');
 Route::get('/privacy-policy', [App\Http\Controllers\PublicController::class, 'privacyPolicy'])->name('public.privacypolicy');

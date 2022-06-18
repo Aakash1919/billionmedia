@@ -13,8 +13,8 @@
           
             <div class="tab-saction tab-keword">
                 <section class="tab-whl-sect">
-<div class="container">
-<h3>Keyword Research</h3>
+        <div class="container">
+        <h3>Keyword Research</h3>
             <p>You have 2 of 3 checks left today</p>
                 <ul class="tabs">
                     <li class="tab-link current" data-tab="tab-1">Related keywords</li>
@@ -116,16 +116,7 @@
                 </div>
             </div>
             </section>
-           @if(isset($keywordResponse['status']) && $keywordResponse['status']==true)
-            {{-- <div class="tblliul">
-                <ul>
-                    <li class={{ isset($action) && $action == 'similar_keywords' ? "active": '' }}><a href="javascript:void(0)">Similar keywords</a></li>
-                    <li class={{ isset($action) && $action == 'questions' ? "active": '' }} ><a href="javascript:void(0)">Questions</a></li>
-                    <li class={{ isset($action) && $action == 'similar_searches' ? "active": '' }}><a href="javascript:void(0)">Related searches</a></li>
-                    <li class={{ isset($action) && $action == 'autocomplete' ? "active": '' }}><a href="javascript:void(0)">Auto complete</a></li>
-                </ul>
-            </div> --}}
-
+           @if(isset($keywordResponse))
             <div class="tab-saction tablle">
                 <div id="tablecontainer">
                     <div id="keyword-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -187,7 +178,11 @@
                                     <th data-toggle="tooltip" data-placement="top" title="Cost per click"
                                         class="text-align-right sorting" tabindex="0" aria-controls="keyword-table"
                                         rowspan="1" colspan="1" style="width: 8%;"
-                                        aria-label="CPC: activate to sort column ascending">CPC</th>
+                                        aria-label="CPC: activate to sort column ascending">Low Top Of Page Bid</th>
+                                    <th data-toggle="tooltip" data-placement="top" title="Cost per click"
+                                        class="text-align-right sorting" tabindex="0" aria-controls="keyword-table"
+                                        rowspan="1" colspan="1" style="width: 8%;"
+                                        aria-label="CPC: activate to sort column ascending">High Top Of Page Bid</th>
                                     <th data-toggle="tooltip" data-placement="top"
                                         title="Top10 search results for the respective keyword"
                                         class="text-align-center sorting_disabled" rowspan="1" colspan="1"
@@ -199,17 +194,17 @@
                                 <tr class="subheader">
                                     <th colspan="1"><a id="link-check-all" data-original-title="" title=""
                                             style="cursor: not-allowed;">Select all {{count($keywordResponse) ?? 0}} keywords</a></th>
-                                    <th colspan="4">
+                                    {{-- <th colspan="4">
                                         <div class="keyword-confirm-tooltip"><input type="button"
                                                 class="btn btn-success keyword-confirm" value="0 Add keywords"
                                                 disabled="disabled" data-original-title="" title=""
                                                 style="cursor: not-allowed;"></div>
                                     </th>
                                     <th class="checkbox-all" data-original-title="" title=""
-                                        style="cursor: not-allowed;"><input type="checkbox" disabled=""></th>
+                                        style="cursor: not-allowed;"><input type="checkbox" disabled=""></th> --}}
                                 </tr>
                             </thead>
-                            <tfoot id="footer">
+                            {{-- <tfoot id="footer">
                                 <tr class="subheader">
                                     <th colspan="5" style="text-align: right;"
                                         class="keyword-td text-align-right text-align-center" rowspan="1">
@@ -222,28 +217,27 @@
                                     <th class="checkbox-all" rowspan="1" colspan="1" data-original-title="" title=""
                                         style="cursor: not-allowed;"><input type="checkbox" disabled=""></th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> --}}
                             <tbody>
-                                @if(isset($keywordResponse['data']) && is_array($keywordResponse['data']))
-                                    @php $maxSearch = $keywordResponse['data']['maxSearch']; @endphp
-                                    @foreach($keywordResponse['data'] as $key => $value)
+                                @if(is_array($keywordResponse))
+                                    @foreach($keywordResponse as $key => $value)
                                         @php 
                                             $i=0; 
-                                            $search = $value['searches'] ?? 0;
-                                            $barPercentage = (  $search / $maxSearch )*100 ;
+                                            $search = $value['search_volume'] ?? 0;
                                         @endphp    
                                             <tr class="{{ $i % 2 == 0 ? 'odd' : 'even'}}">
                                                     <td class=" keyword-td markrow">{{ $value['keyword'] ?? '' }}</td>
                                                     <td class="markrow sorting_1">
                                                         <div class="flex" style="justify-content: space-between;">
                                                             <div class="progress" style="width:85px;margin:5px 0">
-                                                                <div class="progress-bar " style="width: {{ $barPercentage ?? 0 }}%;">
+                                                                <div class="progress-bar " style="width: 0%;">
                                                                 </div>
                                                             </div><span>{{ $search ?? '' }}</span>
                                                         </div>
                                                     </td>
                                                     <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
-                                                    <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
+                                                    <td class=" text-align-right markrow">${{ $value['low_top_of_page_bid'] ?? '0' }}</td>
+                                                    <td class=" text-align-right markrow">${{ $value['high_top_of_page_bid'] ?? '0' }}</td>
                                                     <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
                                                             <span class="glyphicon glyphicon-chevron-down"></span></button></td>
                                                     <td class=" markrow check" data-original-title="" title=""
@@ -255,7 +249,7 @@
                                 @endif
                             </tbody>
                         </table>
-                        <div class="dataTables_paginate paging_simple_numbers" id="keyword-table_paginate">
+                        {{-- <div class="dataTables_paginate paging_simple_numbers" id="keyword-table_paginate">
                             <ul class="pagination">
                                 <li class="paginate_button previous disabled" id="keyword-table_previous"><a href="#"
                                         aria-controls="keyword-table" data-dt-idx="0" tabindex="0">«</a>
@@ -276,7 +270,7 @@
                                         aria-controls="keyword-table" data-dt-idx="7" tabindex="0">»</a></li>
                             </ul>
                             
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
            
