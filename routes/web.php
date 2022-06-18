@@ -34,6 +34,13 @@ Route::get('/privacy-policy', [App\Http\Controllers\PublicController::class, 'pr
 Route::get('/site-audit', [App\Http\Controllers\PublicController::class, 'siteAudit'])->name('public.siteaudit');
 Route::get('/keyword-Rank', [App\Http\Controllers\PublicController::class, 'keywrdRank'])->name('public.keywordRank');
 
+Route::get('/contact-us', function () {
+    return view('public.contactUs');
+})->name('public.contactUs');
+
+Route::get('/about-seo-science', function () {
+    return view('public.aboutSeoScience');
+})->name('public.aboutSeoScience');
 
 Route::get('/blog-details/{slug?}', [App\Http\Controllers\PublicController::class, 'viewBlog'])->name('public.blogDetails');
 

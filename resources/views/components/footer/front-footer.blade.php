@@ -52,8 +52,7 @@
             </div>
         </div>
         <div class="copy-rught">
-            <img src="{{ asset('assets/front/images/logo.png') }}">
-            <p>© 2021 Billion Media. All rights reserved</p>
+            <p>copyright with "© 2022SEO Science. All rights reserved</p>
         </div>
     </div>
 </div>
