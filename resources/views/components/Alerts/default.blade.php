@@ -1,4 +1,6 @@
+
 @if(isset($attributes) && is_array($attributes))
+
     <div class="alert alert-warning border-0 bg-warning alert-dismissible fade show py-2">
         <div class="d-flex align-items-center">
             <div class="font-35 text-dark"><i class="bx bx-info-circle"></i>
