@@ -193,7 +193,7 @@
                                 </tr>
                                 <tr class="subheader">
                                     <th colspan="1"><a id="link-check-all" data-original-title="" title=""
-                                            style="cursor: not-allowed;">Select all {{count($keywordResponse) ?? 0}} keywords</a></th>
+                                            style="cursor: not-allowed;">Select all {{ is_array($keywordResponse) ? count($keywordResponse) : 0}} keywords</a></th>
                                     {{-- <th colspan="4">
                                         <div class="keyword-confirm-tooltip"><input type="button"
                                                 class="btn btn-success keyword-confirm" value="0 Add keywords"
