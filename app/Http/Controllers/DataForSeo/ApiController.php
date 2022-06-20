@@ -25,6 +25,20 @@ class ApiController extends Controller
         return view('public.keywordPlanner');
     }
 
+    public function main(Request $request) {
+        $message = '';
+        if ($request->has('keyword')) {
+            $url = $request->get('url') ?? null;
+            if ($request->has('action')) {
+                $action = $request->get('action');
+                $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                $keywordResponse = $this->getDataForSeoKeywordResponse($keyword, $url);
+                return view('user.keywordPlanner', compact('keywordResponse'));
+            }
+        }
+        return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
+    }
+
     public function getDataForSeoKeywordResponse($keyword, $url)
     {
         $post_array = array();
@@ -40,7 +54,7 @@ class ApiController extends Controller
                 if(isset($result['status_code']) && $result['status_code']==20000) {
                    return $result['tasks'][0]['result'] ?? [];
                 }else {
-                    return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
+                    return redirect('keyword-planner')->with('status', 'Either Keyword is empt'); 
                 }
             } catch (RestClientException $e) {
                 return redirect('keyword-planner')->with('status', $e->getMessage()); 

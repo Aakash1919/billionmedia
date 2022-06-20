@@ -58,7 +58,10 @@ Route::get('/getRank', [App\Http\Controllers\GoogleAds\PositionTracking::class, 
 /**
  * User Post Routes
  */
-Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
+// Route::post('/keyword-planner', [App\Http\Controllers\GoogleAds\KeywordPlanner::class, 'main'])->middleware('auth')->name('keyword-planner-post');
+
+Route::post('/keyword-planner', [App\Http\Controllers\DataForSeo\ApiController::class, 'main'])->middleware('auth')->name('new.keyword-planner-post');
+
 Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'saveProject'])->middleware('auth')->name('save-project');
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
