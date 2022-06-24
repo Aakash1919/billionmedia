@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/semi-dark.css')}}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/header-colors.css')}}" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-
+	<meta name="google-site-verification" content="tyipp38uMZKmaLgmG-5R9EyFnTxzpWaviIBGpplXcp0" />
     <title>{{ config('app.name', 'BillionMedia') }}</title>
     <link href="{{ asset('assets/css/app.css')}}" rel="stylesheet">
 	@stack('style')

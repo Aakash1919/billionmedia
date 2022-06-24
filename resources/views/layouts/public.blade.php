@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('assets/front/css/slick-them-one.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/front/css/slick-them-tow.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap">
+  <meta name="google-site-verification" content="tyipp38uMZKmaLgmG-5R9EyFnTxzpWaviIBGpplXcp0" />
   <title>Seoscience to SEO Science</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
     })
 </script>
 <script>
-    window.onscroll = function () { myFunction() };
+    window.onscroll = function () { myFunction() };g
     var header = document.getElementById("myHeader");
     var sticky = header.offsetTop;
     function myFunction() {

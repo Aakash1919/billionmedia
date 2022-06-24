@@ -19,6 +19,7 @@
 	<link href="{{ asset('assets/css/app.css')}}" rel="stylesheet">
 	<link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet">
     <title>{{ config('app.name', 'BillionMedia') }}</title>
+	<meta name="google-site-verification" content="tyipp38uMZKmaLgmG-5R9EyFnTxzpWaviIBGpplXcp0" />
 </head>
 
 <body class="bg-login">
