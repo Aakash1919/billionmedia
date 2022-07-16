@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\DataForSeo\ApiController;
 use App\Http\Controllers\GoogleAds\KeywordPlanner;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Countries;
@@ -98,17 +99,17 @@ class Controller extends BaseController
 
     public function saveProjectKeywords($projectID = null, $keywords = null, $refreshToken = null)
     {
-        $keywordPlannerObject = new KeywordPlanner();
+        $keywordPlannerObject = new ApiController();
         if (isset($projectID) && isset($keywords)) {
             $websiteUrl = UserProjects::where('id', $projectID)->value('website_url');
             $websiteUrl = str_replace(['http://', 'https://'], "", $websiteUrl);
             $keywordsArray = explode(',', $keywords);
             foreach ($keywordsArray as $keyword) {
-                $keywordStat = $keywordPlannerObject->getGlobalKeywordAnalytics($refreshToken, ['keyword' => $keyword, 'count' => 1]);
+                $keywordStat = $keywordPlannerObject->getDataForSeoKeywordResponse(['keyword' => $keyword]);
                 $rankStats = $this->getRank($websiteUrl, $keyword);
                 $UserProjectKeyword = new UserProjectKeyword();
                 $UserProjectKeyword->project_id = $projectID;
-                $UserProjectKeyword->stats = json_encode($keywordStat);
+                $UserProjectKeyword->stats = json_encode($keywordStat['data']);
                 $UserProjectKeyword->previous_position = $UserProjectKeyword->current_position;
                 $UserProjectKeyword->current_position = isset($rankStats[0]['position']) ? $rankStats[0]['position'] : '100+';
                 $UserProjectKeyword->keyword = $keyword;
@@ -118,7 +119,7 @@ class Controller extends BaseController
     }
     public function getRank($url = null, $keyword = null)
     {
-        $keywordPlannerObject = new KeywordPlanner();
+        $keywordPlannerObject = new ApiController();
 
         $rankArray = [];
         if (isset($url) && $keyword) {

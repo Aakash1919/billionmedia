@@ -18,8 +18,13 @@ class ApiController extends Controller
             if ($request->has('action')) {
                 $action = $request->get('action');
                 $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
-                $keywordResponse = $this->getDataForSeoKeywordResponse($keyword, $url);
-                return view('public.keywordPlanner', compact('keywordResponse', 'request'));
+                $keywordResponseArray = $this->getDataForSeoKeywordResponse($keyword, $url);
+                if($keywordResponseArray['status']==false) {
+                    return redirect('keyword-planner')->with('status', $keywordResponseArray['message']); 
+                }else {
+                    $keywordResponse = $keywordResponseArray['data'];
+                    return view('public.keywordPlanner', compact('keywordResponse', 'request'));
+                }
             }
         }
         return view('public.keywordPlanner');
@@ -33,13 +38,19 @@ class ApiController extends Controller
                 $action = $request->get('action');
                 $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
                 $keywordResponse = $this->getDataForSeoKeywordResponse($keyword, $url);
-                return view('user.keywordPlanner', compact('keywordResponse'));
+                $keywordResponseArray = $this->getDataForSeoKeywordResponse($keyword, $url);
+                if($keywordResponseArray['status']==false) {
+                    return redirect()->back()->with('status', $keywordResponseArray['message']); 
+                }else {
+                    $keywordResponse = $keywordResponseArray['data'];
+                    return view('user.keywordPlanner', compact('keywordResponse', 'request'));
+                }
             }
         }
-        return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
+        return redirect()->back()->with('status', 'Some Error on the API end, Please contact development team'); 
     }
 
-    public function getDataForSeoKeywordResponse($keyword, $url)
+    public function getDataForSeoKeywordResponse($keyword, $url=null)
     {
         $post_array = array();
         $post_array[] = array(
@@ -52,12 +63,12 @@ class ApiController extends Controller
             try {
                 $result = $client->post('/v3/keywords_data/google_ads/search_volume/live', $post_array);
                 if(isset($result['status_code']) && $result['status_code']==20000) {
-                   return $result['tasks'][0]['result'] ?? [];
+                    return ['status'=>true,'data'=>$result['tasks'][0]['result'] ?? []];
                 }else {
-                    return redirect('keyword-planner')->with('status', 'Either Keyword is empt'); 
+                    return ['status'=>false,'message'=>'Some error on the api end'];
                 }
             } catch (RestClientException $e) {
-                return redirect('keyword-planner')->with('status', $e->getMessage()); 
+                return ['status'=>false,'message'=>'Some error on the api end']; 
             }
         }
     }

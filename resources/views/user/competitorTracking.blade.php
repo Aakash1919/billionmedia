@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-sm-8">
           <h2>Competitor Tracking</h2>
-          <p>Your competitor analysis is show below</p>
+          <p>Your competitor analysis is shown below</p>
         </div>
         <div class="col-sm-4">
           <div class="float-left"><a href="#">{{$project->website_name ?? ''}}</a></div>
@@ -52,8 +52,8 @@
                   <th scope="col">Keyword</th>
                   <th scope="col">Volume</th>
                   <th scope="col">Position</th>
-                  <th scope="col">Est. Visits</th>
-                  <th scope="col">CPC</th>
+                  <th>Low Top Of Page Bid</th>
+                  <th>High Top Of Page Bid</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,13 +62,16 @@
                   @foreach ($project->projectKeywords as $keyword)
                     @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
                       @if ($keyword->keyword==$competitorKeyword->keyword)
+                      @php
+                          $data = json_decode($keyword->stats);
+                      @endphp
                         <tr>
                           <td>{{++$i}}</td>
-                          <td>{{ $keyword->keyword ?? 'N/T' }}</td>
-                          <td>{{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
-                          <td>{{ $keyword->current_position ?? 'N/T' }}</td>
-                          <td>185,538</td>
-                          <td>{{ json_decode($keyword->stats)->data->{0}->cpc ?? '' }}</td>
+                          <td>{{ $keyword->keyword ?? '' }}</td>
+                          <td>{{ $data[0]->search_volume ?? '' }}</td>
+                          <td>{{ $keyword->current_position ?? '100+' }}</td>
+                          <td>{{ $data[0]->low_top_of_page_bid ?? '' }}</td>
+                          <td>{{ $data[0]->high_top_of_page_bid ?? '' }}</td>
                         </tr>
                       @endif  
                     @endforeach
@@ -92,8 +95,8 @@
                   <th scope="col">Keyword</th>
                   <th scope="col">Volume</th>
                   <th scope="col">Position</th>
-                  <th scope="col">Est. Visits</th>
-                  <th scope="col">CPC</th>
+                  <th>Low Top Of Page Bid</th>
+                  <th>High Top Of Page Bid</th>
                 </tr>
               </thead>
               <tbody>
@@ -101,14 +104,17 @@
                 @if(isset($projectCompetitor))
                   @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
                     @foreach ($project->projectKeywords as $keyword)
+                    @php
+                        $dataDiff = json_decode($keyword->stats);
+                    @endphp
                       @if ($keyword->keyword!=$competitorKeyword->keyword)
                         <tr>
                           <td>{{++$i}}</td>
-                          <td>{{ $competitorKeyword->keyword ?? 'N/T' }}</td>
-                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->searches ?? '' }}</td>
-                          <td>{{ $competitorKeyword->current_position ?? 'N/T' }}</td>
-                          <td>185,538</td>
-                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->cpc ?? '' }}</td>
+                          <td>{{ $competitorKeyword->keyword ?? '' }}</td>
+                          <td>{{ $dataDiff[0]->search_volume ?? '' }}</td>
+                          <td>{{ $keyword->current_position ?? '100+' }}</td>
+                          <td>{{ $dataDiff[0]->low_top_of_page_bid ?? '' }}</td>
+                          <td>{{ $dataDiff[0]->high_top_of_page_bid ?? '' }}</td>
                         </tr>
                         @php break; @endphp
                       @endif  

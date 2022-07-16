@@ -98,28 +98,33 @@
                                         <th> KEYWORD</th>
                                         <th>CHANGE </th>
                                         <th>VOL </th>
-                                        <th>SD </th>
-                                        {{-- <th>URL </th> --}}
+                                        <th>Low Top Of Page Bid</th>
+                                        <th>High Top Of Page Bid</th>
                                         <th> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($project->projectKeywords as $keyword)
+                                    @php
+                                       $data = json_decode($keyword->stats);
+                                    @endphp
                                         <tr class="even">
                                             <td>
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 </div>
                                             </td>
-                                            <td class="pgn">{{ $keyword->current_position ?? 'N/T' }}</td>
+                                            <td class="pgn">{{ $keyword->current_position ?? '100+' }}</td>
                                             <td class="rk-url">
                                                 <div class="rk-yellow">{{ $keyword->keyword }}</div>
                                             </td>
                                             <td class="pgn"> 2 </td>
                                             <td class="pgn">
-                                                {{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
+                                                {{ $data[0]->search_volume ?? '' }}</td>
                                             <td class="ptgn">
-                                                ${{ json_decode($keyword->stats)->data->{0}->cpc ?? '' }}</td>
+                                                ${{ $data[0]->low_top_of_page_bid ?? '' }}</td>
+                                                <td class="ptgn">
+                                                    ${{ $data[0]->high_top_of_page_bid ?? '' }}</td>
                                             <td class="pgnd"> <img
                                                     src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"> </td>
                                         </tr>
