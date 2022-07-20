@@ -68,10 +68,11 @@
                         <tr>
                           <td>{{++$i}}</td>
                           <td>{{ $keyword->keyword ?? '' }}</td>
-                          <td>{{ $data[0]->search_volume ?? '' }}</td>
-                          <td>{{ $keyword->current_position ?? '100+' }}</td>
-                          <td>{{ $data[0]->low_top_of_page_bid ?? '' }}</td>
-                          <td>{{ $data[0]->high_top_of_page_bid ?? '' }}</td>
+                          
+                          <td>{{ is_array($data) && isset($data[0]->search_volume) ? $data[0]->search_volume : '' }}</td>
+                          <td>{{ is_array($data) && isset($data[0]->current_position) ? $data[0]->current_position : '' }}</td>
+                          <td>{{ is_array($data) && isset($data[0]->low_top_of_page_bid) ? $data[0]->low_top_of_page_bid : '' }}</td>
+                          <td>{{ is_array($data) && isset($data[0]->high_top_of_page_bid) ? $data[0]->high_top_of_page_bid : '' }}</td>
                         </tr>
                       @endif  
                     @endforeach
@@ -111,10 +112,10 @@
                         <tr>
                           <td>{{++$i}}</td>
                           <td>{{ $competitorKeyword->keyword ?? '' }}</td>
-                          <td>{{ $dataDiff[0]->search_volume ?? '' }}</td>
-                          <td>{{ $keyword->current_position ?? '100+' }}</td>
-                          <td>{{ $dataDiff[0]->low_top_of_page_bid ?? '' }}</td>
-                          <td>{{ $dataDiff[0]->high_top_of_page_bid ?? '' }}</td>
+                          <td>{{ is_array($dataDiff) && isset($dataDiff[0]->search_volume) ? $dataDiff[0]->search_volume : '' }}</td>
+                          <td>{{ is_array($dataDiff) && isset($dataDiff[0]->current_position) ? $dataDiff[0]->current_position : '' }}</td>
+                          <td>{{ is_array($dataDiff) && isset($dataDiff[0]->low_top_of_page_bid) ? $dataDiff[0]->low_top_of_page_bid : '' }}</td>
+                          <td>{{ is_array($dataDiff) && isset($dataDiff[0]->high_top_of_page_bid) ? $dataDiff[0]->high_top_of_page_bid : '' }}</td>
                         </tr>
                         @php break; @endphp
                       @endif  

@@ -120,11 +120,11 @@
                                             </td>
                                             <td class="pgn"> 2 </td>
                                             <td class="pgn">
-                                                {{ $data[0]->search_volume ?? '' }}</td>
+                                                {{ is_array($data) && isset($data[0]->search_volume) ? $data[0]->search_volume : '' }}</td>
                                             <td class="ptgn">
-                                                ${{ $data[0]->low_top_of_page_bid ?? '' }}</td>
+                                                ${{ is_array($data) && isset($data[0]->low_top_of_page_bid) ? $data[0]->low_top_of_page_bid : '' }}</td>
                                                 <td class="ptgn">
-                                                    ${{ $data[0]->high_top_of_page_bid ?? '' }}</td>
+                                                    ${{ is_array($data) && isset($data[0]->high_top_of_page_bid) ? $data[0]->high_top_of_page_bid : '' }}</td>
                                             <td class="pgnd"> <img
                                                     src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"> </td>
                                         </tr>
