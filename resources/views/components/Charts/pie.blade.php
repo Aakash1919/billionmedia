@@ -3,7 +3,10 @@
     if(!empty($attributes)) {
         $total = 1;
         foreach ($attributes as $key => $keyword) {
-            $total += json_decode($keyword->stats)->data->{0}->searches ?? 0;
+            $data = json_decode($keyword->stats);
+            if(is_array($data) && isset($data[0]->search_volume)) {
+                $total += $data[0]->search_volume;
+            }
         }
     }
     
@@ -47,7 +50,7 @@
                 @foreach($attributes as $key => $value)
                 {
                     name: '{{trim($value->keyword)}}',
-                    y: {{ (json_decode($value->stats)->data->{0}->searches ?? 0) / $total  }}
+                    y: {{ (json_decode($value->stats)[0]->search_volume ?? 0) / $total  }}
                 },
                 @endforeach
             @endif
