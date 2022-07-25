@@ -111,7 +111,7 @@
                       @if ($keyword->keyword!=$competitorKeyword->keyword)
                         <tr>
                           <td>{{++$i}}</td>
-                          <td>{{ $competitorKeyword->keyword ?? '' }}</td>
+                          <td>{{ $keyword->keyword ?? '' }}</td>
                           <td>{{ is_array($dataDiff) && isset($dataDiff[0]->search_volume) ? $dataDiff[0]->search_volume : '' }}</td>
                           <td>{{ is_array($dataDiff) && isset($dataDiff[0]->current_position) ? $dataDiff[0]->current_position : '' }}</td>
                           <td>{{ is_array($dataDiff) && isset($dataDiff[0]->low_top_of_page_bid) ? $dataDiff[0]->low_top_of_page_bid : '' }}</td>
