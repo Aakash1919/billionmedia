@@ -37,7 +37,6 @@ class ApiController extends Controller
             if ($request->has('action')) {
                 $action = $request->get('action');
                 $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
-                $keywordResponse = $this->getDataForSeoKeywordResponse($keyword, $url);
                 $keywordResponseArray = $this->getDataForSeoKeywordResponse($keyword, $url);
                 if($keywordResponseArray['status']==false) {
                     return redirect()->back()->with('status', $keywordResponseArray['message']); 
