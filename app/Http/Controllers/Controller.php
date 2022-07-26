@@ -124,6 +124,7 @@ class Controller extends BaseController
         $rankArray = [];
         if (isset($url) && $keyword) {
             $i = 1;
+            $url = str_replace(['https://','http://'],'',$url);
             for ($page = 0; $page < 60; $page = $page + 10) {
                 $response = $keywordPlannerObject->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_LINKS_CLASS'), $page);
                 if (isset($response['keyword'])) {
