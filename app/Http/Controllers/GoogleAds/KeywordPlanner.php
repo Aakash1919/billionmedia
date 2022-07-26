@@ -49,10 +49,10 @@ class KeywordPlanner extends Controller
         if(isset($keyword) && isset($action)) {
             switch($action) {
                 case 'questions' :
-                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'Lt3Tzc');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_QUESTIONS_CLASS'));
                     break;
                 case 'similar_searches' :
-                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_RELATED_KEYWORD_CLASS'));
                     break;
                 case 'autocomplete' :
                     $keywordArray = $this->getAutoCompleteSearchResults($keyword);
