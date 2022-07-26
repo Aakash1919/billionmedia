@@ -32,7 +32,6 @@
                                             <option value="questions">Questions</option>
                                             <option value="similar_searches">Related searches</option>
                                             <option value="autocomplete">Auto complete</option>
-                                            <option value="related_keywords">Related terms</option>
                                         </select>
                                     </div>
                                 </div>
