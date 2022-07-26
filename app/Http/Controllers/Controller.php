@@ -120,17 +120,14 @@ class Controller extends BaseController
     public function getRank($url = null, $keyword = null)
     {
         $keywordPlannerObject = new ApiController();
-
         $rankArray = [];
         if (isset($url) && $keyword) {
             $i = 1;
-            $url = str_replace(['https://','http://'],'',$url);
-            for ($page = 0; $page < 60; $page = $page + 10) {
-                $response = $keywordPlannerObject->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_LINKS_CLASS'), $page);
-                if (isset($response['keyword'])) {
-                    $keywords = explode(',', $response['keyword']);
+	   for ($page = 0; $page < 60; $page = $page + 10) {
+                $keywords = $keywordPlannerObject->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_LINKS_CLASS'), $page);
+		    if (!empty($keywords)) {
                     foreach ($keywords as  $keys => $value) {
-                        if (str_contains($value, $url)) {
+                        if (strpos($value, $url)) {
                             $position = $i * ($keys + 1);
                             array_push($rankArray, ['page' => 0, 'position' => $position]);
                         }
