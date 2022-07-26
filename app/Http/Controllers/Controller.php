@@ -102,7 +102,7 @@ class Controller extends BaseController
         $keywordPlannerObject = new ApiController();
         if (isset($projectID) && isset($keywords)) {
             $websiteUrl = UserProjects::where('id', $projectID)->value('website_url');
-            $websiteUrl = str_replace(['http://', 'https://'], "", $websiteUrl);
+            $websiteUrl = rtrim(str_replace(['http://', 'https://'], "", $websiteUrl),'/');
             $keywordsArray = explode(',', $keywords);
             foreach ($keywordsArray as $keyword) {
                 $keywordStat = $keywordPlannerObject->getDataForSeoKeywordResponse(['keyword' => $keyword]);
