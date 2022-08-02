@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\UserProjectCompetitor as ModelsUserProjectCompetitor;
 use App\Models\UserProjects;
+use App\Models\UserProjectKeyword;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 
 class UserProjectCompetitor extends Controller
@@ -37,5 +39,24 @@ class UserProjectCompetitor extends Controller
         }
         
         return view('user.competitorTracking');
+    }
+
+    public function deletecompetitor($id){
+        ModelsUserProjectCompetitor::where('id',$id)->delete();
+        return redirect()->back()->with('status', 'Deleted');
+    }
+
+    public function deletekeyword($id){
+        UserProjectKeyword::where('id',$id)->delete();
+        return redirect()->back()->with('status', 'Deleted');
+    }
+
+    public function deleteProject($id) {
+        $status = UserProjects::where('id',$id)->where('user_id',Auth::user()->id)->delete();
+        if($status) {
+            UserProjectKeyword::where('project_id',$id)->delete();
+            ModelsUserProjectCompetitor::where('Project_id',$id)->delete();    
+        }
+        return redirect()->back()->with('status', 'Deleted');
     }
 }

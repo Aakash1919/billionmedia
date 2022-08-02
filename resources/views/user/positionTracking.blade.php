@@ -90,17 +90,17 @@
                                 summary="An example of a responsive table using Bootstrap breakpoints." aria-role="table">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        {{-- <th>
                                             <div class="form-check"> <input type="checkbox" class="form-check-input"
                                                     id="exampleCheck1"> </div>
-                                        </th>
+                                        </th> --}}
                                         <th> POSITION </th>
                                         <th> KEYWORD</th>
                                         <th>CHANGE </th>
                                         <th>VOL </th>
                                         <th>Low Top Of Page Bid</th>
                                         <th>High Top Of Page Bid</th>
-                                        <th> </th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -109,11 +109,11 @@
                                        $data = json_decode($keyword->stats);
                                     @endphp
                                         <tr class="even">
-                                            <td>
+                                            {{-- <td>
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 </div>
-                                            </td>
+                                            </td> --}}
                                             <td class="pgn">{{ $keyword->current_position ?? '100+' }}</td>
                                             <td class="rk-url">
                                                 <div class="rk-yellow">{{ $keyword->keyword }}</div>
@@ -125,8 +125,16 @@
                                                 ${{ is_array($data) && isset($data[0]->low_top_of_page_bid) ? $data[0]->low_top_of_page_bid : '' }}</td>
                                                 <td class="ptgn">
                                                     ${{ is_array($data) && isset($data[0]->high_top_of_page_bid) ? $data[0]->high_top_of_page_bid : '' }}</td>
-                                            <td class="pgnd"> <img
-                                                    src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"> </td>
+                                            <td class="pgnd"> 
+                                                {{-- <img
+                                                    src="{{ asset('assets/images/pc_grey.svg') }}" alt="#">  --}}
+
+                                                    <a href="{{route('user.deletekeywordTracking')}}/{{$keyword->id}}"><button type="button" class="btn btn-primary btn-sm">DELETE</button></a></td>
+                                                
+                                                    {{-- <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
+                                                    <span class="cont-ps"></span></td> --}}
+
+                                                    
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -174,8 +182,10 @@
                                             <td class="rk-url">
                                                 <div class="rk-yellow">{{ $competitor->project->website_url }}</div>
                                             </td>
-                                            <td class="pgnd"> <a href="{{ route('user.competitorTracking') }}/{{Crypt::encryptString($competitor->project->id)}}"><img
-                                                    src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"></a> </td>
+
+                                            <td><a href="{{route('user.deletecompetitorTracking')}}/{{$competitor->id}}"> <i class="btn btn-primary btn-delt">DELETE</i></a></td>
+
+                                              
                                         </tr>
                                     @endforeach
                                 </tbody>

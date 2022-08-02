@@ -66,6 +66,14 @@ Route::post('/add-project', [App\Http\Controllers\GoogleAds\PositionTracking::cl
 Route::post('/add-keywords', [App\Http\Controllers\GoogleAds\PositionTracking::class, 'addKeywords'])->middleware('auth')->name('add-project-keyword');
 Route::post('/add-competitor', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'addCompetitor'])->middleware('auth')->name('add-competitor');;
 Route::get('/competitor-tracking/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'view'])->middleware('auth')->name('user.competitorTracking');
+Route::get('/delete-competitor/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'deletecompetitor'])->middleware('auth')->name('user.deletecompetitorTracking');
+Route::get('/delete-keyword/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'deletekeyword'])->middleware('auth')->name('user.deletekeywordTracking');
+
+Route::get('/delete-project/{id?}', [App\Http\Controllers\GoogleAds\UserProjectCompetitor::class, 'deleteProject'])->middleware('auth')->name('user.deleteProject');
+
+
+
+
 
 Route::get('/blog', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('user.blog');
 Route::get('/blog/view/{id?}', [App\Http\Controllers\Admin\BlogController::class, 'view'])->name('user.viewBlog');
