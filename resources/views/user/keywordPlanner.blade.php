@@ -48,7 +48,7 @@
                   </div>
                   <div class="-kewful-side">
                     <label>Search engine</label>
-                    <input type="text" name="url" list="engines" class="form-control" placeholder="Google.com">
+                    <input type="text" name="url" list="engines" class="form-control" placeholder="">
                   </div>
                   <div class="btn-keyword">
                     <input class="btn btn-primary form-control" type="submit" value="Keyword Research">

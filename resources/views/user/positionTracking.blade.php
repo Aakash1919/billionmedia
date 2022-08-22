@@ -81,7 +81,6 @@
                                             'viewParameters' => [],
                                         ],
                                     ])
-                                   
                                 @endif
                                 {{-- <button type="button" class="btn btn-primary btn-delt"><i class="far fa-trash-alt"></i> DELETE</button>
             <span class="cont-ps">0 of 9 Selected</span> --}}
@@ -98,9 +97,9 @@
                                         <th> KEYWORD</th>
                                         <th>CHANGE </th>
                                         <th>VOL </th>
-                                        <th>SD </th>
-                                        {{-- <th>URL </th> --}}
-                                        <th> </th>
+                                        <th>Low Top Of Page Bid</th>
+                                        <th>High Top Of Page Bid</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -119,9 +118,15 @@
                                             <td class="pgn">
                                                 {{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
                                             <td class="ptgn">
-                                                ${{ json_decode($keyword->stats)->data->{0}->cpc ?? '' }}</td>
-                                            <td class="pgnd"> <img
-                                                    src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"> </td>
+                                                ${{ json_decode($keyword->stats)->data->{0}->lowBidRange ?? '' }}</td>
+                                            <td class="ptgn">
+                                                ${{ json_decode($keyword->stats)->data->{0}->highBidRange ?? '' }}</td>
+
+
+                                            <td class="pgnd">
+                                                <a href="{{ route('user.deletekeywordTracking') }}/{{ $keyword->id }}"><button
+                                                        type="button" class="btn btn-primary btn-sm">DELETE</button></a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -160,6 +165,7 @@
                                         <th>Name</th>
                                         <th>URL</th>
                                         <th>View </th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -169,8 +175,13 @@
                                             <td class="rk-url">
                                                 <div class="rk-yellow">{{ $competitor->project->website_url }}</div>
                                             </td>
-                                            <td class="pgnd"> <a href="{{ route('user.competitorTracking') }}/{{Crypt::encryptString($competitor->project->id)}}"><img
-                                                    src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"></a> </td>
+                                            <td class="pgnd"> <a
+                                                    href="{{ route('user.competitorTracking') }}/{{ Crypt::encryptString($competitor->project->id) }}"><img
+                                                        src="{{ asset('assets/images/pc_grey.svg') }}" alt="#"></a>
+                                            </td>
+                                            <td><a
+                                                    href="{{ route('user.deletecompetitorTracking') }}/{{ $competitor->id }}">
+                                                    <i class="btn btn-primary btn-delt">DELETE</i></a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

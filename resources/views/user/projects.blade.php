@@ -41,7 +41,8 @@
                         <th scope="col">URL</th>
                         <th scope="col">Locations</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,8 @@
                         <td>{{ rtrim($item->location  ?? '', ',') }}</td>
                         <td>{{ $item->status == 1 ? 'Active' : 'Inactive'}}</td>
                         <td><a href="{{route('rank-tracking-id')}}/{{Crypt::encryptString($item->id)}}"> <i class="lni lni-pencil-alt"></i> </a></td>
+                        <td><a href="{{route('user.deleteProject')}}/{{$item->id}}"><button class="btn btn-warning btn-xs">Delete</button></a></td>
+
                     </tr>
                     @endforeach
                 </tbody>

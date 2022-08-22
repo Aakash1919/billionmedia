@@ -43,7 +43,7 @@
                             <div class="-kewful-side">
                                 <label>Search engine</label>
                                 <input type="text" name="url" list="engines" class="form-control"
-                                    placeholder="Google.com" value='{{ $url ?? '' }}'>
+                                    placeholder="" value='{{ $url ?? '' }}'>
                             </div>
                             <div class="btn-keyword">
                                 <input class="btn btn-primary form-control" type="submit" value="Keyword Research">
@@ -187,7 +187,11 @@
                                     <th data-toggle="tooltip" data-placement="top" title="Cost per click"
                                         class="text-align-right sorting" tabindex="0" aria-controls="keyword-table"
                                         rowspan="1" colspan="1" style="width: 8%;"
-                                        aria-label="CPC: activate to sort column ascending">CPC</th>
+                                        aria-label="CPC: activate to sort column ascending">Low Range Of Bid</th>
+                                        <th data-toggle="tooltip" data-placement="top" title="Cost per click"
+                                        class="text-align-right sorting" tabindex="0" aria-controls="keyword-table"
+                                        rowspan="1" colspan="1" style="width: 8%;"
+                                        aria-label="CPC: activate to sort column ascending">High Range Of Bid</th>
                                     <th data-toggle="tooltip" data-placement="top"
                                         title="Top10 search results for the respective keyword"
                                         class="text-align-center sorting_disabled" rowspan="1" colspan="1"
@@ -243,7 +247,8 @@
                                                         </div>
                                                     </td>
                                                     <td class=" markrow">{{ $value['competition'] ?? '' }}</td>
-                                                    <td class=" text-align-right markrow">${{ $value['cpc'] ?? '0' }}</td>
+                                                    <td class=" text-align-right markrow">${{ $value['lowBidRange'] ?? '0' }}</td>
+                                                    <td class=" text-align-right markrow">${{ $value['highBidRange'] ?? '0' }}</td>
                                                     <td class=" text-align-center"><button class="btn btn-primary show-childrows">show
                                                             <span class="glyphicon glyphicon-chevron-down"></span></button></td>
                                                     <td class=" markrow check" data-original-title="" title=""
@@ -255,28 +260,6 @@
                                 @endif
                             </tbody>
                         </table>
-                        <div class="dataTables_paginate paging_simple_numbers" id="keyword-table_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button previous disabled" id="keyword-table_previous"><a href="#"
-                                        aria-controls="keyword-table" data-dt-idx="0" tabindex="0">«</a>
-                                </li>
-                                <li class="paginate_button active"><a href="#" aria-controls="keyword-table"
-                                        data-dt-idx="1" tabindex="0">1</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="keyword-table" data-dt-idx="2"
-                                        tabindex="0">2</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="keyword-table" data-dt-idx="3"
-                                        tabindex="0">3</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="keyword-table" data-dt-idx="4"
-                                        tabindex="0">4</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="keyword-table" data-dt-idx="5"
-                                        tabindex="0">5</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="keyword-table" data-dt-idx="6"
-                                        tabindex="0">6</a></li>
-                                <li class="paginate_button next" id="keyword-table_next"><a href="#"
-                                        aria-controls="keyword-table" data-dt-idx="7" tabindex="0">»</a></li>
-                            </ul>
-                            
-                        </div>
                     </div>
                 </div>
            
@@ -284,9 +267,6 @@
             </div>
            
             </div>
-   
-            
-           
             @else
             <div class="keywordplanner-content">
                 <section class="keyplan">

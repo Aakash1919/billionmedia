@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\GoogleAds;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\GoogleAds\KeywordPlanner;
-use App\Models\UserProjectKeyword;
 use App\Models\UserProjects;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;

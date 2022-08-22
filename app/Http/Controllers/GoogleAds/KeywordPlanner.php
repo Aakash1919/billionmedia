@@ -49,10 +49,10 @@ class KeywordPlanner extends Controller
         if(isset($keyword) && isset($action)) {
             switch($action) {
                 case 'questions' :
-                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'Lt3Tzc');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_QUESTIONS_CLASS'));
                     break;
                 case 'similar_searches' :
-                    $keywordArray = $this->getSearchesBasedOnClass($keyword, 'BNeawe s3v9rd AP7Wnd lRVwie');
+                    $keywordArray = $this->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_RELATED_KEYWORD_CLASS'));
                     break;
                 case 'autocomplete' :
                     $keywordArray = $this->getAutoCompleteSearchResults($keyword);
@@ -132,8 +132,8 @@ class KeywordPlanner extends Controller
 
             $amc = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getAvgMonthlySearches();
             $competition = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getCompetition();
-            $cpc = is_null($result->getKeywordIdeaMetrics()) ? 0 : ($result->getKeywordIdeaMetrics()->getHighTopOfPageBidMicros() - $result->getKeywordIdeaMetrics()->getLowTopOfPageBidMicros()) / 2000000;
-            $cpc = round($cpc,2);
+            $lowBidRange = is_null($result->getKeywordIdeaMetrics()) ? 0 : $result->getKeywordIdeaMetrics()->getLowTopOfPageBidMicros();
+            $highBidRange = is_null($result->getKeywordIdeaMetrics()) ? 0: $result->getKeywordIdeaMetrics()->getHighTopOfPageBidMicros();
             if($competition >= 67) {
                 $competition = "HIGH";
             }elseif ($competition >= 33 && $competition < 33) {
@@ -142,7 +142,8 @@ class KeywordPlanner extends Controller
                 $competition = "LOW";
             }
             array_push($maxSearchArray, $amc);
-            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'cpc' => $cpc]);
+            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'lowBidRange' => $lowBidRange,
+            'highBidRange'=>$highBidRange]);
             if($keywordCount== $count) break;
             $count++;
         }

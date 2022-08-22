@@ -124,13 +124,15 @@ class Controller extends BaseController
         if (isset($url) && $keyword) {
             $i = 1;
             for ($page = 0; $page < 60; $page = $page + 10) {
-                $response = $keywordPlannerObject->getSearchesBasedOnClass($keyword, 'BNeawe UPmit AP7Wnd', $page);
+                $response = $keywordPlannerObject->getSearchesBasedOnClass($keyword, env('SEARCH_ENGINE_LINKS_CLASS'), $page);
                 if (isset($response['keyword'])) {
                     $keywords = explode(',', $response['keyword']);
-                    foreach ($keywords as  $keys => $value) {
-                        if (str_contains($value, $url)) {
-                            $position = $i * ($keys + 1);
-                            array_push($rankArray, ['page' => 0, 'position' => $position]);
+                    if (!empty($keywords)) {
+                        foreach ($keywords as  $keys => $value) {
+                            if (strpos($value, $url)) {
+                                $position = $i * ($keys + 1);
+                                array_push($rankArray, ['page' => 0, 'position' => $position]);
+                            }
                         }
                     }
                 }
