@@ -181,8 +181,8 @@
             <p>You can also subscribe to our paid package which gives you full and unlimited access to all of our services.
             </p>
             <ul>
-                <li><a href="#" class="sign">Sign up</a></li>
-                <li><a href="#" class="cont">Contact us</a></li>
+                <li><a href="{{route('register')}}" class="sign">Sign up</a></li>
+                <li><a href="{{route('public.contactUs')}}" class="cont">Contact us</a></li>
             </ul>
         </div>
     </div>

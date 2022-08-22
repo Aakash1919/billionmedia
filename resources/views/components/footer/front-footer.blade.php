@@ -16,8 +16,8 @@
                 <div class="box-footer">
                     <h3>Product:</h3>
                     <ul>
-                        <li><a href="#">Create Account</a></li>
-                        <li><a href="#">Log In</a></li>
+                        <li><a href="{{route('register')}}">Create Account</a></li>
+                        <li><a href="{{route('login')}}">Log In</a></li>
                     </ul>
                 </div>
             </div>

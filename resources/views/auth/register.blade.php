@@ -59,7 +59,7 @@
                     </div>
                   </div>
                   <div class="alrdy-btn">
-                    <p>Already have an account? <a href="http://billionmedia.test/login">Log in now</a></p>
+                    <p>Already have an account? <a href="{{route('login')}}">Log in now</a></p>
                   </div>
                 </form>
               </div>
