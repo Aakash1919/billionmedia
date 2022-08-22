@@ -83,7 +83,7 @@
               <td>${{ $value['cpc'] ?? '0' }}</td>
             </tr>
             @endforeach
-            @endif;
+            @endif
           </tbody>
         </table>
       </div>
