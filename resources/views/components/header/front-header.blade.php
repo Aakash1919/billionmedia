@@ -18,13 +18,13 @@
                                 <li class="nav-item solu-nav"><a class="nav-link" href="{{ route('public.solutions')}}">Solutions</a></li>
                                 <li class="nav-item free-nav"><a class="nav-link" href="{{ route('public.freeSeoTool')}}">Free SEO Tools</a></li>
                                 <li class="nav-item plan-nav"><a class="nav-link" href="{{ route('public.pricing')}}">Plans & Pricing</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">keywordResearch</a></li>
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('public.keyword-planner') }}">keywordResearch</a></li> --}}
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.keywordRank') }}">Keyword Rank Checker</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.siteaudit') }}">SiteAudit</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">SEO Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.aboutSeoScience') }}">About SEO Science</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.contactUs') }}">Contact Us</a></li>
-                                <li class="start-fre"><a href="{{route('login')}}">Start Free Trial</a></li>
+                                <li class="start-fre"><a href="{{route('login')}}">Login</a></li>
                             </ul>
                         </div>
                     </nav>

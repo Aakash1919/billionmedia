@@ -18,12 +18,12 @@
                                     <p>If you are already a member, please enter your login details in the form below.
                                     </p>
                                 </div>
-                                <div class="social-btn">
+                                {{-- <div class="social-btn">
                                     <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with
                                         Facebook</a>
                                     <a href="#" class="google"><img src="assets/images/google.png">Sign in with
                                         Google</a>
-                                </div>
+                                </div> --}}
                                 <div class="or-box">
                                     <div class="inner-or-box">Or</div>
                                 </div>
