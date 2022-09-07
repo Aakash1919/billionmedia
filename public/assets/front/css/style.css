@@ -4632,15 +4632,6 @@ section.tol-unique {
 	margin: 20px 0 0 0;
 	display: inline-block;
 }
-.post-saction-home .row .col-md-4 {
-	float: inherit;
-	display: inherit;
-}
-.post-saction-home .row {
-	text-align: center;
-	width: 100%;
-	display: inline-block;
-}
 .sticky img {
 	width: 53%;
 	top: -6px;
