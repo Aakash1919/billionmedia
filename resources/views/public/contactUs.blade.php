@@ -20,14 +20,14 @@
 <div class="contact-form-area pt-100 pb-70">
     <div class="container">
      <div class="section-title text-center">
-    <h2>Let's Send Us a Message Below</h2>
+    <h2>Get In Touch</h2>
     </div>
     <div class="row pt-45">
     <div class="col-lg-4">
     <div class="contact-info mr-20">
     <span>Contact Info</span>
     <h2>Let's Connect With Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet varius mi, ut hendrerit magna mollis ac. </p>
+    <p>Get in touch with the SEO Science team today to see how we can help you take your traffic to the next level. You can call us, write to us, or chat with us now via our live chat service</p>
     <ul>
     <li>
     <div class="content">
@@ -96,7 +96,7 @@
     <div class="agree-label">
     <input type="checkbox" id="chb1">
     <label for="chb1">
-    Accept <a href="terms-condition.html">Terms &amp; Conditions</a> And <a href="privacy-policy.html">Privacy Policy.</a>
+    Accept <a href="{{ route('public.termsandConditions')}}">Terms &amp; Conditions</a> And <a href="{{ route('public.privacypolicy')}}">Privacy Policy.</a>
     </label>
     </div>
     </div>

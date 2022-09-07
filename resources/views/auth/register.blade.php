@@ -12,8 +12,8 @@
               <div class="logo">
                <a href="#"><img src="http://billionmedia.test/assets/images/logo-img.png" alt="" width="180"></a>
                 </div>
-                <h3>Sign Up Free</h3>
-                <p>Create an Billion media account</p>
+                <h3>Sign Up For A Free Account</h3>
+                <p>Complete the form below to become an SEO Scientist</p>
               </div>
               <div class="social-btn">
               <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a> 
@@ -51,7 +51,7 @@
                   </div>
                   <div class="rigestr-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                    <label class="form-check-label" for="remember">I accept the <a href="#">Terms & conditions</a></label>
+                    <label class="form-check-label" for="remember">I accept the <a href="{{ route('public.termsandConditions') }}">Terms & conditions</a></label>
                   </div>
                   <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">

@@ -9,10 +9,10 @@
                             <h2>SEO Science can help to launch your traffic to the next level</h2>
                             <p>Carry out keyword research, track your rankings and keep tabs on your competitors. Try it for
                                 free today</p>
-                            <div class="search">
+                            {{--<div class="search">
                                 <input type="text" class="searchTerm" placeholder="Add your first project">
                                 <button type="submit" class="searchButton">Get Started</button>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="col-md-6">
