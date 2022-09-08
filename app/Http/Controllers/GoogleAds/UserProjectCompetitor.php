@@ -55,7 +55,7 @@ class UserProjectCompetitor extends Controller
         $status = UserProjects::where('id',$id)->where('user_id',Auth::user()->id)->delete();
         if($status) {
             UserProjectKeyword::where('project_id',$id)->delete();
-            ModelsUserProjectCompetitor::where('Project_id',$id)->delete();    
+            ModelsUserProjectCompetitor::where('project_id',$id)->delete();    
         }
         return redirect()->back()->with('status', 'Deleted');
     }
