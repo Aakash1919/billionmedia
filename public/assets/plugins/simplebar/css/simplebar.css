@@ -1354,7 +1354,7 @@ input[type=file]:hover~label i {
     font-size: 27px;
     font-weight: 800;
     color: #000;
-    margin: 20px 0 0 0 !important;
+    margin: 10px 0 0 0 !important;
     letter-spacing: -1.1px;
 }
 
@@ -1941,7 +1941,7 @@ input:focus:focus-visible {
 
 .or-box {
     position: relative;
-    margin: 30px 0 0 0;
+    margin: 15px 0 0 0;
     width: 82%;
     float: left;
 }
