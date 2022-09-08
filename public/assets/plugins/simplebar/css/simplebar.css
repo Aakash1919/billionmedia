@@ -2011,9 +2011,9 @@ input:focus:focus-visible {
 }
 
 .right-login-new img {
-	width: 59% !important;
+	width: 45% !important;
 	text-align: center;
-	margin: 13rem 0 0 7rem;
+	margin: 15rem 0 0 2rem;
 }
 
 .left-login-new .container {
@@ -3068,4 +3068,25 @@ label.error {
     left: 8px;
     font-size: 12px;
     font-weight: 600;
+}
+
+
+
+
+
+@media  screen and (max-width: 1366px) {
+
+.right-login-new img {
+width: 35% !important;
+margin: 13rem 0 0 2rem;
+}
+.right-login-new {
+	height: 100vh;
+}
+.right-login-new.reg {
+	height: 101%;
+}
+
+
+
 }
