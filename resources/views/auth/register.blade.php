@@ -15,13 +15,13 @@
                 <h3>Sign Up For A Free Account</h3>
                 <p>Complete the form below to become an SEO Scientist</p>
               </div>
-              <div class="social-btn">
+              {{--<div class="social-btn">
               <a href="#" class="fb"><img src="assets/images/facebook.png">Sign in with Facebook</a> 
               <a href="#" class="google"><img src="assets/images/google.png">Sign in with Google</a> 
              </div>
              <div class="or-box">
              <div class="inner-or-box">Or</div>
-             </div>
+             </div>--}}
               <div class="card-body register-from">
                 <form method="POST" action="{{ route('register') }}">
                   @csrf

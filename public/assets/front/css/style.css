@@ -252,7 +252,7 @@ body{
 .saction-tow {
 	display: inline-block;
 	width: 100%;
-	padding: 66px 0;
+	padding: 4rem 0;
 	background-color: #f9f9f9;
 	text-align: center;
 }
@@ -714,7 +714,7 @@ td.started {
 .saction-footer {
 	display: inline-block;
 	width: 100%;
-	padding: 80px 0 36px;
+	padding: 3rem 0 15px;
 	margin: 0;
 	background-color: #263238;
 }
@@ -725,12 +725,11 @@ td.started {
 }
 .box-footer h3 {
 	color: #fff;
-	opacity: 0.7;
 	font-weight: 500;
 	font-size: 18px;
 	text-transform: uppercase;
 	display: inline-block;
-	margin: 0 0 33px 0;
+	margin: 0 0 15px 0;
 	width: 100%;
 }
 .box-footer ul {
@@ -745,8 +744,8 @@ td.started {
 }
 .box-footer ul li a {
 	color: #fff;
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 15px;
+	font-weight: 300;
 	opacity: 0.7;
 	display: inline-block;
 	width: 100%;
@@ -829,8 +828,8 @@ input:focus-visible {
 }
 .copy-rught {
 	border-top: 1px solid #3c464c;
-	margin: 70px 0 0 0;
-	padding: 36px 0 0 0;
+	margin: 50px 0 0 0;
+	padding: 20px 0 0 0;
 }
 .copy-rught img {
 	float: left;
@@ -2258,7 +2257,7 @@ input:focus-visible {
 .saction-all-blog {
 	display: inline-block;
 	width: 100%;
-	margin: 5rem 0 4rem;
+	margin: 3rem 0;
 }
 .post-blog-box {
 	display: inline-block;
@@ -2792,7 +2791,7 @@ input:focus-visible {
 .about-saction {
 	display: inline-block;
 	width: 100%;
-	padding: 7rem 0;
+	padding: 4rem 0;
 }
 .about-saction-left {
 	position: relative;
@@ -3078,7 +3077,7 @@ input:focus-visible {
 .post-saction-home {
 	display: inline-block;
 	width: 100%;
-	padding: 66px 0 80px;
+	padding: 4rem 0;
 	text-align: center;
 }
 .post-saction-home h2 {
@@ -3764,7 +3763,7 @@ li.nav-item.blog-nav {display: none !important;}
 	width: 100%;
 	background-color: #f9f9f9;
 	text-align: center;
-	padding: 6rem 0;
+	padding: 4rem 0;
 }
 .signup-saction h3 {
 	display: inline-block;
@@ -3886,15 +3885,12 @@ li.nav-item.blog-nav {display: none !important;}
 	background-color: #eeeeee;
 	padding: 40px 0;
 }
-
-
-
-
 section.keyrank {
-    background: #f9f9f9;
-    display: inline-block;
-    width: 100%;
-    padding: 70px 0;
+	background: #f9f9f9;
+	display: inline-block;
+	width: 100%;
+	padding: 4rem 0;
+	margin: 0;
 }
 .content-box-kewod.rank {
     margin: 0;
@@ -4088,15 +4084,15 @@ section.site-1.fifth {
 
 
 .site-bread {
-    display: inline-block;
-    width: 100%;
-	padding: 100px 0 200px;
-    background-position: inherit;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #fff;
-    background-image: url("/assets/images/people1.jpg");
-    position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: 80px;
+	background-position: inherit;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	background-image: url("/assets/images/people1.jpg");
+	position: relative;
 }
 .text-rank {
     background-image: url("/assets/front/images/business-presentation.jpg");
@@ -4346,10 +4342,10 @@ section.tol-unique {
 
 
 .pb-70 {
-	padding-bottom: 70px;
+	padding-bottom: 4rem;
 }
 .pt-100 {
-	padding-top: 100px;
+	padding-top: 4rem;
 }
 .section-title h2 {
 	font-size: 35px;
@@ -4527,10 +4523,10 @@ section.tol-unique {
 	z-index: 1;
 	background-position: 50%;
 	background-size: cover !important;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	height: 100%;
-	padding-top: 150px;
-	padding-bottom: 150px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	background-attachment: fixed;
 }
 .page-banner-content {
@@ -4576,7 +4572,7 @@ section.tol-unique {
 	width: 100%;
 }
 .about-area.ptb-100 {
-	padding: 100px 0;
+	padding: 4rem 0;
 	display: inline-block;
 	width: 100%;
 }
