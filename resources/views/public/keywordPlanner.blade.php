@@ -43,7 +43,7 @@
                             <div class="-kewful-side">
                                 <label>Search engine</label>
                                 <input type="text" name="url" list="engines" class="form-control"
-                                    placeholder="Google.com" value='{{ $url ?? '' }}'>
+                                    placeholder="" value='{{ $url ?? '' }}'>
                             </div>
                             <div class="btn-keyword">
                                 <input class="btn btn-primary form-control" type="submit" value="Keyword Research">

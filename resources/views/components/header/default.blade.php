@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand">
             <div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
             </div>
-            <div class="top-menu-left d-none d-lg-block">
+            {{-- <div class="top-menu-left d-none d-lg-block">
                 <ul class="nav">
                   <li class="nav-item">
                     <a class="nav-link" href="app-emailbox.html"><i class='bx bx-envelope'></i></a>
@@ -18,7 +18,7 @@
                       <a class="nav-link" href="app-to-do.html"><i class='bx bx-check-square'></i></a>
                   </li>
               </ul>
-             </div>
+             </div> --}}
             <div class="search-bar flex-grow-1">
                 <div class="position-relative search-bar-box">
                     <input type="text" class="form-control search-control" placeholder="Type to search..."> <span class="position-absolute top-50 search-show translate-middle-y"><i class='bx bx-search'></i></span>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="top-menu ms-auto">
-                <ul class="navbar-nav align-items-center">
+                {{-- <ul class="navbar-nav align-items-center">
                     <li class="nav-item mobile-search-icon">
                         <a class="nav-link" href="#">	<i class='bx bx-search'></i>
                         </a>
@@ -336,8 +336,10 @@
                             </a>
                         </div>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
+
+            {{--  --}}
             <div class="user-box dropdown">
                 <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
@@ -346,7 +348,7 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+                    {{-- <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
                     </li>
                     <li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>
                     </li>
@@ -355,7 +357,7 @@
                     <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>
                     </li>
                     <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-download'></i><span>Downloads</span></a>
-                    </li>
+                    </li> --}}
                     <li>
                         <div class="dropdown-divider mb-0"></div>
                     </li>
