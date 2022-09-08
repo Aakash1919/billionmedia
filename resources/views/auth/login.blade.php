@@ -23,10 +23,10 @@
                                         Facebook</a>
                                     <a href="#" class="google"><img src="assets/images/google.png">Sign in with
                                         Google</a>
-                                </div> --}}
+                                </div> 
                                 <div class="or-box">
                                     <div class="inner-or-box">Or</div>
-                                </div>
+                                </div>--}}
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group row email-fild">
