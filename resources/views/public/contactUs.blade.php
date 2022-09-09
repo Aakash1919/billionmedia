@@ -33,21 +33,21 @@
     <div class="content">
     <img src="{{ asset('assets/images/telephone.png') }}">
     <h3>Phone Number</h3>
-    <a href="tel:+1(212)-255-5511">+1 (212) 255-5511</a>
+    <a href="tel:+1(212)-255-5511">0151 261 4650</a>
     </div>
     </li>
     <li>
     <div class="content">
    <img src="{{ asset('assets/images/home.png') }}">
     <h3>Address</h3>
-    <span>124 Virgil A Virginia, USA</span>
+    <span>Billion Media Limited Liverpool Innovation Park Edge Lane L7 9NJ</span>
     </div>
     </li>
     <li>
     <div class="content">
         <img src="{{ asset('assets/images/mail.png') }}">
     <h3>Contact Info</h3>
-    <a href="mailto:hello@techex.com">hello@techex.com</a>
+    <a href="mailto:hello@techex.com">seoscience2@gmail.com </a>
     </div>
     </li>
     </ul>
