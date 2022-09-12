@@ -31,7 +31,7 @@ Route::get('/get-countries', [App\Http\Controllers\PublicController::class, 'get
 Route::get('/terms-conditions', [App\Http\Controllers\PublicController::class, 'termsAndCondition'])->name('public.termsandConditions');
 Route::get('/privacy-policy', [App\Http\Controllers\PublicController::class, 'privacyPolicy'])->name('public.privacypolicy');
 Route::get('/site-audit', [App\Http\Controllers\PublicController::class, 'siteAudit'])->name('public.siteaudit');
-Route::get('/keyword-Rank', [App\Http\Controllers\PublicController::class, 'keywrdRank'])->name('public.keywordRank');
+Route::get('/keyword-rank', [App\Http\Controllers\PublicController::class, 'keywrdRank'])->name('public.keywordrank');
 
 Route::get('/contact-us', function () {
     return view('public.contactUs');

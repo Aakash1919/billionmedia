@@ -70,7 +70,7 @@
     </div>
 
     <div class="col-md-6">
-      <div class="right-login-new"><img src="assets/images/seo-science-logo.png"> </div>
+      <div class="right-login-new reg"><img src="assets/images/seo-science-logo.png"> </div>
     </div>
   </div>
 

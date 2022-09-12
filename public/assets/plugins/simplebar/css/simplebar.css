@@ -2005,15 +2005,15 @@ input:focus:focus-visible {
 }
 
 .left-login-new {
-    padding: 40px 0 40px 100px;
-    display: inline-block;
-    width: auto;
+	padding: 150px 0 40px 100px;
+	display: inline-block;
+	width: auto;
 }
 
 .right-login-new img {
-	width: 59% !important;
+	width: 29% !important;
 	text-align: center;
-	margin: 13rem 0 0 7rem;
+	margin: 20rem 0 0 2rem;
 }
 
 .left-login-new .container {
@@ -2921,9 +2921,9 @@ ul.list-unstyled .check-bx input {
 }
 
 .left-login-new.register-page {
-    padding: 58px 0 40px 116px;
-    width: 100%;
-    float: left;
+	padding: 58px 0 40px 248px;
+	width: 100%;
+	float: left;
 }
 
 .left-login-new.rest-poswrod {
@@ -3068,4 +3068,31 @@ label.error {
     left: 8px;
     font-size: 12px;
     font-weight: 600;
+}
+
+
+
+
+
+@media  screen and (max-width: 1366px) {
+
+.right-login-new img {
+        width: 28% !important;
+        margin: 14rem 0 0 2rem;
+}
+.right-login-new {
+	height: 100vh;
+}
+.right-login-new.reg {
+	height: 101%;
+}
+.left-login-new {
+	padding: 68px 0 40px 100px;
+}
+.left-login-new.register-page {
+	padding: 0px 0 30px 116px;
+}
+
+
+
 }

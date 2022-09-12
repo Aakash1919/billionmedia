@@ -3822,7 +3822,7 @@ li.nav-item.blog-nav {display: none !important;}
 .blog-detlas-saction {
 	display: inline-block;
 	width: 100%;
-	margin: 3rem 0;
+	margin: 1rem 0;
 }
 .blog-detlas-saction-left h2 {
 	font-size: 40px;
@@ -3834,6 +3834,15 @@ li.nav-item.blog-nav {display: none !important;}
 	line-height: 25px;
 	color: #666;
 	margin: 10px 0 0 0;
+}
+.blog-detlas-saction-left h3 strong {
+	margin: 15px 0 0 0;
+	display: inline-block;
+	font-size: 25px;
+}
+.blog-detlas-saction-left h2 strong {
+	font-size: 33px;
+	font-weight: 900;
 }
 .blog-detlas-saction-left ul {
 	display: inline-block;
@@ -4621,6 +4630,8 @@ section.tol-unique {
 }
 .blog-detlas-saction img {
 	width: 100%;
+	height: 400px;
+	object-fit: cover;
 }
 .blog-detlas-saction-left p strong {
 	color: #000;

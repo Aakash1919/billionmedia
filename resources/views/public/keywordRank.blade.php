@@ -4,7 +4,7 @@
 <div class="rank-section">
 <div class="site-bread text-rank">
         <div class="container">
-            <h2>KeywordRank</h2>
+            <h2>Keyword Rank Tracker</h2>
      <p>The ability to track the performance of your keywords is one of 
                                  the most<br> important analytical steps you can take when it comes to SEO.</p>
 </div>
