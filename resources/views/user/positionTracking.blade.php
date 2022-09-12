@@ -8,7 +8,7 @@
                 @include('components.Alerts.default', [
                     'attributes' => [
                         'title' => 'Message',
-                        'message' => 'Keyword Added Successfully',
+                        'message' => 'Operation Done Successfully',
                     ],
                 ])
             @endif

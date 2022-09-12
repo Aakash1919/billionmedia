@@ -4,7 +4,7 @@
   <div class="page-content"> @if (session('status'))
     @include('components.Alerts.default', array('attributes' => array(
     'title' => 'Message',
-    'message' => 'Keyword Added Successfully'
+    'message' => 'Operation Done Successfully'
     )))
     @endif
     <div class="hadder-row">
