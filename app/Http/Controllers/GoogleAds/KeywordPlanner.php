@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\GoogleAds;
 
 use App\Http\Controllers\Controller;
+use App\Models\Countries;
+use Exception;
 use Illuminate\Http\Request;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\Lib\V9\GoogleAdsClient;
@@ -23,10 +25,11 @@ class KeywordPlanner extends Controller
    
     public function index() {
         $refreshToken = Auth::user()->google_refresh_token;
+        $countries = Countries::all();
         if(!isset($refreshToken)) {
             return Redirect::to('google-authorize');
         }
-        return view('user.keywordPlanner',compact('refreshToken'));
+        return view('user.keywordPlanner',compact('refreshToken','countries'));
     }
 
     public function publicPlanner(Request $request) {
@@ -64,21 +67,29 @@ class KeywordPlanner extends Controller
 
     public function main(Request $request)
     {
-        $refreshToken = Auth::user()->google_refresh_token;   
-        if($request->has('keyword') && isset($refreshToken)) {
-            $url = $request->get('url') ?? null;
-            if($request->has('action')) {
-                $action = $request->get('action');
-                $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
-                $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url);
-                return view('user.keywordPlanner', compact('keywordResponse','refreshToken'));
+        try{
+            $refreshToken = Auth::user()->google_refresh_token;   
+            if($request->has('keyword') && isset($refreshToken)) {
+                $url = $request->get('url') ?? null;
+                if($request->has('action')) {
+                    $action = $request->get('action');
+                    $keyword = $this->getKeywordByAction($request->get('keyword'), $request->get('action'));
+                    $country = $request->location ?? 2826;
+                    $keywordResponse = $this->getGlobalKeywordAnalytics($refreshToken, $keyword, $url,$country);
+                    $countries = Countries::all();
+                    return view('user.keywordPlanner', compact('keywordResponse','refreshToken','request','countries'));
+                }
+            }else {
+                return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
             }
-        }else {
-            return redirect('keyword-planner')->with('status', 'Either Keyword is empty or connect to google ads'); 
+        }catch(Exception $e) {
+            return redirect('keyword-planner')->with('status', $e->getMessage()); 
+ 
         }
+        
     }
 
-    public function getGlobalKeywordAnalytics($refreshToken = null, $keywordArray = null, $url = null) {
+    public function getGlobalKeywordAnalytics($refreshToken = null, $keywordArray = null, $url = null,$country = 2826) {
         $response = array('status' => 'false', 'message' => 'Keyword Planner Not working at this moment please contact administator');  
         $message = '';
         $keyword = $keywordArray['keyword'];
@@ -88,7 +99,7 @@ class KeywordPlanner extends Controller
             $googleAdsClient = (new GoogleAdsClientBuilder())->withDeveloperToken(env('DEVELOPER_TOKEN'))->withOAuth2Credential($oAuth2Credential)->build();
             $keyword = explode(',',$keyword) ;
             try {
-                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [1012873],1000, $keyword , $keywordCount, $url);
+                $keywordResponse = $this->getKeywordsDetails($googleAdsClient,(int)env('CUSTOMER_ID'), [$country],1000, $keyword , $keywordCount, $url);
                 $response = array('status' => 'true', 'data' => $keywordResponse, 'token' => $refreshToken);
             } catch (GoogleAdsException $googleAdsException) {
                 foreach ($googleAdsException->getGoogleAdsFailure()->getErrors() as $error) {
