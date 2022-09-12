@@ -81,7 +81,8 @@
                                     <th scope="col">Keyword</th>
                                     <th scope="col">Average Monthly Searches</th>
                                     <th scope="col">Competition</th>
-                                    <th scope="col">CPC</th>
+                                    <th scope="col">Low Top Of Page Bid	</th>
+                                    <th scope="col">High Top Of Page Bid</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,7 +93,8 @@
                                             <td>{{ $value['keyword'] ?? '' }}</td>
                                             <td>{{ $value['searches'] ?? '' }}</td>
                                             <td>{{ $value['competition'] ?? '' }}</td>
-                                            <td>${{ $value['cpc'] ?? '0' }}</td>
+                                            <td>${{ $value['lowBidRange'] ?? '0' }}</td>
+                                            <td>${{ $value['highBidRange'] ?? '0' }}</td>
                                         </tr>
                                     @endforeach
                                 @endif
