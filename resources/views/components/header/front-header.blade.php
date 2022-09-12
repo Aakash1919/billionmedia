@@ -24,7 +24,7 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.blogs') }}">SEO Blog</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.aboutSeoScience') }}">About SEO Science</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('public.contactUs') }}">Contact Us</a></li>
-                                <li class="start-fre"><a href="{{route('login')}}">Login</a></li>
+                                <li class="start-fre"><a href="{{route('login')}}">{{Auth::user()->name ?? 'Login'}}</a></li>
                             </ul>
                         </div>
                     </nav>
