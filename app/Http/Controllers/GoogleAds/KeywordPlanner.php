@@ -153,8 +153,8 @@ class KeywordPlanner extends Controller
                 $competition = "LOW";
             }
             array_push($maxSearchArray, $amc);
-            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'lowBidRange' => $lowBidRange/1000000,
-            'highBidRange'=>$highBidRange/1000000]);
+            array_push($responseArray, ['keyword'=>$result->getText(), 'searches'=>$amc, 'competition'=>$competition, 'lowBidRange' => round($lowBidRange/1000000,2),
+            'highBidRange'=>round($highBidRange/1000000,2)]);
             if($keywordCount== $count) break;
             $count++;
         }
