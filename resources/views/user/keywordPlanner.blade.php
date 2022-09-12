@@ -87,7 +87,7 @@
                             </thead>
                             <tbody>
                                 @if (isset($keywordResponse['data']) && is_array($keywordResponse['data']))
-                                    @foreach ($keywordResponse['data'] as $key => $value)
+                                    @forelse ($keywordResponse['data'] as $key => $value)
                                         <tr>
                                             <th scope="row">{{ ++$key }}</th>
                                             <td>{{ $value['keyword'] ?? '' }}</td>
@@ -96,7 +96,11 @@
                                             <td>${{ $value['lowBidRange'] ?? '0' }}</td>
                                             <td>${{ $value['highBidRange'] ?? '0' }}</td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                    <tr>
+                                        <td colspan="6">No Records Found</td>
+                                    </tr>
+                                @endforelse
                                 @endif
                             </tbody>
                         </table>

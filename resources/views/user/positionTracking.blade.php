@@ -103,32 +103,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($project->projectKeywords as $keyword)
-                                        <tr class="even">
-                                            {{-- <td>
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                </div>
-                                            </td> --}}
-                                            <td class="pgn">{{ $keyword->current_position ?? 'N/T' }}</td>
-                                            <td class="rk-url">
-                                                <div class="rk-yellow">{{ $keyword->keyword }}</div>
-                                            </td>
-                                            <td class="pgn"> 2 </td>
-                                            <td class="pgn">
-                                                {{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
-                                            <td class="ptgn">
-                                                ${{ json_decode($keyword->stats)->data->{0}->lowBidRange ?? '' }}</td>
-                                            <td class="ptgn">
-                                                ${{ json_decode($keyword->stats)->data->{0}->highBidRange ?? '' }}</td>
+                                    @forelse ($project->projectKeywords as $keyword)
+                                    <tr class="even">
+                                        {{-- <td>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            </div>
+                                        </td> --}}
+                                        <td class="pgn">{{ $keyword->current_position ?? 'N/T' }}</td>
+                                        <td class="rk-url">
+                                            <div class="rk-yellow">{{ $keyword->keyword }}</div>
+                                        </td>
+                                        <td class="pgn"> 2 </td>
+                                        <td class="pgn">
+                                            {{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
+                                        <td class="ptgn">
+                                            ${{ json_decode($keyword->stats)->data->{0}->lowBidRange ?? '' }}</td>
+                                        <td class="ptgn">
+                                            ${{ json_decode($keyword->stats)->data->{0}->highBidRange ?? '' }}</td>
 
 
-                                            <td class="pgnd">
-                                                <a href="{{ route('user.deletekeywordTracking') }}/{{ $keyword->id }}"><button
-                                                        type="button" class="btn btn-primary btn-sm">DELETE</button></a>
-                                            </td>
+                                        <td class="pgnd">
+                                            <a href="{{ route('user.deletekeywordTracking') }}/{{ $keyword->id }}"><button
+                                                    type="button" class="btn btn-primary btn-sm">DELETE</button></a>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="7">No Records Found</td>
                                         </tr>
-                                    @endforeach
+                                    @endforelse
                                 </tbody>
                             </table>
                         @endif
@@ -169,7 +173,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($project->projectCompetitors as $competitor)
+                                    @forelse ($project->projectCompetitors as $competitor)
                                         <tr class="even">
                                             <td class="pgn">{{ $competitor->project->website_name ?? '' }}</td>
                                             <td class="rk-url">
@@ -183,7 +187,11 @@
                                                     href="{{ route('user.deletecompetitorTracking') }}/{{ $competitor->id }}">
                                                     <i class="btn btn-primary btn-delt">DELETE</i></a></td>
                                         </tr>
-                                    @endforeach
+                                        @empty
+                                        <tr>
+                                            <td colspan="4">No Records Found</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         @endif

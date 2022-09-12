@@ -59,7 +59,7 @@
               <tbody>
                 @php $i = 0; @endphp
                 @if(isset($project))
-                  @foreach ($project->projectKeywords as $keyword)
+                  @forelse ($project->projectKeywords as $keyword)
                     @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
                       @if ($keyword->keyword==$competitorKeyword->keyword)
                         <tr>
@@ -72,7 +72,11 @@
                         </tr>
                       @endif  
                     @endforeach
-                  @endforeach
+                  @empty
+                  <tr>
+                      <td colspan="6">No Records Found</td>
+                  </tr>
+              @endforelse
                 @endif
               </tbody>
             </table>
@@ -99,7 +103,7 @@
               <tbody>
                 @php $i = 0; @endphp
                 @if(isset($projectCompetitor))
-                  @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
+                  @forelse ($projectCompetitor->projectKeywords as $competitorKeyword)
                     @foreach ($project->projectKeywords as $keyword)
                       @if ($keyword->keyword!=$competitorKeyword->keyword)
                         <tr>
@@ -113,7 +117,11 @@
                         @php break; @endphp
                       @endif  
                     @endforeach
-                  @endforeach
+                  @empty
+                  <tr>
+                      <td colspan="6">No Records Found</td>
+                  </tr>
+              @endforelse
                 @endif              
               </tbody>
             </table>
