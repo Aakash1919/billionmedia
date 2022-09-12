@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="lt-udt">
-                            <p>January 11, 2022 13:01 PM</p>
+                            <p>{{date('F d, y h:i A')}}</p>
                         </div>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
                                 summary="An example of a responsive table using Bootstrap breakpoints." aria-role="table">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        {{-- <th>
                                             <div class="form-check"> <input type="checkbox" class="form-check-input"
                                                     id="exampleCheck1"> </div>
-                                        </th>
+                                        </th> --}}
                                         <th> POSITION </th>
                                         <th> KEYWORD</th>
                                         <th>CHANGE </th>
@@ -105,11 +105,11 @@
                                 <tbody>
                                     @foreach ($project->projectKeywords as $keyword)
                                         <tr class="even">
-                                            <td>
+                                            {{-- <td>
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                 </div>
-                                            </td>
+                                            </td> --}}
                                             <td class="pgn">{{ $keyword->current_position ?? 'N/T' }}</td>
                                             <td class="rk-url">
                                                 <div class="rk-yellow">{{ $keyword->keyword }}</div>
