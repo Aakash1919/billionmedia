@@ -52,8 +52,9 @@
                   <th scope="col">Keyword</th>
                   <th scope="col">Volume</th>
                   <th scope="col">Position</th>
-                  <th scope="col">Est. Visits</th>
-                  <th scope="col">CPC</th>
+                  <th scope="col">Low Bid Range</th>
+                  <th scope="col">High Bid Range</th>
+                  <th scope="col">Max Search</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,8 +68,9 @@
                           <td>{{ $keyword->keyword ?? 'N/T' }}</td>
                           <td>{{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
                           <td>{{ $keyword->current_position ?? 'N/T' }}</td>
-                          <td>185,538</td>
-                          <td>{{ json_decode($keyword->stats)->data->{0}->cpc ?? '' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->lowBidRange ?? '' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->highBidRange ?? '' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->maxSearch ?? '' }}</td>
                         </tr>
                       @endif  
                     @endforeach
@@ -96,23 +98,25 @@
                   <th scope="col">Keyword</th>
                   <th scope="col">Volume</th>
                   <th scope="col">Position</th>
-                  <th scope="col">Est. Visits</th>
-                  <th scope="col">CPC</th>
+                  <th scope="col">Low Bid Range</th>
+                  <th scope="col">High Bid Range</th>
+                  <th scope="col">Max Search</th>
                 </tr>
               </thead>
               <tbody>
                 @php $i = 0; @endphp
                 @if(isset($projectCompetitor))
-                  @forelse ($projectCompetitor->projectKeywords as $competitorKeyword)
-                    @foreach ($project->projectKeywords as $keyword)
-                      @if ($keyword->keyword!=$competitorKeyword->keyword)
+                @forelse ($project->projectKeywords as $keyword)
+                @foreach ($projectCompetitor->projectKeywords as $competitorKeyword)
+                  @if ($keyword->keyword!==$competitorKeyword->keyword)
                         <tr>
                           <td>{{++$i}}</td>
-                          <td>{{ $competitorKeyword->keyword ?? 'N/T' }}</td>
-                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->searches ?? '' }}</td>
-                          <td>{{ $competitorKeyword->current_position ?? 'N/T' }}</td>
-                          <td>185,538</td>
-                          <td>{{ json_decode($competitorKeyword->stats)->data->{0}->cpc ?? '' }}</td>
+                          <td>{{ $keyword->keyword ?? 'N/T' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->searches ?? '' }}</td>
+                          <td>{{ $keyword->current_position ?? 'N/T' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->lowBidRange ?? '' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->{0}->highBidRange ?? '' }}</td>
+                          <td>{{ json_decode($keyword->stats)->data->maxSearch ?? '' }}</td>
                         </tr>
                         @php break; @endphp
                       @endif  
